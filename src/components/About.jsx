@@ -84,7 +84,7 @@ export default function About() {
             { label: 'University', value: 'Addis Ababa University' },
             { label: 'Degree', value: 'BSc Electrical & Computer Engineering' },
             { label: 'Year', value: 'Second Year' },
-            { label: 'Startup', value: 'voiET — Amharic Voice AI' },
+            { label: 'Startup', value: 'voiET, Amharic Voice AI' },
             { label: 'HuggingFace', value: 'Henokk' },
             { label: 'Status', value: 'Open to internships & collaborations' },
           ].map(({ label, value }) => (
