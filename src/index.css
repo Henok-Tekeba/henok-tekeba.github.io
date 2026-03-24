@@ -95,3 +95,65 @@ body::after {
 .reveal.d1 { transition-delay: 0.15s; }
 .reveal.d2 { transition-delay: 0.3s; }
 .reveal.d3 { transition-delay: 0.45s; }
+/* ── MOBILE ── */
+@media (max-width: 768px) {
+  /* Nav */
+  nav {
+    padding: 1rem 1.5rem !important;
+  }
+
+  nav div {
+    display: none !important;
+  }
+
+  /* Hero */
+  section#hero {
+    padding: 0 1.5rem !important;
+  }
+
+  /* All sections */
+  section {
+    padding: 5rem 1.5rem !important;
+  }
+
+  /* Two column grids → single column */
+  section div[style*="grid-template-columns: 1fr 1fr"] {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 3rem !important;
+  }
+
+  /* Experience grid */
+  section div[style*="grid-template-columns: 180px"] {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 0.5rem !important;
+  }
+
+  /* Projects grid */
+  section div[style*="grid-template-columns: 80px 1fr auto"] {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 1rem !important;
+  }
+
+  /* Skills grid */
+  div[style*="grid-template-columns: repeat(3, 1fr)"] {
+    display: flex !important;
+    flex-direction: column !important;
+  }
+
+  /* Skills cell borders */
+  div[style*="borderRight"] {
+    border-right: none !important;
+    border-bottom: 1px solid var(--border) !important;
+  }
+
+  /* Footer */
+  footer {
+    flex-direction: column !important;
+    gap: 1rem !important;
+    text-align: center !important;
+    padding: 2rem 1.5rem !important;
+  }
+}
