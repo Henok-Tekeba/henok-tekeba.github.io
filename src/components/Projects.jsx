@@ -16,7 +16,7 @@ const projects = [
     tag: 'Full Stack',
     desc: 'Production waitlist platform built with Next.js, Tailwind CSS, Node.js, Express, and PostgreSQL. Deployed on Vercel and Railway with a strict feature-branch Git workflow.',
     tags: ['Next.js', 'Tailwind', 'Node.js', 'PostgreSQL', 'Railway'],
-    link: '#',
+    link: 'https://voiet.vercel.app',
     linkLabel: 'Live Site →',
   },
   {
@@ -43,8 +43,8 @@ const projects = [
     tag: 'Frontend',
     desc: "Landing page built for Icog Labs, one of Ethiopia's leading AI research organizations. Delivered as a real client project.",
     tags: ['TypeScript', 'React'],
-    link: 'https://github.com/Henok-Tekeba/Icog',
-    linkLabel: 'GitHub →',
+    link: 'https://icog.vercel.app',
+    linkLabel: 'Live Site →',
   },
   {
     num: '06',

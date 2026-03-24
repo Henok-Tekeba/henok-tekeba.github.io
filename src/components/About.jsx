@@ -72,7 +72,7 @@ export default function About() {
             lineHeight: 1.9,
           }}>
             My work sits at the intersection of full-stack engineering and
-            machine learning — fine-tuning Whisper for Amharic ASR, building
+            machine learning — fine-tuning AI models for better Amharic AI products , building
             TTS pipelines, and shipping production systems that actually work
             for Ethiopian users.
           </p>

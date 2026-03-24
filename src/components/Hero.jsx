@@ -19,7 +19,7 @@ export default function Hero() {
         textTransform: 'uppercase',
         marginBottom: '2rem',
       }}>
-        Addis Ababa, Ethiopia — 2025
+        Addis Ababa, Ethiopia — 2026
       </p>
 
       {/* Name */}
