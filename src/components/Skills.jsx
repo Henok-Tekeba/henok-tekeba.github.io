@@ -2,11 +2,11 @@ import useWindowSize from '../hooks/useWindowSize'
 
 const skillGroups = [
   { cat: 'Languages', skills: ['Python', 'TypeScript', 'JavaScript', 'Java'] },
-  { cat: 'Frontend', skills: ['Next.js', 'React', 'Tailwind CSS', 'Vite'] },
+  { cat: 'Frontend', skills: ['Next.js', 'React', 'Tailwind CSS'] },
   { cat: 'Backend', skills: ['Node.js', 'Express', 'PostgreSQL', 'REST APIs'] },
-  { cat: 'Machine Learning', skills: ['PyTorch', 'HuggingFace', 'Whisper', 'LoRA Fine-tuning', 'XTTSv2'] },
+  { cat: 'Machine Learning', skills: ['PyTorch', 'HuggingFace', 'Whisper', 'LoRA Fine tuning', 'XTTSv2'] },
   { cat: 'MLOps & Infra', skills: ['Kaggle','Google Collab', 'wandb', 'Railway'] },
-  { cat: 'Tools', skills: ['Git', 'GitHub', 'Linux', 'Bash', 'VS Code'] },
+  { cat: 'Tools', skills: ['Git', 'GitHub', 'Linux', 'Bash'] },
 ]
 
 export default function Skills() {

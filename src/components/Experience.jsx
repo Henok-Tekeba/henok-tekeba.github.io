@@ -12,15 +12,15 @@ const experiences = [
     year: '2024 — present',
     role: 'Robotics Competition Team Member',
     company: 'AAU VEX Robotics Team',
-    desc: 'Representing Addis Ababa University in the nationwide VEX Robotics competition. Working on hardware design, embedded programming, and autonomous systems.',
-    tags: ['Embedded Systems', 'C++', 'Autonomous Control'],
+    desc: 'Competing in Addis Ababa University VEX Robotics competition. Working on design, embedded programming, and autonomous driving.',
+    tags: ['Robotics', 'Python', 'Autonomous Control'],
   },
   {
     year: '2024 — present',
     role: 'BSc Student',
     company: 'Addis Ababa University',
-    desc: 'Second-year Electrical and Computer Engineering student. Coursework spanning Object Oriented Programming, Applied Electronics, computer architecture, and Computational Methods.',
-    tags: ['ECE', 'Signal Processing', 'Computer Architecture'],
+    desc: 'Second year Electrical and Computer Engineering student. Coursework spanning Object Oriented Programming, Applied Electronics, computer architecture, and Computational Methods.',
+    tags: ['ECE', 'OOP', 'Computer Architecture'],
   },
 ]
 
