@@ -10,8 +10,6 @@ import Projects from './components/Projects'
 import Skills from './components/Skills'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
-import { useParams, useLocation } from "react-router-dom";
-import { Analytics } from '@vercel/analytics/react';  
 
 function App() {
   useReveal()
@@ -28,7 +26,7 @@ function App() {
       <Skills />
       <Contact />
       <Footer />
-      <Analytics />
+
     </div>
   )
 }
