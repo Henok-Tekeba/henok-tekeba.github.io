@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useState } from 'react'
 import { SiGithub } from 'react-icons/si'
+import useWindowSize from '../hooks/useWindowSize'
 
 const username = 'Henok-Tekeba'
 const apiUrl = `https://github-contributions-api.jogruber.de/v4/${username}?y=last`
@@ -37,6 +38,8 @@ function contributionColor(level) {
 }
 
 export default function GitHubCommitGraph() {
+  const width = useWindowSize()
+  const isMobile = width < 768
   const [data, setData] = useState(null)
   const [status, setStatus] = useState('loading')
   const [activeCell, setActiveCell] = useState(null)
@@ -101,9 +104,17 @@ export default function GitHubCommitGraph() {
 
     const totalWeeks = Math.max(...cells.map(cell => cell.column)) + 1
     const totalCount = data.total?.lastYear ?? cells.reduce((sum, cell) => sum + cell.count, 0)
+    const visibleWeeks = isMobile ? Math.min(20, totalWeeks) : totalWeeks
+    const startWeek = totalWeeks - visibleWeeks
+    const visibleCells = cells
+      .filter(cell => cell.column >= startWeek)
+      .map(cell => ({
+        ...cell,
+        column: cell.column - startWeek,
+      }))
 
-    return { cells, totalWeeks, totalCount }
-  }, [data])
+    return { cells: visibleCells, totalWeeks: visibleWeeks, totalCount }
+  }, [data, isMobile])
 
   return (
     <section id="github-graph" className="commit-graph-section">
@@ -159,7 +170,7 @@ export default function GitHubCommitGraph() {
 
                 <div
                   className="commit-graph-grid"
-                  style={{ gridTemplateColumns: `repeat(${graph.totalWeeks}, 12px)` }}
+                  style={{ gridTemplateColumns: `repeat(${graph.totalWeeks}, var(--commit-cell-size))` }}
                   role="img"
                   aria-label={`GitHub contribution heatmap for ${username}`}
                 >
