@@ -1,5 +1,4 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
-import { SiGithub } from 'react-icons/si'
 import useWindowSize from '../hooks/useWindowSize'
 
 const username = 'Henok-Tekeba'
@@ -92,6 +91,8 @@ export default function GitHubCommitGraph() {
     const totalCount = data.total?.lastYear ?? cells.reduce((sum, cell) => sum + cell.count, 0)
     const visibleWeeks = isMobile ? Math.min(20, totalWeeks) : totalWeeks
     const startWeek = totalWeeks - visibleWeeks
+    const visibleStartDate = new Date(startDate)
+    visibleStartDate.setDate(visibleStartDate.getDate() + startWeek * 7)
     const visibleCells = cells
       .filter(cell => cell.column >= startWeek)
       .map(cell => ({
@@ -99,7 +100,31 @@ export default function GitHubCommitGraph() {
         column: cell.column - startWeek,
       }))
 
-    return { cells: visibleCells, totalWeeks: visibleWeeks, totalCount }
+    let activeDays = 0
+    for (const cell of visibleCells) {
+      if (cell.count > 0) activeDays += 1
+    }
+
+    const monthLabels = []
+    for (let column = 0; column < visibleWeeks; column += 1) {
+      const tickDate = new Date(visibleStartDate)
+      tickDate.setDate(visibleStartDate.getDate() + column * 7)
+
+      if (column === 0 || tickDate.getDate() <= 7) {
+        monthLabels.push({
+          column,
+          label: tickDate.toLocaleString('en-US', { month: 'short' }),
+        })
+      }
+    }
+
+    return {
+      cells: visibleCells,
+      totalWeeks: visibleWeeks,
+      totalCount,
+      activeDays,
+      monthLabels,
+    }
   }, [data, isMobile])
 
   function showCellTooltip(cell, event) {
@@ -119,55 +144,55 @@ export default function GitHubCommitGraph() {
   }
 
   return (
-    <section id="github-graph" className="commit-graph-section">
-      <div className="reveal commit-graph-shell">
-        <div className="commit-graph-topbar">
-          <div className="commit-graph-heading">
-            <span className="commit-graph-mark">
-              <SiGithub aria-hidden="true" focusable="false" />
-            </span>
-            <div>
-              <p className="commit-graph-kicker">github commit graph</p>
-              <h2 className="commit-graph-title">Henok-Tekeba</h2>
-            </div>
+    <section id="github-graph" className="commit-graph-section reveal">
+      <div className="commit-graph-topbar">
+        <h2 className="commit-graph-title">GitHub Activity</h2>
+        {status === 'ready' && graph && (
+          <p className="commit-graph-summary">
+            {graph.totalCount} contributions last 12 months
+          </p>
+        )}
+      </div>
+
+      <div className="commit-graph-stage" ref={stageRef}>
+        {status === 'loading' && (
+          <div className="commit-graph-state">
+            <span>Loading contributions...</span>
           </div>
+        )}
 
-          <a className="commit-graph-user" href={`https://github.com/${username}`} target="_blank" rel="noreferrer">
-            @{username}
-          </a>
-        </div>
+        {status === 'error' && (
+          <div className="commit-graph-state">
+            <span>Could not load activity right now.</span>
+            <a href={`https://github.com/${username}`} target="_blank" rel="noreferrer">
+              Open GitHub profile
+            </a>
+          </div>
+        )}
 
-        <div className="commit-graph-stage" ref={stageRef}>
-          {status === 'loading' && (
-            <div className="commit-graph-state">
-              <span>Loading real GitHub contribution data...</span>
-            </div>
-          )}
-
-          {status === 'error' && (
-            <div className="commit-graph-state">
-              <span>Could not load the graph right now.</span>
-              <a href={`https://github.com/${username}`} target="_blank" rel="noreferrer">
-                Open GitHub profile
-              </a>
-            </div>
-          )}
-
-          {status === 'ready' && graph && (
-            <>
-              <div className="commit-graph-meta">
-                <span>{graph.totalCount} contributions in the last year</span>
+        {status === 'ready' && graph && (
+          <>
+            <div className="commit-graph-grid-wrap">
+              <div className="commit-graph-days" aria-hidden="true">
+                <span />
+                <span>Mon</span>
+                <span />
+                <span>Wed</span>
+                <span />
+                <span>Fri</span>
+                <span />
               </div>
 
-              <div className="commit-graph-grid-wrap">
-                <div className="commit-graph-days" aria-hidden="true">
-                  <span>Sun</span>
-                  <span>Mon</span>
-                  <span>Tue</span>
-                  <span>Wed</span>
-                  <span>Thu</span>
-                  <span>Fri</span>
-                  <span>Sat</span>
+              <div className="commit-graph-board">
+                <div className="commit-graph-months" aria-hidden="true">
+                  {graph.monthLabels.map(month => (
+                    <span
+                      key={`${month.label}-${month.column}`}
+                      style={{ gridColumn: month.column + 1 }}
+                    >
+                      {month.label}
+                    </span>
+                  ))}
                 </div>
 
                 <div
@@ -177,8 +202,9 @@ export default function GitHubCommitGraph() {
                   aria-label={`GitHub contribution heatmap for ${username}`}
                 >
                   {graph.cells.map(cell => (
-                    <span
+                    <button
                       key={cell.date}
+                      type="button"
                       className={`commit-cell intensity-${cell.level}`}
                       style={{
                         gridColumn: cell.column + 1,
@@ -191,31 +217,35 @@ export default function GitHubCommitGraph() {
                       onMouseLeave={() => setActiveCell(null)}
                       onFocus={event => showCellTooltip(cell, event)}
                       onBlur={() => setActiveCell(null)}
-                      tabIndex={0}
                     />
                   ))}
                 </div>
               </div>
+            </div>
 
-              {activeCell && (
-                <div
-                  className="commit-graph-tooltip-inline"
-                  role="status"
-                  aria-live="polite"
-                  style={{ left: `${activeCell.left}px`, top: `${activeCell.top}px` }}
-                >
-                  {activeCell.count} {activeCell.count === 1 ? 'contribution' : 'contributions'} on {formatDateLabel(activeCell.date)}
-                </div>
-              )}
-
-              <div className="commit-graph-footer">
-                <a href={`https://github.com/${username}`} target="_blank" rel="noreferrer">
-                  View profile
-                </a>
+            {activeCell && (
+              <div
+                className="commit-graph-tooltip-inline"
+                role="status"
+                aria-live="polite"
+                style={{ left: `${activeCell.left}px`, top: `${activeCell.top}px` }}
+              >
+                {activeCell.count} {activeCell.count === 1 ? 'contribution' : 'contributions'} on {formatDateLabel(activeCell.date)}
               </div>
-            </>
-          )}
-        </div>
+            )}
+
+            <div className="commit-graph-footer">
+              <span>{graph.activeDays} active days</span>
+              <div className="commit-graph-legend" aria-hidden="true">
+                <span>Less</span>
+                {[0, 1, 2, 3, 4].map(level => (
+                  <span key={level} className={`commit-cell legend-cell intensity-${level}`} />
+                ))}
+                <span>More</span>
+              </div>
+            </div>
+          </>
+        )}
       </div>
     </section>
   )
