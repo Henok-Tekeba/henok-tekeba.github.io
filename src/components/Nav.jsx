@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { FaMoon, FaSun } from 'react-icons/fa'
 import useWindowSize from '../hooks/useWindowSize'
 
 const links = ['about', 'experience', 'projects', 'skills', 'contact']
@@ -93,16 +94,15 @@ export default function Nav() {
                 border: '1px solid var(--border-2)',
                 background: 'transparent',
                 color: 'var(--text-2)',
-                fontFamily: 'var(--mono)',
-                fontSize: '0.62rem',
-                letterSpacing: '0.12em',
-                textTransform: 'uppercase',
-                padding: '0.45rem 0.65rem',
+                width: '2.2rem',
+                height: '2.2rem',
                 borderRadius: '999px',
                 cursor: 'pointer',
+                display: 'grid',
+                placeItems: 'center',
               }}
             >
-              {theme === 'dark' ? 'Light' : 'Dark'}
+              {theme === 'dark' ? <FaSun size={13} /> : <FaMoon size={13} />}
             </button>
           </div>
         )}
@@ -174,21 +174,20 @@ export default function Nav() {
 
           <button
             onClick={toggleTheme}
+            aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
             style={{
               border: '1px solid var(--border-2)',
               background: 'transparent',
               color: 'var(--text-2)',
-              fontFamily: 'var(--mono)',
-              fontSize: '0.72rem',
-              letterSpacing: '0.12em',
-              textTransform: 'uppercase',
-              padding: '0.7rem 0.9rem',
+              width: '2.4rem',
+              height: '2.4rem',
               borderRadius: '999px',
               cursor: 'pointer',
-              width: 'fit-content',
+              display: 'grid',
+              placeItems: 'center',
             }}
           >
-            Switch to {theme === 'dark' ? 'Light' : 'Dark'}
+            {theme === 'dark' ? <FaSun size={14} /> : <FaMoon size={14} />}
           </button>
         </div>
       )}
