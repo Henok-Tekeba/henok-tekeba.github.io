@@ -6,6 +6,7 @@ const links = ['about', 'experience', 'projects', 'skills', 'contact']
 export default function Nav() {
   const [sticky, setSticky] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
+  const [theme, setTheme] = useState('dark')
   const width = useWindowSize()
   const isMobile = width < 768
 
@@ -14,6 +15,24 @@ export default function Nav() {
     window.addEventListener('scroll', onScroll)
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
+
+  useEffect(() => {
+    const savedTheme = localStorage.getItem('theme')
+    if (savedTheme === 'light' || savedTheme === 'dark') {
+      setTheme(savedTheme)
+      document.documentElement.setAttribute('data-theme', savedTheme)
+      return
+    }
+
+    document.documentElement.setAttribute('data-theme', 'dark')
+  }, [])
+
+  const toggleTheme = () => {
+    const nextTheme = theme === 'dark' ? 'light' : 'dark'
+    setTheme(nextTheme)
+    localStorage.setItem('theme', nextTheme)
+    document.documentElement.setAttribute('data-theme', nextTheme)
+  }
 
   return (
     <>
@@ -25,7 +44,7 @@ export default function Nav() {
         justifyContent: 'space-between',
         alignItems: 'center',
         padding: isMobile ? '1rem 1.5rem' : sticky ? '1rem 3rem' : '1.5rem 3rem',
-        background: sticky || menuOpen ? 'rgba(8,8,8,0.92)' : 'transparent',
+        background: sticky || menuOpen ? 'color-mix(in srgb, var(--bg) 92%, transparent)' : 'transparent',
         borderBottom: sticky || menuOpen ? '1px solid var(--border)' : '1px solid transparent',
         backdropFilter: sticky || menuOpen ? 'blur(12px)' : 'none',
         transition: 'all 0.4s ease',
@@ -66,6 +85,25 @@ export default function Nav() {
                 {link}
               </a>
             ))}
+
+            <button
+              onClick={toggleTheme}
+              aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
+              style={{
+                border: '1px solid var(--border-2)',
+                background: 'transparent',
+                color: 'var(--text-2)',
+                fontFamily: 'var(--mono)',
+                fontSize: '0.62rem',
+                letterSpacing: '0.12em',
+                textTransform: 'uppercase',
+                padding: '0.45rem 0.65rem',
+                borderRadius: '999px',
+                cursor: 'pointer',
+              }}
+            >
+              {theme === 'dark' ? 'Light' : 'Dark'}
+            </button>
           </div>
         )}
 
@@ -108,7 +146,7 @@ export default function Nav() {
           top: '56px',
           left: 0, right: 0,
           zIndex: 999,
-          background: 'rgba(8,8,8,0.97)',
+          background: 'color-mix(in srgb, var(--bg) 97%, transparent)',
           borderBottom: '1px solid var(--border)',
           display: 'flex',
           flexDirection: 'column',
@@ -133,6 +171,25 @@ export default function Nav() {
               {link}
             </a>
           ))}
+
+          <button
+            onClick={toggleTheme}
+            style={{
+              border: '1px solid var(--border-2)',
+              background: 'transparent',
+              color: 'var(--text-2)',
+              fontFamily: 'var(--mono)',
+              fontSize: '0.72rem',
+              letterSpacing: '0.12em',
+              textTransform: 'uppercase',
+              padding: '0.7rem 0.9rem',
+              borderRadius: '999px',
+              cursor: 'pointer',
+              width: 'fit-content',
+            }}
+          >
+            Switch to {theme === 'dark' ? 'Light' : 'Dark'}
+          </button>
         </div>
       )}
     </>

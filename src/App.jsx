@@ -1,6 +1,5 @@
 import './index.css'
 import useReveal from './hooks/useReveal'
-import Cursor from './components/Cursor'
 import ParticleCanvas from './components/ParticleCanvas'
 import Nav from './components/Nav'
 import Hero from './components/Hero'
@@ -16,7 +15,6 @@ function App() {
 
   return (
     <div>
-      <Cursor />
       <ParticleCanvas />
       <Nav />
       <Hero />

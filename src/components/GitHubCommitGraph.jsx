@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from 'react'
+import { useEffect, useMemo, useRef, useState } from 'react'
 import { SiGithub } from 'react-icons/si'
 import useWindowSize from '../hooks/useWindowSize'
 
@@ -40,6 +40,7 @@ function contributionColor(level) {
 export default function GitHubCommitGraph() {
   const width = useWindowSize()
   const isMobile = width < 768
+  const stageRef = useRef(null)
   const [data, setData] = useState(null)
   const [status, setStatus] = useState('loading')
   const [activeCell, setActiveCell] = useState(null)
@@ -116,6 +117,22 @@ export default function GitHubCommitGraph() {
     return { cells: visibleCells, totalWeeks: visibleWeeks, totalCount }
   }, [data, isMobile])
 
+  function showCellTooltip(cell, event) {
+    if (!stageRef.current) return
+
+    const stageRect = stageRef.current.getBoundingClientRect()
+    const cellRect = event.currentTarget.getBoundingClientRect()
+    const left = cellRect.left - stageRect.left + (cellRect.width / 2)
+    const top = cellRect.top - stageRect.top - 6
+
+    setActiveCell({
+      count: cell.count,
+      date: cell.date,
+      left,
+      top,
+    })
+  }
+
   return (
     <section id="github-graph" className="commit-graph-section">
       <div className="reveal commit-graph-shell">
@@ -135,7 +152,7 @@ export default function GitHubCommitGraph() {
           </a>
         </div>
 
-        <div className="commit-graph-stage">
+        <div className="commit-graph-stage" ref={stageRef}>
           {status === 'loading' && (
             <div className="commit-graph-state">
               <span>Loading real GitHub contribution data...</span>
@@ -185,9 +202,10 @@ export default function GitHubCommitGraph() {
                       }}
                       title={cell.label}
                       aria-label={cell.label}
-                      onMouseEnter={() => setActiveCell(cell)}
+                      onMouseEnter={event => showCellTooltip(cell, event)}
+                      onMouseMove={event => showCellTooltip(cell, event)}
                       onMouseLeave={() => setActiveCell(null)}
-                      onFocus={() => setActiveCell(cell)}
+                      onFocus={event => showCellTooltip(cell, event)}
                       onBlur={() => setActiveCell(null)}
                       tabIndex={0}
                     />
@@ -196,7 +214,12 @@ export default function GitHubCommitGraph() {
               </div>
 
               {activeCell && (
-                <div className="commit-graph-tooltip" role="status" aria-live="polite">
+                <div
+                  className="commit-graph-tooltip-inline"
+                  role="status"
+                  aria-live="polite"
+                  style={{ left: `${activeCell.left}px`, top: `${activeCell.top}px` }}
+                >
                   {activeCell.count} {activeCell.count === 1 ? 'contribution' : 'contributions'} on {formatDateLabel(activeCell.date)}
                 </div>
               )}
