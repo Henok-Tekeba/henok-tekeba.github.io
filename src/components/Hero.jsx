@@ -53,7 +53,7 @@ export default function Hero() {
         marginBottom: '1.7rem',
       }}>
         <img
-          src="public/heni.png"
+          src={`${import.meta.env.BASE_URL}heni.png`}
           alt="Henok Tekeba"
           style={{
             width: isMobile ? '122px' : '156px',
