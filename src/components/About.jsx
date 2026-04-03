@@ -3,34 +3,14 @@ import { GraduationCap, MapPin, Sparkles } from 'lucide-react'
 export default function About() {
   return (
     <section id="about" style={{
-      padding: '8rem 3rem',
+      padding: '5.5rem 3rem 8rem',
       position: 'relative',
       zIndex: 1,
-      borderTop: '1px solid var(--border)',
-      maxWidth: '1100px',
-      margin: '0 auto',
     }}>
 
-      <div className="reveal" style={{
-        display: 'flex',
-        alignItems: 'center',
-        gap: '1rem',
-        marginBottom: '4rem',
-      }}>
-        <span style={{
-          fontFamily: 'var(--mono)',
-          fontSize: '0.65rem',
-          color: 'var(--accent)',
-          letterSpacing: '0.15em',
-        }}>01</span>
-        <span style={{
-          fontFamily: 'var(--mono)',
-          fontSize: '0.65rem',
-          color: 'var(--text-2)',
-          letterSpacing: '0.15em',
-          textTransform: 'uppercase',
-        }}>about</span>
-        <div style={{ flex: 1, height: '1px', background: 'var(--border)' }} />
+      <div className="section-heading reveal">
+        <h2 className="section-heading-title">About</h2>
+        <div className="section-heading-rule" />
       </div>
 
       <div style={{

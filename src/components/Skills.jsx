@@ -54,18 +54,11 @@ export default function Skills() {
       padding: '8rem 3rem',
       position: 'relative',
       zIndex: 1,
-      borderTop: '1px solid var(--border)',
     }}>
 
-      <div className="reveal" style={{
-        display: 'flex',
-        alignItems: 'center',
-        gap: '1rem',
-        marginBottom: '2rem',
-      }}>
-        <span style={{ fontFamily: 'var(--mono)', fontSize: '0.65rem', color: 'var(--accent)', letterSpacing: '0.15em' }}>04</span>
-        <span style={{ fontFamily: 'var(--mono)', fontSize: '0.65rem', color: 'var(--text-2)', letterSpacing: '0.15em', textTransform: 'uppercase' }}>skills & tools</span>
-        <div style={{ flex: 1, height: '1px', background: 'var(--border)' }} />
+      <div className="section-heading reveal" style={{ marginBottom: '2rem' }}>
+        <h2 className="section-heading-title">Skills & Tools</h2>
+        <div className="section-heading-rule" />
       </div>
 
       <div className="reveal d1 skills-grid">

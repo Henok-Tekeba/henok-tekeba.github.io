@@ -45,7 +45,7 @@ export default function Hero() {
 
   return (
     <section id="hero" style={{
-      minHeight: '100vh',
+      minHeight: isMobile ? '84vh' : '88vh',
       display: 'flex',
       flexDirection: 'column',
       justifyContent: 'center',

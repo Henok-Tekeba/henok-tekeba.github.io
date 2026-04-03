@@ -4,7 +4,7 @@ import './index.css'
 import App from './App.jsx'
 
 const savedTheme = localStorage.getItem('theme')
-const initialTheme = savedTheme === 'dark' || savedTheme === 'light' ? savedTheme : 'light'
+const initialTheme = savedTheme === 'dark' || savedTheme === 'light' ? savedTheme : 'dark'
 document.documentElement.setAttribute('data-theme', initialTheme)
 if (!savedTheme) localStorage.setItem('theme', initialTheme)
 

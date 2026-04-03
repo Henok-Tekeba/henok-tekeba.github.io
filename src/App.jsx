@@ -10,10 +10,11 @@ import GitHubCommitGraph from './components/GitHubCommitGraph'
 import Skills from './components/Skills'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
+import SectionDivider from './components/SectionDivider'
 
 function App() {
   useReveal()
-  const [theme, setTheme] = useState(() => document.documentElement.getAttribute('data-theme') || 'light')
+  const [theme, setTheme] = useState(() => document.documentElement.getAttribute('data-theme') || 'dark')
 
   useEffect(() => {
     const root = document.documentElement
@@ -31,10 +32,15 @@ function App() {
       {theme !== 'dark' && <ParticleCanvas />}
       <Nav />
       <Hero />
+      <SectionDivider />
       <About />
+      <SectionDivider />
       <Projects />
+      <SectionDivider />
       <GitHubCommitGraph />
+      <SectionDivider />
       <Skills />
+      <SectionDivider />
       <Contact />
       <Footer />
 

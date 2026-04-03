@@ -7,7 +7,7 @@ const links = ['about', 'experience', 'projects', 'skills', 'contact']
 export default function Nav() {
   const [sticky, setSticky] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
-  const [theme, setTheme] = useState('light')
+  const [theme, setTheme] = useState('dark')
   const width = useWindowSize()
   const isMobile = width < 768
 
@@ -25,8 +25,8 @@ export default function Nav() {
       return
     }
 
-    localStorage.setItem('theme', 'light')
-    document.documentElement.setAttribute('data-theme', 'light')
+    localStorage.setItem('theme', 'dark')
+    document.documentElement.setAttribute('data-theme', 'dark')
   }, [])
 
   const toggleTheme = () => {
