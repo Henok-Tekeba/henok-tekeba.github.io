@@ -52,14 +52,14 @@ export default function Nav() {
         transition: 'all 0.4s ease',
       }}>
         <a href="#" style={{
-          fontFamily: 'var(--mono)',
+          fontFamily: 'var(--title)',
           fontSize: '0.8rem',
           letterSpacing: '0.15em',
           color: 'var(--accent)',
           textDecoration: 'none',
           textTransform: 'uppercase',
         }}>
-          HT<span style={{ color: 'var(--text-3)', margin: '0 0.3rem' }}>/</span>dev
+          HT
         </a>
 
         {/* Desktop links */}

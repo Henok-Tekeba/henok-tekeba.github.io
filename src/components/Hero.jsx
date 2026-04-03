@@ -1,6 +1,13 @@
 import { useEffect, useState } from 'react'
 import useWindowSize from '../hooks/useWindowSize'
 
+const rotatingHeadlines = [
+  '20 . engineer',
+  'Always learning',
+  'Grinding every day',
+  'Hustling',
+]
+
 function getPresenceStatus() {
   const hourString = new Intl.DateTimeFormat('en-US', {
     hour: '2-digit',
@@ -24,8 +31,23 @@ function getPresenceStatus() {
 export default function Hero() {
   const width = useWindowSize()
   const isMobile = width < 768
+  const [headlineIndex, setHeadlineIndex] = useState(0)
+  const [isHeadlineVisible, setIsHeadlineVisible] = useState(true)
   const [isLiveDotOn, setIsLiveDotOn] = useState(true)
   const [presence, setPresence] = useState(getPresenceStatus)
+
+  useEffect(() => {
+    const headlineTimer = setInterval(() => {
+      setIsHeadlineVisible(false)
+
+      setTimeout(() => {
+        setHeadlineIndex(prev => (prev + 1) % rotatingHeadlines.length)
+        setIsHeadlineVisible(true)
+      }, 220)
+    }, 2500)
+
+    return () => clearInterval(headlineTimer)
+  }, [])
 
   useEffect(() => {
     const liveDotTimer = setInterval(() => {
@@ -88,6 +110,20 @@ export default function Hero() {
             Henok <span style={{ color: 'var(--accent)' }}>Tekeba</span>
           </h1>
 
+          <p style={{
+            fontFamily: 'var(--title)',
+            fontSize: isMobile ? '0.68rem' : '0.78rem',
+            letterSpacing: '0.08em',
+            textTransform: 'uppercase',
+            color: 'var(--text-2)',
+            minHeight: '1.2rem',
+            opacity: isHeadlineVisible ? 1 : 0,
+            transform: isHeadlineVisible ? 'translateY(0)' : 'translateY(5px)',
+            transition: 'opacity 0.22s ease, transform 0.22s ease',
+          }}>
+            {rotatingHeadlines[headlineIndex]}
+          </p>
+
           <div style={{
             display: 'inline-flex',
             alignItems: 'center',
@@ -113,7 +149,7 @@ export default function Hero() {
               color: 'var(--text-2)',
               lineHeight: 1,
             }}>
-              {presence.label} . Live
+              {presence.label}
             </span>
           </div>
         </div>
@@ -131,23 +167,6 @@ export default function Hero() {
       }}>
         I am a developer in Addis Ababa building practical Amharic AI tools while studying Electrical and Computer Engineering at AAU.
       </p>
-
-      {/* Scroll indicator */}
-      <div style={{
-        position: 'absolute',
-        bottom: '2.5rem',
-        left: '3rem',
-        display: 'flex',
-        alignItems: 'center',
-        gap: '0.75rem',
-      }}>
-        <div style={{
-          width: '1px',
-          height: '48px',
-          background: 'linear-gradient(to bottom, var(--accent), transparent)',
-        }} />
-
-      </div>
 
     </section>
   )
