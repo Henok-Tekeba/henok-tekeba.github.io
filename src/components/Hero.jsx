@@ -1,13 +1,6 @@
 import { useEffect, useState } from 'react'
 import useWindowSize from '../hooks/useWindowSize'
 
-const rotatingHeadlines = [
-  '20 . engineer',
-  'Trying to do better',
-  'grinding every day',
-  'Always learning',
-]
-
 function getPresenceStatus() {
   const hourString = new Intl.DateTimeFormat('en-US', {
     hour: '2-digit',
@@ -31,23 +24,8 @@ function getPresenceStatus() {
 export default function Hero() {
   const width = useWindowSize()
   const isMobile = width < 768
-  const [headlineIndex, setHeadlineIndex] = useState(0)
-  const [isHeadlineVisible, setIsHeadlineVisible] = useState(true)
   const [isLiveDotOn, setIsLiveDotOn] = useState(true)
   const [presence, setPresence] = useState(getPresenceStatus)
-
-  useEffect(() => {
-    const headlineTimer = setInterval(() => {
-      setIsHeadlineVisible(false)
-
-      setTimeout(() => {
-        setHeadlineIndex(prev => (prev + 1) % rotatingHeadlines.length)
-        setIsHeadlineVisible(true)
-      }, 220)
-    }, 2500)
-
-    return () => clearInterval(headlineTimer)
-  }, [])
 
   useEffect(() => {
     const liveDotTimer = setInterval(() => {
@@ -110,20 +88,6 @@ export default function Hero() {
             Henok <span style={{ color: 'var(--accent)' }}>Tekeba</span>
           </h1>
 
-          <p style={{
-            fontFamily: 'var(--mono)',
-            fontSize: isMobile ? '0.62rem' : '0.72rem',
-            letterSpacing: '0.1em',
-            textTransform: 'uppercase',
-            color: 'var(--text-2)',
-            minHeight: '1.1rem',
-            opacity: isHeadlineVisible ? 1 : 0,
-            transform: isHeadlineVisible ? 'translateY(0)' : 'translateY(5px)',
-            transition: 'opacity 0.22s ease, transform 0.22s ease',
-          }}>
-            {rotatingHeadlines[headlineIndex]}
-          </p>
-
           <div style={{
             display: 'inline-flex',
             alignItems: 'center',
@@ -165,57 +129,8 @@ export default function Hero() {
         lineHeight: 1.8,
         marginBottom: '3rem',
       }}>
-        Ethiopia-based developer portfolio. I build Amharic AI products for local users while studying ECE at Addis Ababa University.
+        I am a developer in Addis Ababa building practical Amharic AI tools while studying Electrical and Computer Engineering at AAU.
       </p>
-
-      {/* CTA buttons */}
-      <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
-        <a href="#projects" style={{
-          fontFamily: 'var(--mono)',
-          fontSize: '0.7rem',
-          letterSpacing: '0.12em',
-          color: 'var(--accent)',
-          border: '1px solid var(--accent)',
-          padding: '0.8rem 1.8rem',
-          textDecoration: 'none',
-          textTransform: 'lowercase',
-          transition: 'all 0.2s',
-          background: 'transparent',
-        }}
-          onMouseEnter={e => {
-            e.currentTarget.style.background = 'var(--accent)'
-            e.currentTarget.style.color = 'var(--bg)'
-          }}
-          onMouseLeave={e => {
-            e.currentTarget.style.background = 'transparent'
-            e.currentTarget.style.color = 'var(--accent)'
-          }}
-        >
-          view projects →
-        </a>
-        <a href="#contact" style={{
-          fontFamily: 'var(--mono)',
-          fontSize: '0.7rem',
-          letterSpacing: '0.12em',
-          color: 'var(--text-2)',
-          border: '1px solid var(--border-2)',
-          padding: '0.8rem 1.8rem',
-          textDecoration: 'none',
-          textTransform: 'lowercase',
-          transition: 'all 0.2s',
-        }}
-          onMouseEnter={e => {
-            e.currentTarget.style.borderColor = 'var(--text-2)'
-            e.currentTarget.style.color = 'var(--text)'
-          }}
-          onMouseLeave={e => {
-            e.currentTarget.style.borderColor = 'var(--border-2)'
-            e.currentTarget.style.color = 'var(--text-2)'
-          }}
-        >
-          get in touch
-        </a>
-      </div>
 
       {/* Scroll indicator */}
       <div style={{

@@ -97,8 +97,8 @@ export default function Contact() {
           color: 'var(--text)',
           marginBottom: '1.2rem',
         }}>
-          Let's build<br />
-          <span style={{ color: 'var(--accent)' }}>something.</span>
+          If you are building for
+          <span style={{ color: 'var(--accent)' }}> Ethiopia, let's talk.</span>
         </h2>
 
         <p className="reveal d1" style={{
@@ -109,7 +109,7 @@ export default function Contact() {
           lineHeight: 1.8,
           marginBottom: '1.6rem',
         }}>
-          Open to internships, work, and AI collaborations.
+          Open to internships, engineering roles, and practical AI collaborations.
         </p>
 
         {!isMobile && (

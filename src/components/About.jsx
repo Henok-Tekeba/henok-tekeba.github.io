@@ -48,8 +48,8 @@ export default function About() {
             color: 'var(--text)',
             marginBottom: '2rem',
           }}>
-            Portfolio of an
-            <span style={{ color: 'var(--accent)' }}> Ethiopian AI engineer.</span>
+            Building useful products
+            <span style={{ color: 'var(--accent)' }}> for Ethiopia.</span>
           </h2>
 
           <p className="reveal d1" style={{
@@ -60,7 +60,7 @@ export default function About() {
             lineHeight: 1.9,
             marginBottom: '1.5rem',
           }}>
-            I am a second-year ECE student at Addis Ababa University and founder of voiET, focused on practical Amharic voice AI.
+            I am a second-year ECE student at Addis Ababa University working on Amharic voice AI and full-stack product delivery.
           </p>
 
           <p className="reveal d2" style={{
@@ -70,7 +70,7 @@ export default function About() {
             color: 'var(--text-2)',
             lineHeight: 1.9,
           }}>
-            This work spans model fine-tuning, speech pipelines, and full-stack delivery for teams in Ethiopia.
+            Most of my work is grounded in local use-cases: speech systems, tooling, and products people can actually use day to day.
           </p>
         </div>
 

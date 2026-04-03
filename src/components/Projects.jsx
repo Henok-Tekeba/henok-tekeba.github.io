@@ -2,7 +2,6 @@ import useWindowSize from '../hooks/useWindowSize'
 
 const projects = [
   {
-    num: '01',
     name: 'voiET',
     tag: 'AI Startup',
     desc: 'Amharic voice AI platform for Ethiopian banks and telecoms, with improved Whisper ASR and XTTSv2 TTS.',
@@ -12,7 +11,6 @@ const projects = [
     image: 'pro2.png',
   },
   {
-    num: '02',
     name: 'voiET Landing Page',
     tag: 'Full Stack',
     desc: 'Production waitlist platform built with Next.js, Express, and PostgreSQL.',
@@ -22,7 +20,6 @@ const projects = [
     image: 'pro3.png',
   },
   {
-    num: '03',
     name: 'VEX Robotics',
     tag: 'Robotics',
     desc: 'AAU VEX project focused on autonomous control, embedded programming, and mechanical design.',
@@ -31,7 +28,6 @@ const projects = [
     linkLabel: 'View Project →',
   },
   {
-    num: '04',
     name: 'Addis Cars Image Classifier',
     tag: 'Machine Learning',
     desc: 'Local car dataset and TensorFlow classifier trained on Addis Ababa vehicle categories.',
@@ -40,7 +36,6 @@ const projects = [
     linkLabel: 'GitHub →',
   },
   {
-    num: '05',
     name: 'Icog Labs Landing Page',
     tag: 'Frontend',
     desc: "Landing page delivered for Icog Labs.",
@@ -50,7 +45,6 @@ const projects = [
     image: 'pro1.png',
   },
   {
-    num: '06',
     name: 'X Electron Wrapper',
     tag: 'Linux',
     desc: 'Minimal Electron wrapper for X on Linux.',
@@ -102,7 +96,6 @@ export default function Projects() {
             onMouseLeave={e => e.currentTarget.style.background = 'transparent'}
           >
             <div style={{ display: 'flex', alignItems: 'baseline', gap: '0.75rem', flexWrap: 'wrap' }}>
-              <span style={{ fontFamily: 'var(--mono)', fontSize: '0.65rem', color: 'var(--text-3)', letterSpacing: '0.1em' }}>{p.num}</span>
               <h3 style={{ fontFamily: 'var(--title)', fontWeight: 'var(--display-weight-reg)', fontSize: '1.2rem', color: 'var(--text)' }}>{p.name}</h3>
               <span style={{
                 fontFamily: 'var(--mono)',
