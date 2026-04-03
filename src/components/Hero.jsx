@@ -1,37 +1,33 @@
 import { useEffect, useState } from 'react'
 import useWindowSize from '../hooks/useWindowSize'
 
-function getPresenceStatus() {
-  const hourString = new Intl.DateTimeFormat('en-US', {
-    hour: '2-digit',
-    hour12: false,
-    timeZone: 'Africa/Addis_Ababa',
-  }).format(new Date())
-
-  const hour = Number.parseInt(hourString, 10)
-
-  if (hour >= 0 && hour < 6) {
-    return { label: 'Currently Asleep', color: '#64748b' }
-  }
-
-  if ((hour >= 6 && hour < 9) || (hour >= 21 && hour < 24)) {
-    return { label: 'Currently Idle', color: '#d4a853' }
-  }
-
-  return { label: 'Currently Building', color: '#3dbe76' }
-}
+const rotatingHeadlines = [
+  '20 . engineer',
+  'Trying to do better',
+  'grinding every day',
+  'Always learning',
+]
 
 export default function Hero() {
   const width = useWindowSize()
   const isMobile = width < 768
-  const [presence, setPresence] = useState(getPresenceStatus)
+  const [headlineIndex, setHeadlineIndex] = useState(0)
+  const [isLiveDotOn, setIsLiveDotOn] = useState(true)
 
   useEffect(() => {
-    const timer = setInterval(() => {
-      setPresence(getPresenceStatus())
-    }, 60000)
+    const headlineTimer = setInterval(() => {
+      setHeadlineIndex(prev => (prev + 1) % rotatingHeadlines.length)
+    }, 2500)
 
-    return () => clearInterval(timer)
+    return () => clearInterval(headlineTimer)
+  }, [])
+
+  useEffect(() => {
+    const liveDotTimer = setInterval(() => {
+      setIsLiveDotOn(prev => !prev)
+    }, 1000)
+
+    return () => clearInterval(liveDotTimer)
   }, [])
 
   return (
@@ -48,16 +44,16 @@ export default function Hero() {
       <div style={{
         display: 'flex',
         alignItems: 'center',
-        flexDirection: isMobile ? 'column' : 'row',
-        gap: isMobile ? '1.25rem' : '1.6rem',
+        flexDirection: 'row',
+        gap: isMobile ? '0.9rem' : '1.6rem',
         marginBottom: '1.7rem',
       }}>
         <img
           src={`${import.meta.env.BASE_URL}heni.png`}
           alt="Henok Tekeba"
           style={{
-            width: isMobile ? '122px' : '156px',
-            height: isMobile ? '122px' : '156px',
+            width: isMobile ? '98px' : '156px',
+            height: isMobile ? '98px' : '156px',
             borderRadius: '1rem',
             objectFit: 'cover',
             border: '1px solid var(--border-2)',
@@ -66,19 +62,29 @@ export default function Hero() {
           }}
         />
 
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '0.7rem' }}>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '0.55rem' }}>
           <h1 style={{
             fontFamily: 'var(--title)',
             fontWeight: 'var(--display-weight-thin)',
-            fontSize: isMobile ? 'clamp(1.8rem, 7.5vw, 2.35rem)' : 'clamp(1.9rem, 4.2vw, 3.2rem)',
+            fontSize: isMobile ? 'clamp(1.55rem, 7.2vw, 2.15rem)' : 'clamp(1.9rem, 4.2vw, 3.2rem)',
             lineHeight: 1.0,
             letterSpacing: '-0.02em',
             color: 'var(--text)',
-            textAlign: isMobile ? 'center' : 'left',
-            whiteSpace: 'nowrap',
+            textAlign: 'left',
           }}>
             Henok <span style={{ color: 'var(--accent)' }}>Tekeba</span>
           </h1>
+
+          <p style={{
+            fontFamily: 'var(--mono)',
+            fontSize: isMobile ? '0.62rem' : '0.72rem',
+            letterSpacing: '0.1em',
+            textTransform: 'uppercase',
+            color: 'var(--text-2)',
+            minHeight: '1.1rem',
+          }}>
+            {rotatingHeadlines[headlineIndex]}
+          </p>
 
           <div style={{
             display: 'inline-flex',
@@ -88,16 +94,18 @@ export default function Hero() {
             borderRadius: '999px',
             padding: '0.4rem 0.7rem',
             width: 'fit-content',
-            alignSelf: isMobile ? 'center' : 'flex-start',
+            alignSelf: 'flex-start',
             background: 'color-mix(in srgb, var(--bg-2) 88%, transparent)',
           }}>
             <span style={{
               width: '7px',
               height: '7px',
               borderRadius: '50%',
-              background: presence.color,
-              boxShadow: `0 0 0 4px color-mix(in srgb, ${presence.color} 18%, transparent)`,
+              background: '#3dbe76',
+              boxShadow: '0 0 0 4px color-mix(in srgb, #3dbe76 18%, transparent)',
               flexShrink: 0,
+              opacity: isLiveDotOn ? 1 : 0.2,
+              transition: 'opacity 0.22s ease',
             }} />
             <span style={{
               fontFamily: 'var(--mono)',
@@ -107,29 +115,10 @@ export default function Hero() {
               color: 'var(--text-2)',
               lineHeight: 1,
             }}>
-              {presence.label}
+              Currently Building . Live
             </span>
           </div>
         </div>
-      </div>
-
-      {/* Role line */}
-      <div style={{
-        display: 'flex',
-        alignItems: 'center',
-        gap: '1rem',
-        marginBottom: '2.5rem',
-      }}>
-        <div style={{ width: '40px', height: '1px', background: 'var(--accent)' }} />
-        <p style={{
-          fontFamily: 'var(--mono)',
-          fontSize: '0.75rem',
-          letterSpacing: '0.18em',
-          color: 'var(--text-2)',
-          textTransform: 'uppercase',
-        }}>
-          AI Engineer · Full Stack Developer
-        </p>
       </div>
 
       {/* Bio */}
