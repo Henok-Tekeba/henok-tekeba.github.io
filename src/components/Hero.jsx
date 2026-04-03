@@ -8,11 +8,32 @@ const rotatingHeadlines = [
   'Always learning',
 ]
 
+function getPresenceStatus() {
+  const hourString = new Intl.DateTimeFormat('en-US', {
+    hour: '2-digit',
+    hour12: false,
+    timeZone: 'Africa/Addis_Ababa',
+  }).format(new Date())
+
+  const hour = Number.parseInt(hourString, 10)
+
+  if (hour >= 0 && hour < 6) {
+    return { label: 'Currently Asleep', color: '#64748b' }
+  }
+
+  if ((hour >= 6 && hour < 9) || (hour >= 21 && hour < 24)) {
+    return { label: 'Currently Idle', color: '#d4a853' }
+  }
+
+  return { label: 'Currently Building', color: '#3dbe76' }
+}
+
 export default function Hero() {
   const width = useWindowSize()
   const isMobile = width < 768
   const [headlineIndex, setHeadlineIndex] = useState(0)
   const [isLiveDotOn, setIsLiveDotOn] = useState(true)
+  const [presence, setPresence] = useState(getPresenceStatus)
 
   useEffect(() => {
     const headlineTimer = setInterval(() => {
@@ -28,6 +49,14 @@ export default function Hero() {
     }, 1000)
 
     return () => clearInterval(liveDotTimer)
+  }, [])
+
+  useEffect(() => {
+    const presenceTimer = setInterval(() => {
+      setPresence(getPresenceStatus())
+    }, 60000)
+
+    return () => clearInterval(presenceTimer)
   }, [])
 
   return (
@@ -90,22 +119,18 @@ export default function Hero() {
             display: 'inline-flex',
             alignItems: 'center',
             gap: '0.5rem',
-            border: '1px solid var(--border-2)',
-            borderRadius: '999px',
-            padding: '0.4rem 0.7rem',
             width: 'fit-content',
             alignSelf: 'flex-start',
-            background: 'color-mix(in srgb, var(--bg-2) 88%, transparent)',
           }}>
             <span style={{
               width: '7px',
               height: '7px',
               borderRadius: '50%',
-              background: '#3dbe76',
-              boxShadow: '0 0 0 4px color-mix(in srgb, #3dbe76 18%, transparent)',
+              background: presence.color,
+              boxShadow: `0 0 0 4px color-mix(in srgb, ${presence.color} 18%, transparent)`,
               flexShrink: 0,
-              opacity: isLiveDotOn ? 1 : 0.2,
-              transition: 'opacity 0.22s ease',
+              opacity: isLiveDotOn ? 1 : 0.58,
+              transition: 'opacity 0.65s ease',
             }} />
             <span style={{
               fontFamily: 'var(--mono)',
@@ -115,7 +140,7 @@ export default function Hero() {
               color: 'var(--text-2)',
               lineHeight: 1,
             }}>
-              Currently Building . Live
+              {presence.label} . Live
             </span>
           </div>
         </div>

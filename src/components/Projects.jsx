@@ -9,6 +9,7 @@ const projects = [
     tags: ['PyTorch', 'Whisper', 'LoRA', 'HuggingFace', 'Amharic ASR'],
     link: 'https://huggingface.co/Henokk',
     linkLabel: 'HuggingFace →',
+    image: 'pro2.png',
   },
   {
     num: '02',
@@ -18,6 +19,7 @@ const projects = [
     tags: ['Next.js', 'Tailwind', 'Node.js', 'PostgreSQL', 'Railway'],
     link: 'https://voiet.vercel.app',
     linkLabel: 'Live Site →',
+    image: 'pro3.png',
   },
   {
     num: '03',
@@ -45,6 +47,7 @@ const projects = [
     tags: ['TypeScript', 'React'],
     link: 'https://icog.vercel.app',
     linkLabel: 'Live Site →',
+    image: 'pro1.png',
   },
   {
     num: '06',
@@ -118,6 +121,28 @@ export default function Projects() {
               color: 'var(--text-2)',
               lineHeight: 1.8,
             }}>{p.desc}</p>
+
+            {p.image && (
+              <div style={{
+                width: '100%',
+                maxWidth: '640px',
+                borderRadius: '0.9rem',
+                overflow: 'hidden',
+                border: '1px solid var(--border)',
+                background: 'var(--bg-2)',
+              }}>
+                <img
+                  src={`${import.meta.env.BASE_URL}${p.image}`}
+                  alt={`${p.name} preview`}
+                  style={{
+                    display: 'block',
+                    width: '100%',
+                    height: isMobile ? '170px' : '220px',
+                    objectFit: 'cover',
+                  }}
+                />
+              </div>
+            )}
 
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem' }}>
               {p.tags.map(tag => (

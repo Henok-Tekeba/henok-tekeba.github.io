@@ -1,4 +1,5 @@
 import './index.css'
+import { useEffect, useState } from 'react'
 import useReveal from './hooks/useReveal'
 import ParticleCanvas from './components/ParticleCanvas'
 import Nav from './components/Nav'
@@ -12,10 +13,22 @@ import Footer from './components/Footer'
 
 function App() {
   useReveal()
+  const [theme, setTheme] = useState(() => document.documentElement.getAttribute('data-theme') || 'light')
+
+  useEffect(() => {
+    const root = document.documentElement
+    const observer = new MutationObserver(() => {
+      setTheme(root.getAttribute('data-theme') || 'light')
+    })
+
+    observer.observe(root, { attributes: true, attributeFilter: ['data-theme'] })
+
+    return () => observer.disconnect()
+  }, [])
 
   return (
     <div>
-      <ParticleCanvas />
+      {theme !== 'dark' && <ParticleCanvas />}
       <Nav />
       <Hero />
       <About />
