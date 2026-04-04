@@ -98,6 +98,11 @@ body, p, span, a, button, input, textarea, select, li, label {
   font-family: 'Geist Pixel', monospace;
 }
 
+.app-shell {
+  width: min(1400px, calc(100% - 5rem));
+  margin: 0 auto;
+}
+
 body::after {
   content: '';
   position: fixed;
@@ -158,7 +163,7 @@ body::after {
 
 /* ── GITHUB COMMIT GRAPH ── */
 .commit-graph-section {
-  padding: 5.5rem 3rem 4rem;
+  padding: 5.5rem 5rem 4rem;
   position: relative;
   z-index: 1;
 }
@@ -203,9 +208,10 @@ body::after {
   --commit-cell-size: 11px;
   --commit-cell-gap: 4px;
   display: grid;
-  grid-template-columns: 1.8rem 1fr;
+  grid-template-columns: 1.8rem auto;
   gap: 0.65rem;
   align-items: start;
+  justify-content: center;
   position: relative;
   z-index: 1;
 }
@@ -237,8 +243,7 @@ body::after {
 }
 
 .commit-graph-board {
-  min-width: 0;
-  width: 100%;
+  min-width: max-content;
 }
 
 .commit-graph-months {
@@ -257,9 +262,8 @@ body::after {
   padding: 0;
   margin: 0;
   background: transparent;
-  width: 100%;
-  height: auto;
-  aspect-ratio: 1 / 1;
+  width: var(--commit-cell-size);
+  height: var(--commit-cell-size);
   border-radius: 2px;
   border: 1px solid color-mix(in srgb, var(--border) 75%, transparent);
   box-shadow: none;
@@ -416,6 +420,10 @@ body::after {
 
 /* ── MOBILE ── */
 @media (max-width: 768px) {
+  .app-shell {
+    width: 100%;
+  }
+
   /* Nav */
   nav {
     padding: 1rem 1.5rem !important;

@@ -2,12 +2,10 @@ import {
   SiExpress,
   SiGit,
   SiGithub,
-  SiGnubash,
   SiGooglecolab,
   SiHuggingface,
   SiJavascript,
   SiKaggle,
-  SiLinux,
   SiNextdotjs,
   SiNodedotjs,
   SiOpenai,
@@ -44,8 +42,6 @@ const skillItems = [
   { key: 'railway', Icon: SiRailway, color: '#0B0D0E' },
   { key: 'git', Icon: SiGit, color: '#F05032' },
   { key: 'github', Icon: SiGithub, color: '#F5F5F5' },
-  { key: 'linux', Icon: SiLinux, color: '#FCC624' },
-  { key: 'bash', Icon: SiGnubash, color: '#4EAA25' },
 ]
 
 export default function Skills() {

@@ -1,8 +1,16 @@
 import { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
 import { Moon, Sun } from 'lucide-react'
 import useWindowSize from '../hooks/useWindowSize'
 
-const links = ['about', 'experience', 'projects', 'skills', 'contact']
+const links = [
+  { key: 'about', type: 'anchor' },
+  { key: 'experience', type: 'anchor' },
+  { key: 'projects', type: 'anchor' },
+  { key: 'articles', type: 'route' },
+  { key: 'skills', type: 'anchor' },
+  { key: 'contact', type: 'anchor' },
+]
 
 export default function Nav() {
   const [sticky, setSticky] = useState(false)
@@ -65,28 +73,49 @@ export default function Nav() {
         {/* Desktop links */}
         {!isMobile && (
           <div style={{ display: 'flex', gap: '2.5rem', alignItems: 'center' }}>
-            {links.map((link, i) => (
-              <a
-                key={link}
-                href={`#${link}`}
-                style={{
-                  fontFamily: 'var(--mono)',
-                  fontSize: '0.7rem',
-                  letterSpacing: '0.12em',
-                  color: 'var(--text-2)',
-                  textDecoration: 'none',
-                  textTransform: 'lowercase',
-                  transition: 'color 0.2s',
-                }}
-                onMouseEnter={e => e.target.style.color = 'var(--accent)'}
-                onMouseLeave={e => e.target.style.color = 'var(--text-2)'}
-              >
-                <span style={{ color: 'var(--text-3)', marginRight: '0.3rem' }}>
-                  0{i + 1}.
-                </span>
-                {link}
-              </a>
-            ))}
+            {links.map((link, i) => {
+              const sharedStyle = {
+                fontFamily: 'var(--mono)',
+                fontSize: '0.7rem',
+                letterSpacing: '0.12em',
+                color: 'var(--text-2)',
+                textDecoration: 'none',
+                textTransform: 'lowercase',
+                transition: 'color 0.2s',
+              }
+
+              if (link.type === 'route') {
+                return (
+                  <Link
+                    key={link.key}
+                    to="/articles"
+                    style={sharedStyle}
+                    onMouseEnter={e => e.target.style.color = 'var(--accent)'}
+                    onMouseLeave={e => e.target.style.color = 'var(--text-2)'}
+                  >
+                    <span style={{ color: 'var(--text-3)', marginRight: '0.3rem' }}>
+                      0{i + 1}.
+                    </span>
+                    {link.key}
+                  </Link>
+                )
+              }
+
+              return (
+                <a
+                  key={link.key}
+                  href={`#${link.key}`}
+                  style={sharedStyle}
+                  onMouseEnter={e => e.target.style.color = 'var(--accent)'}
+                  onMouseLeave={e => e.target.style.color = 'var(--text-2)'}
+                >
+                  <span style={{ color: 'var(--text-3)', marginRight: '0.3rem' }}>
+                    0{i + 1}.
+                  </span>
+                  {link.key}
+                </a>
+              )
+            })}
 
             <button
               onClick={toggleTheme}
@@ -174,24 +203,42 @@ export default function Nav() {
           padding: '1.5rem',
           gap: '1.5rem',
         }}>
-          {links.map((link, i) => (
-            <a
-              key={link}
-              href={`#${link}`}
-              onClick={() => setMenuOpen(false)}
-              style={{
-                fontFamily: 'var(--mono)',
-                fontSize: '0.85rem',
-                letterSpacing: '0.12em',
-                color: 'var(--text-2)',
-                textDecoration: 'none',
-                textTransform: 'lowercase',
-              }}
-            >
-              <span style={{ color: 'var(--accent)', marginRight: '0.5rem' }}>0{i + 1}.</span>
-              {link}
-            </a>
-          ))}
+          {links.map((link, i) => {
+            const sharedStyle = {
+              fontFamily: 'var(--mono)',
+              fontSize: '0.85rem',
+              letterSpacing: '0.12em',
+              color: 'var(--text-2)',
+              textDecoration: 'none',
+              textTransform: 'lowercase',
+            }
+
+            if (link.type === 'route') {
+              return (
+                <Link
+                  key={link.key}
+                  to="/articles"
+                  onClick={() => setMenuOpen(false)}
+                  style={sharedStyle}
+                >
+                  <span style={{ color: 'var(--accent)', marginRight: '0.5rem' }}>0{i + 1}.</span>
+                  {link.key}
+                </Link>
+              )
+            }
+
+            return (
+              <a
+                key={link.key}
+                href={`#${link.key}`}
+                onClick={() => setMenuOpen(false)}
+                style={sharedStyle}
+              >
+                <span style={{ color: 'var(--accent)', marginRight: '0.5rem' }}>0{i + 1}.</span>
+                {link.key}
+              </a>
+            )
+          })}
 
         </div>
       )}
