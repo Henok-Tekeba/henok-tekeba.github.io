@@ -4,7 +4,7 @@ const projects = [
   {
     name: 'voiET',
     tag: 'AI Startup',
-    desc: 'I fine-tuned Whisper on 38K+ Amharic samples and built a full voice AI pipeline for Ethiopian banks and telecoms. This is my main bet.',
+    desc: 'I built a wrapper around a fine tuned Whisper on 38K+ Amharic samples and built a full voice AI pipeline for Ethiopian banks and telecoms. This is my main bet.',
     tags: ['PyTorch', 'Whisper', 'LoRA', 'HuggingFace', 'Amharic ASR'],
     link: 'https://huggingface.co/Henokk',
     linkLabel: 'HuggingFace →',
@@ -22,8 +22,8 @@ const projects = [
   {
     name: 'VEX Robotics',
     tag: 'Robotics',
-    desc: 'Our AAU team competing in VEX - autonomous control, embedded C++, and a lot of late nights figuring out why the robot disagrees with us.',
-    tags: ['C++', 'Embedded', 'Autonomous', 'VEX'],
+    desc: 'Our AAU team competing in VEX , autonomous control,Python, and a lot of late nights figuring out why the robot disagrees with us.',
+    tags: ['Python', 'Design', 'Autonomous', 'VEX'],
     link: '#',
     linkLabel: 'View Project →',
   },
@@ -121,17 +121,17 @@ export default function Projects() {
                 overflow: 'hidden',
                 lineHeight: 0,
               }}>
-                <img
-                  src={`${import.meta.env.BASE_URL}${p.image}`}
-                  alt={`${p.name} preview`}
+                <div
+                  role="img"
+                  aria-label={`${p.name} preview`}
                   style={{
-                    display: 'block',
-                    width: '100%',
-                    height: '100%',
-                    objectFit: 'cover',
-                    objectPosition: 'center',
-                    borderRadius: 0,
-                    opacity: 1,
+                    position: 'absolute',
+                    inset: '0.55rem',
+                    borderRadius: '0.6rem',
+                    backgroundImage: `url(${import.meta.env.BASE_URL}${p.image})`,
+                    backgroundRepeat: 'no-repeat',
+                    backgroundPosition: 'center',
+                    backgroundSize: 'contain',
                   }}
                 />
               </div>
