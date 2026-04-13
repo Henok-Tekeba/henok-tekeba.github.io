@@ -120,16 +120,15 @@ export default function Projects() {
                 lineHeight: 0,
                 margin: isMobile ? '0.35rem 0 0.2rem' : '0.5rem 0 0.35rem',
               }}>
-                <div
-                  role="img"
-                  aria-label={`${p.name} preview`}
+                <img
+                  src={`${import.meta.env.BASE_URL}${p.image}`}
+                  alt={`${p.name} preview`}
                   style={{
-                    position: 'absolute',
-                    inset: 0,
-                    backgroundImage: `url(${import.meta.env.BASE_URL}${p.image})`,
-                    backgroundRepeat: 'no-repeat',
-                    backgroundPosition: 'center',
-                    backgroundSize: 'cover',
+                    width: '100%',
+                    height: '100%',
+                    objectFit: 'cover',
+                    objectPosition: 'center',
+                    display: 'block',
                   }}
                 />
               </div>
