@@ -4,7 +4,7 @@ const projects = [
   {
     name: 'voiET',
     tag: 'AI Startup',
-    desc: 'I built a wrapper around a fine tuned Whisper on 38K+ Amharic samples and built a full voice AI pipeline for Ethiopian banks and telecoms. This is my main bet.',
+    desc: 'I built a wrapper around a fine tuned Whisper on Amharic samples and built a full voice AI pipeline for Ethiopian users. This is my main bet.',
     tags: ['PyTorch', 'Whisper', 'LoRA', 'HuggingFace', 'Amharic ASR'],
     link: 'https://huggingface.co/Henokk',
     linkLabel: 'HuggingFace →',
