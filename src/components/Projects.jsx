@@ -8,7 +8,7 @@ const projects = [
     tags: ['PyTorch', 'Whisper', 'LoRA', 'HuggingFace', 'Amharic ASR'],
     link: 'https://huggingface.co/Henokk',
     linkLabel: 'HuggingFace →',
-    image: 'pro2.png',
+    image: 'pro2.jpg',
   },
   {
     name: 'voiET Landing Page',
@@ -17,7 +17,7 @@ const projects = [
     tags: ['Next.js', 'Tailwind', 'Node.js', 'PostgreSQL', 'Railway'],
     link: 'https://voiet.vercel.app',
     linkLabel: 'Live Site →',
-    image: 'pro3.png',
+    image: 'pro3.jpg',
   },
   {
     name: 'VEX Robotics',
@@ -42,7 +42,7 @@ const projects = [
     tags: ['TypeScript', 'React'],
     link: 'https://icog.vercel.app',
     linkLabel: 'Live Site →',
-    image: 'pro1.png',
+    image: 'pro1.jpg',
   },
   {
     name: 'X Electron Wrapper',
@@ -57,7 +57,6 @@ const projects = [
 export default function Projects() {
   const width = useWindowSize()
   const isMobile = width < 768
-  const imageBackdrop = `${import.meta.env.BASE_URL}Backhgroundimg.jpg`
 
   return (
     <section id="projects" style={{
@@ -112,26 +111,25 @@ export default function Projects() {
                 width: '100%',
                 maxWidth: 'none',
                 aspectRatio: '16 / 9',
+                minHeight: isMobile ? '190px' : '270px',
                 position: 'relative',
                 borderRadius: '0.9rem',
                 border: '1px solid color-mix(in srgb, var(--border) 72%, transparent)',
-                backgroundImage: `url(${imageBackdrop})`,
-                backgroundSize: 'cover',
-                backgroundPosition: 'center',
+                background: 'var(--bg-2)',
                 overflow: 'hidden',
                 lineHeight: 0,
+                margin: isMobile ? '0.35rem 0 0.2rem' : '0.5rem 0 0.35rem',
               }}>
                 <div
                   role="img"
                   aria-label={`${p.name} preview`}
                   style={{
                     position: 'absolute',
-                    inset: '0.55rem',
-                    borderRadius: '0.6rem',
+                    inset: 0,
                     backgroundImage: `url(${import.meta.env.BASE_URL}${p.image})`,
                     backgroundRepeat: 'no-repeat',
                     backgroundPosition: 'center',
-                    backgroundSize: 'contain',
+                    backgroundSize: 'cover',
                   }}
                 />
               </div>
