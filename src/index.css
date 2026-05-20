@@ -13,17 +13,17 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
-  --bg:        #080808;
-  --bg-2:      #0f0f0f;
-  --bg-3:      #161616;
-  --border:    #1c1c1c;
-  --border-2:  #2a2a2a;
-  --text:      #f0ede8;
-  --text-2:    #ccc7bf;
-  --text-3:    #b1b1a5;
-  --accent:    #d4a853;
-  --accent-2:  #b8892e;
-  --green:     #3dbe76;
+  --bg:        #ffffff;
+  --bg-2:      #ffffff;
+  --bg-3:      #ffffff;
+  --border:    #e5e7eb;
+  --border-2:  #d1d5db;
+  --text:      #0f172a;
+  --text-2:    #374151;
+  --text-3:    #6b7280;
+  --accent:    #374151;
+  --accent-2:  #6b7280;
+  --green:     #1f8f52;
   --mono:      'Geist Pixel', monospace;
   --title:     'Geist Pixel', monospace;
   --display:   'Geist Pixel', monospace;
@@ -35,16 +35,30 @@
 
 [data-theme="light"] {
   --bg:        #ffffff;
-  --bg-2:      #f0ece5;
-  --bg-3:      #e8e2d8;
-  --border:    #ddd3c5;
-  --border-2:  #cbbda8;
-  --text:      #1f1a14;
-  --text-2:    #3a3228;
-  --text-3:    #645a4b;
-  --accent:    #a16b1f;
-  --accent-2:  #8d5916;
+  --bg-2:      #ffffff;
+  --bg-3:      #ffffff;
+  --border:    #e5e7eb;
+  --border-2:  #d1d5db;
+  --text:      #0f172a;
+  --text-2:    #374151;
+  --text-3:    #6b7280;
+  --accent:    #374151;
+  --accent-2:  #6b7280;
   --green:     #1f8f52;
+}
+
+[data-theme="dark"] {
+  --bg:        #080808;
+  --bg-2:      #0f0f0f;
+  --bg-3:      #161616;
+  --border:    #1c1c1c;
+  --border-2:  #2a2a2a;
+  --text:      #f0ede8;
+  --text-2:    #ccc7bf;
+  --text-3:    #b1b1a5;
+  --accent:    #6b7280;
+  --accent-2:  #94a3b8;
+  --green:     #3dbe76;
 }
 
 [data-font="cormorant"] {
@@ -296,16 +310,16 @@ body::after {
   width: var(--commit-cell-size);
   height: var(--commit-cell-size);
   border-radius: 2px;
-  border: 1px solid color-mix(in srgb, var(--border) 75%, transparent);
+  border: 1px solid color-mix(in srgb, var(--border) 60%, transparent);
   box-shadow: none;
   cursor: default;
 }
 
-.commit-cell.intensity-0 { background: #151515; }
-.commit-cell.intensity-1 { background: #0f3a21; }
-.commit-cell.intensity-2 { background: #146c38; }
-.commit-cell.intensity-3 { background: #1f9d4f; }
-.commit-cell.intensity-4 { background: #39d16f; }
+.commit-cell.intensity-0 { background: color-mix(in srgb, var(--bg) 6%, var(--border-2)); }
+.commit-cell.intensity-1 { background: color-mix(in srgb, var(--bg) 6%, #0b4f2c); }
+.commit-cell.intensity-2 { background: color-mix(in srgb, var(--bg) 8%, #0f8a44); }
+.commit-cell.intensity-3 { background: color-mix(in srgb, var(--bg) 12%, #17b65b); }
+.commit-cell.intensity-4 { background: color-mix(in srgb, var(--bg) 18%, #2fe06a); }
 
 .commit-cell:focus-visible {
   outline: 1px solid var(--accent);
@@ -319,12 +333,12 @@ body::after {
 .commit-graph-state {
   min-height: 10rem;
   border-radius: 1rem;
-  border: 1px solid rgba(255, 255, 255, 0.06);
+  border: 1px solid color-mix(in srgb, var(--text) 6%, transparent);
   display: grid;
   place-items: center;
   gap: 0.75rem;
   color: var(--text-2);
-  background: rgba(255, 255, 255, 0.02);
+  background: color-mix(in srgb, var(--bg) 6%, transparent);
   font-family: var(--mono);
   text-align: center;
   padding: 1.5rem;
@@ -368,10 +382,15 @@ body::after {
 }
 
 [data-theme="light"] .commit-cell.intensity-0 { background: #ede6dc; }
-[data-theme="light"] .commit-cell.intensity-1 { background: #cae9d5; }
-[data-theme="light"] .commit-cell.intensity-2 { background: #9fdab8; }
-[data-theme="light"] .commit-cell.intensity-3 { background: #69c790; }
-[data-theme="light"] .commit-cell.intensity-4 { background: #2f9f5a; }
+[data-theme="light"] .commit-cell.intensity-1 { background: color-mix(in srgb, var(--bg) 6%, #94a3b8); }
+[data-theme="light"] .commit-cell.intensity-2 { background: color-mix(in srgb, var(--bg) 10%, #34d399); }
+[data-theme="light"] .commit-cell.intensity-3 { background: color-mix(in srgb, var(--bg) 14%, #10b981); }
+[data-theme="light"] .commit-cell.intensity-4 { background: color-mix(in srgb, var(--bg) 18%, #059669); }
+
+[data-theme="dark"] .commit-cell.intensity-1 { background: color-mix(in srgb, var(--bg) 6%, #0b4f2c); }
+[data-theme="dark"] .commit-cell.intensity-2 { background: color-mix(in srgb, var(--bg) 8%, #0f8a44); }
+[data-theme="dark"] .commit-cell.intensity-3 { background: color-mix(in srgb, var(--bg) 12%, #17b65b); }
+[data-theme="dark"] .commit-cell.intensity-4 { background: color-mix(in srgb, var(--bg) 18%, #2fe06a); }
 
 [data-theme="light"] .commit-graph-tooltip-inline {
   border-color: var(--border-2);

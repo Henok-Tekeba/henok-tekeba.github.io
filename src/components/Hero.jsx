@@ -19,14 +19,14 @@ function getPresenceStatus() {
   const hour = Number.parseInt(hourString, 10)
 
   if (hour >= 0 && hour < 6) {
-    return { label: 'Currently Asleep', color: '#64748b' }
+    return { label: 'Currently Asleep', color: 'var(--text-3)' }
   }
 
   if ((hour >= 6 && hour < 9) || (hour >= 21 && hour < 24)) {
-    return { label: 'Currently: idle', color: '#d4a853' }
+    return { label: 'Currently: idle', color: 'var(--accent)' }
   }
 
-  return { label: 'Currently: deep in code', color: '#3dbe76' }
+  return { label: 'Currently: deep in code', color: 'var(--green)' }
 }
 
 export default function Hero() {
