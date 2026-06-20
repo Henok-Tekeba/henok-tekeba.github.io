@@ -24,7 +24,7 @@ const projects = [
     tag: 'Robotics',
     desc: 'Worked on robotics with the AAU VEX team, contributing to autonomous behavior, debugging, and the constant cycle of testing hardware against reality.',
     tags: ['Python', 'Design', 'Autonomous', 'VEX'],
-    link: '#',
+    link: null,
     linkLabel: 'Team project',
   },
   {
@@ -148,24 +148,37 @@ export default function Projects() {
               ))}
             </div>
 
-            <a
-              href={p.link}
-              target="_blank"
-              rel="noreferrer"
-              style={{
+            {p.link ? (
+              <a
+                href={p.link}
+                target="_blank"
+                rel="noreferrer"
+                style={{
+                  fontFamily: 'var(--mono)',
+                  fontSize: '0.65rem',
+                  letterSpacing: '0.1em',
+                  color: 'var(--text-3)',
+                  textDecoration: 'none',
+                  transition: 'color 0.2s',
+                  alignSelf: 'flex-start',
+                }}
+                onMouseEnter={e => e.currentTarget.style.color = 'var(--accent)'}
+                onMouseLeave={e => e.currentTarget.style.color = 'var(--text-3)'}
+              >
+                {p.linkLabel}
+              </a>
+            ) : (
+              <span style={{
                 fontFamily: 'var(--mono)',
                 fontSize: '0.65rem',
                 letterSpacing: '0.1em',
                 color: 'var(--text-3)',
-                textDecoration: 'none',
-                transition: 'color 0.2s',
                 alignSelf: 'flex-start',
-              }}
-              onMouseEnter={e => e.currentTarget.style.color = 'var(--accent)'}
-              onMouseLeave={e => e.currentTarget.style.color = 'var(--text-3)'}
-            >
-              {p.linkLabel}
-            </a>
+                opacity: 0.5,
+              }}>
+                {p.linkLabel}
+              </span>
+            )}
           </div>
         ))}
       </div>

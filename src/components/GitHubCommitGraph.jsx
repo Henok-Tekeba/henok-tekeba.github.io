@@ -162,8 +162,24 @@ export default function GitHubCommitGraph() {
 
       <div className="commit-graph-stage" ref={stageRef}>
         {status === 'loading' && (
-          <div className="commit-graph-state">
-            <span>Loading contributions...</span>
+          <div className="commit-graph-state" style={{ border: 'none', minHeight: '10rem' }}>
+            <div className="commit-graph-skeleton">
+              <div className="commit-graph-skeleton-grid" aria-hidden="true">
+                {Array.from({ length: 52 * 7 }).map((_, i) => (
+                  <div key={i} className="commit-graph-skeleton-cell" />
+                ))}
+              </div>
+              <span style={{
+                fontFamily: 'var(--mono)',
+                fontSize: '0.55rem',
+                color: 'var(--text-3)',
+                letterSpacing: '0.1em',
+                textTransform: 'uppercase',
+                marginTop: '0.5rem',
+              }}>
+                Loading contributions...
+              </span>
+            </div>
           </div>
         )}
 

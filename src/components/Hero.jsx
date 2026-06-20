@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { FileText } from 'lucide-react'
+import { Download, FileText } from 'lucide-react'
 import useWindowSize from '../hooks/useWindowSize'
 
 const rotatingHeadlines = [
@@ -169,47 +169,90 @@ export default function Hero() {
         I am a second-year ECE student at AAU building speech AI and product systems for Ethiopian users. My focus is simple: make language technology useful in the places where it is usually ignored.
       </p>
 
-      <a
-        href={resumeHref}
-        target="_blank"
-        rel="noreferrer"
-        style={{
-          display: 'inline-flex',
-          alignItems: 'center',
-          gap: '0.55rem',
-          width: 'fit-content',
-          padding: '0.68rem 0.92rem',
-          border: '1px solid var(--border-2)',
-          borderRadius: '999px',
-          textDecoration: 'none',
-          color: 'var(--text-2)',
-          background: 'color-mix(in srgb, var(--bg-2) 88%, transparent)',
-          transition: 'all 0.2s ease',
-          lineHeight: 1,
-        }}
-        onMouseEnter={e => {
-          e.currentTarget.style.borderColor = 'var(--accent)'
-          e.currentTarget.style.color = 'var(--text)'
-          e.currentTarget.style.boxShadow = '0 0 0 1px color-mix(in srgb, var(--accent) 35%, transparent)'
-        }}
-        onMouseLeave={e => {
-          e.currentTarget.style.borderColor = 'var(--border-2)'
-          e.currentTarget.style.color = 'var(--text-2)'
-          e.currentTarget.style.boxShadow = 'none'
-        }}
-        aria-label="Open resume"
-      >
-        <FileText size={14} strokeWidth={1.5} style={{ opacity: 0.9 }} />
-        <span style={{
-          fontFamily: 'var(--mono)',
-          fontSize: '0.62rem',
-          letterSpacing: '0.11em',
-          textTransform: 'uppercase',
-          lineHeight: 1,
-        }}>
-          Resume
-        </span>
-      </a>
+      <div style={{ display: 'flex', gap: '0.7rem', flexWrap: 'wrap' }}>
+        <a
+          href={resumeHref}
+          target="_blank"
+          rel="noreferrer"
+          style={{
+            display: 'inline-flex',
+            alignItems: 'center',
+            gap: '0.55rem',
+            width: 'fit-content',
+            padding: '0.68rem 0.92rem',
+            border: '1px solid var(--border-2)',
+            borderRadius: '999px',
+            textDecoration: 'none',
+            color: 'var(--text-2)',
+            background: 'color-mix(in srgb, var(--bg-2) 88%, transparent)',
+            transition: 'all 0.2s ease',
+            lineHeight: 1,
+          }}
+          onMouseEnter={e => {
+            e.currentTarget.style.borderColor = 'var(--accent)'
+            e.currentTarget.style.color = 'var(--text)'
+            e.currentTarget.style.boxShadow = '0 0 0 1px color-mix(in srgb, var(--accent) 35%, transparent)'
+          }}
+          onMouseLeave={e => {
+            e.currentTarget.style.borderColor = 'var(--border-2)'
+            e.currentTarget.style.color = 'var(--text-2)'
+            e.currentTarget.style.boxShadow = 'none'
+          }}
+          aria-label="Open resume"
+        >
+          <FileText size={14} strokeWidth={1.5} style={{ opacity: 0.9 }} />
+          <span style={{
+            fontFamily: 'var(--mono)',
+            fontSize: '0.62rem',
+            letterSpacing: '0.11em',
+            textTransform: 'uppercase',
+            lineHeight: 1,
+          }}>
+            Resume
+          </span>
+        </a>
+        <a
+          href={`${resumeHref}?print`}
+          target="_blank"
+          rel="noreferrer"
+          style={{
+            display: 'inline-flex',
+            alignItems: 'center',
+            gap: '0.55rem',
+            width: 'fit-content',
+            padding: '0.68rem 0.92rem',
+            border: '1px solid var(--border-2)',
+            borderRadius: '999px',
+            textDecoration: 'none',
+            color: 'var(--text-2)',
+            background: 'color-mix(in srgb, var(--bg-2) 88%, transparent)',
+            transition: 'all 0.2s ease',
+            lineHeight: 1,
+          }}
+          onMouseEnter={e => {
+            e.currentTarget.style.borderColor = 'var(--accent)'
+            e.currentTarget.style.color = 'var(--text)'
+            e.currentTarget.style.boxShadow = '0 0 0 1px color-mix(in srgb, var(--accent) 35%, transparent)'
+          }}
+          onMouseLeave={e => {
+            e.currentTarget.style.borderColor = 'var(--border-2)'
+            e.currentTarget.style.color = 'var(--text-2)'
+            e.currentTarget.style.boxShadow = 'none'
+          }}
+          aria-label="Download resume as PDF"
+        >
+          <Download size={14} strokeWidth={1.5} style={{ opacity: 0.9 }} />
+          <span style={{
+            fontFamily: 'var(--mono)',
+            fontSize: '0.62rem',
+            letterSpacing: '0.11em',
+            textTransform: 'uppercase',
+            lineHeight: 1,
+          }}>
+            Download PDF
+          </span>
+        </a>
+      </div>
 
     </section>
   )

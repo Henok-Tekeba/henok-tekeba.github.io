@@ -1,5 +1,6 @@
+import { useState } from 'react'
 import useWindowSize from '../hooks/useWindowSize'
-import { FileText, Mail } from 'lucide-react'
+import { Download, FileText, Mail } from 'lucide-react'
 import { SiGithub, SiHuggingface, SiX } from 'react-icons/si'
 import { FaLinkedinIn } from 'react-icons/fa6'
 
@@ -17,6 +18,17 @@ const links = [
 export default function Contact() {
   const width = useWindowSize()
   const isMobile = width < 768
+  const [formName, setFormName] = useState('')
+  const [formEmail, setFormEmail] = useState('')
+  const [formMessage, setFormMessage] = useState('')
+
+  function handleSubmit(e) {
+    e.preventDefault()
+    const subject = encodeURIComponent(`Message from ${formName}`)
+    const body = encodeURIComponent(`From: ${formName}\nEmail: ${formEmail}\n\n${formMessage}`)
+    window.location.href = `mailto:tekebahenok6@gmail.com?subject=${subject}&body=${body}`
+  }
+
   const firstRowLinks = links.slice(0, 3)
   const secondRowLinks = links.slice(3)
 
@@ -128,6 +140,30 @@ export default function Contact() {
             </div>
           </div>
         )}
+
+        <form className="contact-form reveal d2" onSubmit={handleSubmit}>
+          <input
+            type="text"
+            placeholder="Your name"
+            value={formName}
+            onChange={e => setFormName(e.target.value)}
+            required
+          />
+          <input
+            type="email"
+            placeholder="Your email"
+            value={formEmail}
+            onChange={e => setFormEmail(e.target.value)}
+            required
+          />
+          <textarea
+            placeholder="What are you building?"
+            value={formMessage}
+            onChange={e => setFormMessage(e.target.value)}
+            required
+          />
+          <button type="submit">Send message</button>
+        </form>
       </div>
     </section>
   )

@@ -42,8 +42,76 @@ export default function HomePage() {
         </div>
       </section>
 
+      <section id="learning" style={{
+        padding: '8rem 3rem',
+        position: 'relative',
+        zIndex: 1,
+      }}>
+        <div className="section-heading reveal">
+          <h2 className="section-heading-title">Currently Learning</h2>
+          <div className="section-heading-rule" />
+        </div>
+        <div className="reveal d1" style={{
+          display: 'flex',
+          flexWrap: 'wrap',
+          gap: '0.75rem',
+        }}>
+          {['Docker', 'Kubernetes', 'Rust', 'Go', 'System Design', 'MLOps', 'Audio Signal Processing'].map(item => (
+            <span key={item} style={{
+              fontFamily: 'var(--mono)',
+              fontSize: '0.7rem',
+              letterSpacing: '0.08em',
+              textTransform: 'uppercase',
+              color: 'var(--text-2)',
+              border: '1px solid var(--border)',
+              padding: '0.5rem 1rem',
+              borderRadius: '999px',
+            }}>{item}</span>
+          ))}
+        </div>
+      </section>
+
       <Skills />
       <Contact />
+
+      <section id="testimonials" style={{
+        padding: '0 3rem 8rem',
+        position: 'relative',
+        zIndex: 1,
+      }}>
+        <div className="section-heading reveal">
+          <h2 className="section-heading-title">Testimonials</h2>
+          <div className="section-heading-rule" />
+        </div>
+        <div className="reveal d1" style={{
+          display: 'grid',
+          gap: '1.5rem',
+          maxWidth: '600px',
+        }}>
+          <p style={{
+            fontFamily: 'var(--display)',
+            fontWeight: 'var(--display-weight-light)',
+            fontSize: '0.95rem',
+            color: 'var(--text-2)',
+            lineHeight: 1.8,
+            fontStyle: 'italic',
+            borderLeft: '2px solid var(--accent)',
+            paddingLeft: '1.5rem',
+          }}>
+            "Add a recommendation from a professor, mentor, or teammate to build trust with visitors."
+          </p>
+          <span style={{
+            fontFamily: 'var(--mono)',
+            fontSize: '0.6rem',
+            letterSpacing: '0.1em',
+            textTransform: 'uppercase',
+            color: 'var(--text-3)',
+          }}>
+            — Your name here
+          </span>
+        </div>
+      </section>
+
       <Footer />
     </div>
   )
