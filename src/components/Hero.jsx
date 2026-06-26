@@ -79,7 +79,7 @@ export default function Hero() {
       <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem', marginBottom: '1.7rem' }}>
         <h1 style={{
           fontFamily: 'var(--title)',
-          fontWeight: 900,
+          fontWeight: 600,
           fontSize: isMobile ? 'clamp(1.6rem, 6vw, 2.2rem)' : 'clamp(1.8rem, 3.5vw, 2.8rem)',
           lineHeight: 1.05,
           letterSpacing: '-0.02em',
@@ -136,7 +136,6 @@ export default function Hero() {
         fontWeight: 'var(--display-weight-light)',
         fontSize: 'clamp(0.9rem, 1.8vw, 1.1rem)',
         color: 'var(--text-2)',
-        maxWidth: '380px',
         lineHeight: 1.7,
         marginBottom: '3rem',
       }}>
