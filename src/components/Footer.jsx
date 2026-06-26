@@ -1,7 +1,6 @@
 export default function Footer() {
   return (
     <footer style={{
-      padding: '2.5rem 3rem',
       borderTop: '1px solid var(--border)',
       display: 'flex',
       flexDirection: 'column',

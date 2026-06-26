@@ -46,7 +46,7 @@ const skills = [
 
 export default function Skills() {
   return (
-    <section id="skills">
+    <section id="skills" className="section-body">
       <div className="section-heading reveal">
         <h2 className="section-heading-title">Skills & Tools</h2>
         <div className="section-heading-rule" />
