@@ -8,11 +8,7 @@ const facts = [
 
 export default function About() {
   return (
-    <section id="about" style={{
-      padding: '5.5rem 3rem 8rem',
-      position: 'relative',
-      zIndex: 1,
-    }}>
+    <section id="about">
 
       <div className="section-heading reveal">
         <h2 className="section-heading-title">About</h2>
@@ -27,11 +23,10 @@ export default function About() {
       }}>
         <div>
           <p className="reveal" style={{
-            fontFamily: 'var(--title)',
             fontSize: 'clamp(1.1rem, 2vw, 1.4rem)',
             lineHeight: 1.6,
             color: 'var(--text)',
-            marginBottom: '1.5rem',
+            marginBottom: '1.2rem',
           }}>
             I build full-stack web products and backend systems for{' '}
             <span style={{ color: 'var(--accent)' }}>users who are usually treated as edge cases</span>
@@ -39,22 +34,18 @@ export default function About() {
           </p>
 
           <p className="reveal d1" style={{
-            fontFamily: 'var(--display)',
-            fontWeight: 'var(--display-weight-light)',
-            fontSize: '0.95rem',
+            fontSize: '0.9rem',
             color: 'var(--text-2)',
-            lineHeight: 1.85,
-            marginBottom: '1.5rem',
+            lineHeight: 1.7,
+            marginBottom: '1.2rem',
           }}>
             My work spans frontend, backend, and infrastructure — web apps, APIs, databases, and the unglamorous work of turning ideas into deployed products people actually use.
           </p>
 
           <p className="reveal d2" style={{
-            fontFamily: 'var(--display)',
-            fontWeight: 'var(--display-weight-light)',
-            fontSize: '0.95rem',
+            fontSize: '0.9rem',
             color: 'var(--text-2)',
-            lineHeight: 1.85,
+            lineHeight: 1.7,
           }}>
             The thread through everything is local usefulness. Building software that respects Ethiopian realities instead of assuming Silicon Valley defaults.
           </p>
@@ -63,51 +54,18 @@ export default function About() {
         <div className="reveal d1" style={{
           display: 'flex',
           flexDirection: 'column',
-          gap: '0.75rem',
+          gap: '1rem',
         }}>
           {facts.map(({ label, value, Icon }) => (
-            <div key={label} style={{
-              display: 'flex',
-              alignItems: 'center',
-              gap: '1rem',
-              padding: '1rem 1.25rem',
-              border: '1px solid var(--border)',
-              borderRadius: '0.75rem',
-              background: 'color-mix(in srgb, var(--bg-2) 94%, transparent)',
-            }}>
-              <span style={{
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                width: '36px',
-                height: '36px',
-                borderRadius: '0.5rem',
-                background: 'color-mix(in srgb, var(--accent) 10%, transparent)',
-                color: 'var(--accent)',
-                flexShrink: 0,
-              }}>
-                <Icon size={16} strokeWidth={1.5} />
-              </span>
+            <div key={label} style={{ display: 'flex', alignItems: 'center', gap: '0.65rem' }}>
+              <Icon size={14} strokeWidth={1.5} style={{ color: 'var(--accent)', flexShrink: 0 }} />
               <div>
-                <span style={{
-                  fontFamily: 'var(--mono)',
-                  fontSize: '0.5rem',
-                  letterSpacing: '0.12em',
-                  textTransform: 'uppercase',
-                  color: 'var(--text-3)',
-                  display: 'block',
-                  marginBottom: '0.15rem',
-                }}>
+                <div style={{ fontSize: '0.6rem', color: 'var(--text-3)', textTransform: 'uppercase', letterSpacing: '0.04em' }}>
                   {label}
-                </span>
-                <span style={{
-                  fontFamily: 'var(--display)',
-                  fontSize: '0.85rem',
-                  color: 'var(--text-2)',
-                  lineHeight: 1.4,
-                }}>
+                </div>
+                <div style={{ fontSize: '0.85rem', color: 'var(--text-2)' }}>
                   {value}
-                </span>
+                </div>
               </div>
             </div>
           ))}

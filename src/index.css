@@ -10,7 +10,7 @@
   --text-3:    #777777;
   --accent:    #555555;
   --green:     #22a84a;
-  --font:      'Inter', system-ui, -apple-system, sans-serif;
+  --font:      'Inter', sans-serif;
   --shell-width: min(820px, calc(100vw - 3rem));
 }
 
@@ -31,8 +31,10 @@ html { scroll-behavior: smooth; }
 body {
   background: var(--bg);
   color: var(--text);
-  font-family: var(--font);
-  line-height: 1.6;
+  font-family: 'Inter', sans-serif;
+  font-weight: 300;
+  letter-spacing: -0.01em;
+  line-height: 1.4;
   overflow-x: hidden;
 }
 
@@ -87,9 +89,7 @@ body {
 }
 
 .section-heading-rule {
-  flex: 1;
-  height: 1px;
-  background: var(--border);
+  display: none;
 }
 
 /* ── HERO ── */
@@ -115,8 +115,7 @@ body {
   display: grid;
   grid-template-columns: 90px 1fr;
   gap: 2rem;
-  padding: 1.5rem 0;
-  border-bottom: 1px solid var(--border);
+  padding: 1rem 0;
 }
 
 .experience-entry:last-child {
@@ -252,19 +251,18 @@ body {
   appearance: none;
   padding: 0;
   margin: 0;
-  background: transparent;
   width: var(--commit-cell-size);
   height: var(--commit-cell-size);
   border-radius: 2px;
-  border: 1px solid var(--border);
+  border: 0;
   cursor: default;
 }
 
-.commit-cell.intensity-0 { background: #1a2e1a; }
-.commit-cell.intensity-1 { background: #166b34; }
-.commit-cell.intensity-2 { background: #219d4e; }
-.commit-cell.intensity-3 { background: #30c767; }
-.commit-cell.intensity-4 { background: #4ae67c; }
+.commit-cell.intensity-0 { background: color-mix(in srgb, var(--bg) 60%, var(--border)); }
+.commit-cell.intensity-1 { background: #9be9a8; }
+.commit-cell.intensity-2 { background: #40c463; }
+.commit-cell.intensity-3 { background: #30a14e; }
+.commit-cell.intensity-4 { background: #216e39; }
 
 .commit-cell:focus-visible {
   outline: 1px solid var(--accent);
@@ -275,13 +273,10 @@ body {
 
 .commit-graph-state {
   min-height: 8rem;
-  border: 1px solid var(--border);
-  border-radius: 0.6rem;
   display: grid;
   place-items: center;
   gap: 0.75rem;
   color: var(--text-2);
-  padding: 1.5rem;
 }
 
 .commit-graph-state a {
@@ -367,17 +362,11 @@ body {
 .skill-item {
   display: inline-flex;
   align-items: center;
-  justify-content: center;
-  width: 30px;
-  height: 30px;
-  border: 1px solid var(--border);
-  border-radius: 0.35rem;
-  background: var(--bg-2);
 }
 
 .skill-item svg {
-  width: 16px;
-  height: 16px;
+  width: 18px;
+  height: 18px;
 }
 
 /* ── PROJECT CARD ── */
@@ -452,22 +441,6 @@ section {
   display: flex;
   align-items: center;
   gap: 0.75rem;
-  padding: 0.7rem 0.9rem;
-  border: 1px solid var(--border);
-  border-radius: 0.4rem;
-  background: var(--bg-2);
-}
-
-.about-card-icon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 30px;
-  height: 30px;
-  border-radius: 0.35rem;
-  background: color-mix(in srgb, var(--accent) 12%, transparent);
-  color: var(--accent);
-  flex-shrink: 0;
 }
 
 .about-card-label {
