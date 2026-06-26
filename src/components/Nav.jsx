@@ -6,7 +6,7 @@ import useWindowSize from '../hooks/useWindowSize'
 const links = [
   { key: 'about', type: 'anchor' },
   { key: 'activity', type: 'anchor' },
-  { key: 'projects', type: 'anchor' },
+  { key: 'experience', type: 'anchor' },
   { key: 'articles', type: 'route' },
   { key: 'skills', type: 'anchor' },
   { key: 'contact', type: 'anchor' },
