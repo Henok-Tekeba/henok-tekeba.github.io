@@ -1,3 +1,4 @@
+import NavBar from '../components/NavBar'
 import useReveal from '../hooks/useReveal'
 import Hero from '../components/Hero'
 import GitHubCommitGraph from '../components/GitHubCommitGraph'
@@ -15,10 +16,13 @@ export default function HomePage() {
 
   return (
     <div className="app-shell">
+      <NavBar />
       <Hero />
       <GitHubCommitGraph />
       <About />
       <Projects />
+
+      <Skills />
 
       <section id="articles">
         <div className="section-heading reveal">
@@ -35,8 +39,6 @@ export default function HomePage() {
           ))}
         </div>
       </section>
-
-      <Skills />
       <Contact />
 
       <Footer />
