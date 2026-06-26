@@ -17,7 +17,7 @@ export default function Contact() {
 
   return (
     <section id="contact" style={{
-      padding: isMobile ? '5rem 1.5rem' : '8rem 3rem',
+      padding: isMobile ? '3rem 1.5rem' : '4rem 3rem',
       position: 'relative',
       zIndex: 1,
     }}>

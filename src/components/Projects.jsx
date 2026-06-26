@@ -39,7 +39,7 @@ export default function Projects() {
 
   return (
     <section id="experience" style={{
-      padding: isMobile ? '5rem 1.5rem' : '8rem 3rem',
+      padding: isMobile ? '2rem 1.5rem' : '3rem 3rem',
       position: 'relative',
       zIndex: 1,
     }}>
