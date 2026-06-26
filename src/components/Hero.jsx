@@ -67,11 +67,10 @@ export default function Hero() {
 
   return (
     <section id="hero" style={{
-      minHeight: isMobile ? '68vh' : '74vh',
       display: 'flex',
       flexDirection: 'column',
       justifyContent: 'center',
-      padding: isMobile ? '5.8rem 1.5rem 2rem' : '7.2rem 3rem 2rem',
+      padding: isMobile ? '4.5rem 1.5rem 1.5rem' : '5.5rem 3rem 1.5rem',
       position: 'relative',
       zIndex: 1,
     }}>
