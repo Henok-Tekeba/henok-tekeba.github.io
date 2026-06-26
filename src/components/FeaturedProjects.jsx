@@ -7,12 +7,14 @@ const projects = [
     tagline: 'A live tracker of the Ethiopian AI ecosystem — companies, tools, researchers, and initiatives, updating automatically.',
     image: '/goha.png',
     url: 'https://goha.et',
+    stack: ['Next.js', 'Express', 'PostgreSQL', 'GitHub Actions'],
   },
   {
     title: 'voiET',
-    tagline: 'Voice AI platform for Amharic speech recognition, transcription, and diarization — built for users overlooked by mainstream speech tech.',
-    image: '/pro1.png',
+    tagline: 'A production-ready waitlist for Amharic voice AI — speech recognition, transcription, and diarization for users overlooked by mainstream speech tech.',
+    image: '/voiet.png',
     url: 'https://voiet.tech',
+    stack: ['Next.js', 'Express', 'PostgreSQL', 'Modal', 'Whisper'],
   },
 ]
 
@@ -104,6 +106,27 @@ export default function FeaturedProjects() {
               }}>
                 {project.tagline}
               </p>
+              <div style={{
+                display: 'flex',
+                flexWrap: 'wrap',
+                gap: '0.4rem',
+                marginTop: '0.35rem',
+              }}>
+                {project.stack.map(tech => (
+                  <span key={tech} style={{
+                    fontFamily: 'var(--mono)',
+                    fontSize: '0.55rem',
+                    letterSpacing: '0.06em',
+                    color: 'var(--text-3)',
+                    border: '1px solid var(--border)',
+                    borderRadius: '999px',
+                    padding: '0.2rem 0.55rem',
+                    lineHeight: 1.3,
+                  }}>
+                    {tech}
+                  </span>
+                ))}
+              </div>
             </div>
           </div>
         ))}
