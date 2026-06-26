@@ -44,14 +44,13 @@ export default function FeaturedProjects() {
               borderRadius: '0.75rem',
               overflow: 'hidden',
               border: '1px solid var(--border)',
-              background: 'var(--bg-2)',
             }}
           >
             <div style={{
               width: '100%',
               aspectRatio: '16 / 9',
               overflow: 'hidden',
-              background: 'var(--bg)',
+              flexShrink: 0,
             }}>
               <img
                 src={project.image}
