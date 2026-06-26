@@ -41,15 +41,15 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
-  --bg:        #ffffff;
-  --bg-2:      #f5f5f5;
-  --border:    #e5e5e5;
-  --border-2:  #d4d4d4;
-  --text:      #111111;
-  --text-2:    #444444;
+  --bg:        #0a0a0a;
+  --bg-2:      #111111;
+  --border:    #222222;
+  --border-2:  #2e2e2e;
+  --text:      #f0f0f0;
+  --text-2:    #aaaaaa;
   --text-3:    #777777;
-  --accent:    #555555;
-  --green:     #22a84a;
+  --accent:    #888888;
+  --green:     #3dbe76;
   --font:      'Geist', sans-serif;
   --title:     'Geist', sans-serif;
   --display:   'Geist', sans-serif;
@@ -60,16 +60,16 @@
   --shell-width: min(820px, calc(100vw - 3rem));
 }
 
-[data-theme="dark"] {
-  --bg:        #0a0a0a;
-  --bg-2:      #111111;
-  --border:    #222222;
-  --border-2:  #2e2e2e;
-  --text:      #f0f0f0;
-  --text-2:    #aaaaaa;
+[data-theme="light"] {
+  --bg:        #ffffff;
+  --bg-2:      #f5f5f5;
+  --border:    #e5e5e5;
+  --border-2:  #d4d4d4;
+  --text:      #111111;
+  --text-2:    #444444;
   --text-3:    #777777;
-  --accent:    #888888;
-  --green:     #3dbe76;
+  --accent:    #555555;
+  --green:     #22a84a;
 }
 
 html { scroll-behavior: smooth; }
