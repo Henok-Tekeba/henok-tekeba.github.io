@@ -54,7 +54,7 @@ export default function Contact() {
             lineHeight: 1.8,
             marginBottom: '1.5rem',
           }}>
-            I am looking for internships, ML engineering work, and teams building products that need technical curiosity, speed, and local context.
+            I am looking for internships and teams building products that need technical curiosity, speed, and local context.
           </p>
 
           <div className="reveal d2" style={{

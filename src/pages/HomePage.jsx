@@ -1,9 +1,8 @@
 import useReveal from '../hooks/useReveal'
-import Nav from '../components/Nav'
 import Hero from '../components/Hero'
+import GitHubCommitGraph from '../components/GitHubCommitGraph'
 import About from '../components/About'
 import Projects from '../components/Projects'
-import GitHubCommitGraph from '../components/GitHubCommitGraph'
 import Skills from '../components/Skills'
 import Contact from '../components/Contact'
 import Footer from '../components/Footer'
@@ -16,25 +15,20 @@ export default function HomePage() {
 
   return (
     <div className="app-shell">
-      <Nav />
       <Hero />
+      <GitHubCommitGraph />
       <About />
       <Projects />
-      <GitHubCommitGraph />
 
-      <section id="articles" style={{
-        padding: '8rem 3rem',
-        position: 'relative',
-        zIndex: 1,
-      }}>
-        <div className="section-heading reveal" style={{ marginBottom: '2rem' }}>
+      <section id="articles">
+        <div className="section-heading reveal">
           <h2 className="section-heading-title">Latest Writing</h2>
           <div className="section-heading-rule" />
         </div>
         <div style={{
           display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
-          gap: '1.5rem',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))',
+          gap: '1rem',
         }}>
           {publishedArticles.map((article, i) => (
             <ArticleCard key={article.slug} article={article} delayClass={`d${i + 1}`} />
@@ -42,11 +36,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section id="learning" style={{
-        padding: '8rem 3rem',
-        position: 'relative',
-        zIndex: 1,
-      }}>
+      <section id="learning">
         <div className="section-heading reveal">
           <h2 className="section-heading-title">Currently Learning</h2>
           <div className="section-heading-rule" />
@@ -54,18 +44,16 @@ export default function HomePage() {
         <div className="reveal d1" style={{
           display: 'flex',
           flexWrap: 'wrap',
-          gap: '0.75rem',
+          gap: '0.6rem',
         }}>
-          {['Docker', 'Kubernetes', 'Rust', 'Go', 'System Design', 'MLOps', 'Audio Signal Processing'].map(item => (
+          {['Docker', 'Kubernetes', 'Rust', 'Go', 'System Design', 'Redis', 'PostgreSQL'].map(item => (
             <span key={item} style={{
-              fontFamily: 'var(--mono)',
-              fontSize: '0.7rem',
-              letterSpacing: '0.08em',
-              textTransform: 'uppercase',
+              fontSize: '0.8rem',
               color: 'var(--text-2)',
               border: '1px solid var(--border)',
-              padding: '0.5rem 1rem',
-              borderRadius: '999px',
+              padding: '0.4rem 0.8rem',
+              borderRadius: '0.3rem',
+              background: 'var(--bg-2)',
             }}>{item}</span>
           ))}
         </div>
@@ -74,38 +62,27 @@ export default function HomePage() {
       <Skills />
       <Contact />
 
-      <section id="testimonials" style={{
-        padding: '0 3rem 8rem',
-        position: 'relative',
-        zIndex: 1,
-      }}>
+      <section id="testimonials">
         <div className="section-heading reveal">
           <h2 className="section-heading-title">Testimonials</h2>
           <div className="section-heading-rule" />
         </div>
-        <div className="reveal d1" style={{
-          display: 'grid',
-          gap: '1.5rem',
-          maxWidth: '600px',
-        }}>
+        <div className="reveal d1" style={{ maxWidth: '540px' }}>
           <p style={{
-            fontFamily: 'var(--display)',
-            fontWeight: 'var(--display-weight-light)',
-            fontSize: '0.95rem',
+            fontSize: '0.9rem',
             color: 'var(--text-2)',
-            lineHeight: 1.8,
+            lineHeight: 1.7,
             fontStyle: 'italic',
             borderLeft: '2px solid var(--accent)',
-            paddingLeft: '1.5rem',
+            paddingLeft: '1.25rem',
           }}>
             "Add a recommendation from a professor, mentor, or teammate to build trust with visitors."
           </p>
           <span style={{
-            fontFamily: 'var(--mono)',
-            fontSize: '0.6rem',
-            letterSpacing: '0.1em',
-            textTransform: 'uppercase',
+            fontSize: '0.75rem',
             color: 'var(--text-3)',
+            display: 'block',
+            marginTop: '0.5rem',
           }}>
             — Your name here
           </span>

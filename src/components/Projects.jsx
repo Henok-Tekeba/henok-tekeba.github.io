@@ -4,9 +4,9 @@ const experience = [
   {
     period: '2024 – Present',
     role: 'Founder & Full-Stack Engineer',
-    company: 'voiET — Amharic Voice AI Platform',
+    company: 'voiET — Voice AI Platform',
     highlights: [
-      'Built and shipped a full-stack voice AI platform end to end: Next.js frontend, Express REST API, PostgreSQL database, deployed across Vercel, Railway, and Modal Labs',
+      'Built and shipped a full-stack platform end to end: Next.js frontend, Express REST API, PostgreSQL database, deployed across Vercel, Railway, and Modal Labs',
       'Implemented JWT authentication, Server-Sent Events for real-time streaming responses, and parallel audio chunking using Modal\'s starmap for high-throughput inference',
       'Fine-tuned OpenAI Whisper Medium on 38K+ Amharic audio samples (Google WAXAL dataset) for low-resource language ASR',
       'Converted fine-tuned model to ONNX format for optimized CPU inference; reduced latency for serverless cold-start environments',
@@ -16,10 +16,10 @@ const experience = [
   {
     period: '2024',
     role: 'Full-Stack Engineer',
-    company: 'goha.et — Ethiopian AI Ecosystem Tracker',
+    company: 'goha.et — Ecosystem Tracker',
     highlights: [
       'Designed and shipped a full-stack product from zero to production in a single day: Next.js + Express, automated GitHub Actions cron job for live data updates, deployed on Vercel and Render',
-      'Architected a living data pipeline that continuously tracks and surfaces the Ethiopian AI ecosystem without manual intervention',
+      'Architected a living data pipeline that continuously tracks and surfaces ecosystem data without manual intervention',
     ],
   },
   {

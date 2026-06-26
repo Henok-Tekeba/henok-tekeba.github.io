@@ -3,9 +3,9 @@ import { Download, FileText } from 'lucide-react'
 import useWindowSize from '../hooks/useWindowSize'
 
 const rotatingHeadlines = [
-  'Amharic AI builder',
-  'ML engineer in progress',
-  'Shipping for real users',
+  'Full-stack developer',
+  'React • Node • TypeScript',
+  'Shipping products end to end',
   'Focused on useful systems',
 ]
 
@@ -142,7 +142,7 @@ export default function Hero() {
         lineHeight: 1.8,
         marginBottom: '3rem',
       }}>
-        I am a second-year ECE student at AAU building speech AI and product systems for Ethiopian users. My focus is simple: make language technology useful in the places where it is usually ignored.
+        I am a second-year ECE student at AAU building full-stack web products and backend systems for Ethiopian users. My focus is simple: build things that work for people who are usually overlooked.
       </p>
 
       <div style={{ display: 'flex', gap: '0.7rem', flexWrap: 'wrap' }}>

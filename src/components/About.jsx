@@ -3,7 +3,7 @@ import { GraduationCap, MapPin, Sparkles } from 'lucide-react'
 const facts = [
   { label: 'Location', value: 'Addis Ababa, Ethiopia', Icon: MapPin },
   { label: 'University', value: 'Addis Ababa University', Icon: GraduationCap },
-  { label: 'Looking for', value: 'Internships & ML roles', Icon: Sparkles },
+  { label: 'Looking for', value: 'Internships & full-stack roles', Icon: Sparkles },
 ]
 
 export default function About() {
@@ -33,7 +33,7 @@ export default function About() {
             color: 'var(--text)',
             marginBottom: '1.5rem',
           }}>
-            I build speech AI and product systems for{' '}
+            I build full-stack web products and backend systems for{' '}
             <span style={{ color: 'var(--accent)' }}>users who are usually treated as edge cases</span>
             {' '}by the mainstream market.
           </p>
@@ -46,7 +46,7 @@ export default function About() {
             lineHeight: 1.85,
             marginBottom: '1.5rem',
           }}>
-            My work sits across ML and product engineering — speech systems, web products, and the unglamorous work of turning experiments into tools people actually use.
+            My work spans frontend, backend, and infrastructure — web apps, APIs, databases, and the unglamorous work of turning ideas into deployed products people actually use.
           </p>
 
           <p className="reveal d2" style={{
@@ -56,7 +56,7 @@ export default function About() {
             color: 'var(--text-2)',
             lineHeight: 1.85,
           }}>
-            The thread through everything is local usefulness. Amharic speech recognition, voice interfaces, software that respects Ethiopian realities instead of assuming Silicon Valley defaults.
+            The thread through everything is local usefulness. Building software that respects Ethiopian realities instead of assuming Silicon Valley defaults.
           </p>
         </div>
 
