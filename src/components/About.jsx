@@ -1,5 +1,11 @@
 import { GraduationCap, MapPin, Sparkles } from 'lucide-react'
 
+const facts = [
+  { label: 'Location', value: 'Addis Ababa, Ethiopia', Icon: MapPin },
+  { label: 'University', value: 'Addis Ababa University', Icon: GraduationCap },
+  { label: 'Looking for', value: 'Internships & ML roles', Icon: Sparkles },
+]
+
 export default function About() {
   return (
     <section id="about" style={{
@@ -16,68 +22,93 @@ export default function About() {
       <div style={{
         display: 'grid',
         gridTemplateColumns: '1fr 1fr',
-        gap: '6rem',
-        maxWidth: '1000px',
+        gap: '4rem',
+        maxWidth: '960px',
       }}>
         <div>
-          <h2 className="reveal" style={{
+          <p className="reveal" style={{
             fontFamily: 'var(--title)',
-            fontWeight: 'var(--display-weight-light)',
-            fontSize: 'clamp(2rem, 4vw, 3rem)',
-            lineHeight: 1.2,
+            fontSize: 'clamp(1.1rem, 2vw, 1.4rem)',
+            lineHeight: 1.6,
             color: 'var(--text)',
-            marginBottom: '2rem',
+            marginBottom: '1.5rem',
           }}>
-            I build for the gap
-            <span style={{ color: 'var(--accent)' }}> between strong ideas and real use.</span>
-          </h2>
+            I build speech AI and product systems for{' '}
+            <span style={{ color: 'var(--accent)' }}>users who are usually treated as edge cases</span>
+            {' '}by the mainstream market.
+          </p>
 
           <p className="reveal d1" style={{
             fontFamily: 'var(--display)',
             fontWeight: 'var(--display-weight-light)',
-            fontSize: '1rem',
+            fontSize: '0.95rem',
             color: 'var(--text-2)',
-            lineHeight: 1.9,
+            lineHeight: 1.85,
             marginBottom: '1.5rem',
           }}>
-            I work across ML and product engineering. Most of my time goes into speech systems, web products, and the unglamorous parts of shipping that turn experiments into tools people can actually use.
+            My work sits across ML and product engineering — speech systems, web products, and the unglamorous work of turning experiments into tools people actually use.
           </p>
 
           <p className="reveal d2" style={{
             fontFamily: 'var(--display)',
             fontWeight: 'var(--display-weight-light)',
-            fontSize: '1rem',
+            fontSize: '0.95rem',
             color: 'var(--text-2)',
-            lineHeight: 1.9,
+            lineHeight: 1.85,
           }}>
-            The thread through my work is local usefulness. I care about Amharic speech recognition, voice interfaces, and software that respects the realities of Ethiopian users instead of assuming Silicon Valley defaults.
+            The thread through everything is local usefulness. Amharic speech recognition, voice interfaces, software that respects Ethiopian realities instead of assuming Silicon Valley defaults.
           </p>
         </div>
 
-        <div className="reveal d1" style={{ paddingTop: '0.5rem' }}>
-          {[
-            { key: 'location', value: 'Addis Ababa, Ethiopia', Icon: MapPin },
-            { key: 'university', value: 'Addis Ababa University', Icon: GraduationCap },
-            { key: 'status', value: 'Open to internships, ML roles, and product teams solving real problems', Icon: Sparkles },
-          ].map(({ key, value, Icon }) => (
-            <div key={key} style={{
+        <div className="reveal d1" style={{
+          display: 'flex',
+          flexDirection: 'column',
+          gap: '0.75rem',
+        }}>
+          {facts.map(({ label, value, Icon }) => (
+            <div key={label} style={{
               display: 'flex',
-              justifyContent: 'space-between',
-              alignItems: 'baseline',
-              padding: '0.9rem 0',
-              borderBottom: '1px solid var(--border)',
-              gap: '2rem',
+              alignItems: 'center',
+              gap: '1rem',
+              padding: '1rem 1.25rem',
+              border: '1px solid var(--border)',
+              borderRadius: '0.75rem',
+              background: 'color-mix(in srgb, var(--bg-2) 94%, transparent)',
             }}>
-              <span style={{ display: 'inline-flex', alignItems: 'center', color: 'var(--text-3)' }}>
-                <Icon size={15} strokeWidth={1.5} aria-hidden="true" />
-              </span>
               <span style={{
-                fontFamily: 'var(--display)',
-                fontWeight: 'var(--display-weight-light)',
-                fontSize: '0.9rem',
-                color: 'var(--text-2)',
-                textAlign: 'right',
-              }}>{value}</span>
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                width: '36px',
+                height: '36px',
+                borderRadius: '0.5rem',
+                background: 'color-mix(in srgb, var(--accent) 10%, transparent)',
+                color: 'var(--accent)',
+                flexShrink: 0,
+              }}>
+                <Icon size={16} strokeWidth={1.5} />
+              </span>
+              <div>
+                <span style={{
+                  fontFamily: 'var(--mono)',
+                  fontSize: '0.5rem',
+                  letterSpacing: '0.12em',
+                  textTransform: 'uppercase',
+                  color: 'var(--text-3)',
+                  display: 'block',
+                  marginBottom: '0.15rem',
+                }}>
+                  {label}
+                </span>
+                <span style={{
+                  fontFamily: 'var(--display)',
+                  fontSize: '0.85rem',
+                  color: 'var(--text-2)',
+                  lineHeight: 1.4,
+                }}>
+                  {value}
+                </span>
+              </div>
             </div>
           ))}
         </div>

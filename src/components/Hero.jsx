@@ -78,82 +78,58 @@ export default function Hero() {
       zIndex: 1,
     }}>
 
-      <div style={{
-        display: 'flex',
-        alignItems: 'center',
-        flexDirection: 'row',
-        gap: isMobile ? '0.9rem' : '1.6rem',
-        marginBottom: '1.7rem',
-      }}>
-        <img
-          src={`${import.meta.env.BASE_URL}heni.png`}
-          alt="Henok Tekeba"
-          style={{
-            width: isMobile ? '74px' : '116px',
-            height: isMobile ? '74px' : '116px',
-            borderRadius: '1rem',
-            objectFit: 'cover',
-            border: '1px solid var(--border-2)',
-            boxShadow: '0 10px 28px rgba(0,0,0,0.2)',
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem', marginBottom: '1.7rem' }}>
+        <h1 style={{
+          fontFamily: 'var(--title)',
+          fontWeight: 'var(--display-weight-thin)',
+          fontSize: isMobile ? 'clamp(2rem, 8vw, 2.8rem)' : 'clamp(2.5rem, 5vw, 4rem)',
+          lineHeight: 1.05,
+          letterSpacing: '-0.02em',
+          color: 'var(--text)',
+        }}>
+          Henok <span style={{ color: 'var(--accent)' }}>Tekeba</span>
+        </h1>
+
+        <p style={{
+          fontFamily: 'var(--title)',
+          fontSize: isMobile ? '0.72rem' : '0.85rem',
+          letterSpacing: '0.08em',
+          textTransform: 'uppercase',
+          color: 'var(--text-2)',
+          minHeight: '1.3rem',
+          opacity: isHeadlineVisible ? 1 : 0,
+          transform: isHeadlineVisible ? 'translateY(0)' : 'translateY(5px)',
+          transition: 'opacity 0.22s ease, transform 0.22s ease',
+        }}>
+          {rotatingHeadlines[headlineIndex]}
+        </p>
+
+        <div style={{
+          display: 'inline-flex',
+          alignItems: 'center',
+          gap: '0.5rem',
+          width: 'fit-content',
+        }}>
+          <span style={{
+            width: '7px',
+            height: '7px',
+            borderRadius: '50%',
+            background: presence.color,
+            boxShadow: `0 0 0 4px color-mix(in srgb, ${presence.color} 18%, transparent)`,
             flexShrink: 0,
-          }}
-        />
-
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '0.55rem' }}>
-          <h1 style={{
-            fontFamily: 'var(--title)',
-            fontWeight: 'var(--display-weight-thin)',
-            fontSize: isMobile ? 'clamp(1.55rem, 7.2vw, 2.15rem)' : 'clamp(1.9rem, 4.2vw, 3.2rem)',
-            lineHeight: 1.0,
-            letterSpacing: '-0.02em',
-            color: 'var(--text)',
-            textAlign: 'left',
-          }}>
-            Henok <span style={{ color: 'var(--accent)' }}>Tekeba</span>
-          </h1>
-
-          <p style={{
-            fontFamily: 'var(--title)',
-            fontSize: isMobile ? '0.68rem' : '0.78rem',
-            letterSpacing: '0.08em',
+            opacity: isLiveDotOn ? 1 : 0.58,
+            transition: 'opacity 0.65s ease',
+          }} />
+          <span style={{
+            fontFamily: 'var(--mono)',
+            fontSize: '0.58rem',
+            letterSpacing: '0.11em',
             textTransform: 'uppercase',
             color: 'var(--text-2)',
-            minHeight: '1.2rem',
-            opacity: isHeadlineVisible ? 1 : 0,
-            transform: isHeadlineVisible ? 'translateY(0)' : 'translateY(5px)',
-            transition: 'opacity 0.22s ease, transform 0.22s ease',
+            lineHeight: 1,
           }}>
-            {rotatingHeadlines[headlineIndex]}
-          </p>
-
-          <div style={{
-            display: 'inline-flex',
-            alignItems: 'center',
-            gap: '0.5rem',
-            width: 'fit-content',
-            alignSelf: 'flex-start',
-          }}>
-            <span style={{
-              width: '7px',
-              height: '7px',
-              borderRadius: '50%',
-              background: presence.color,
-              boxShadow: `0 0 0 4px color-mix(in srgb, ${presence.color} 18%, transparent)`,
-              flexShrink: 0,
-              opacity: isLiveDotOn ? 1 : 0.58,
-              transition: 'opacity 0.65s ease',
-            }} />
-            <span style={{
-              fontFamily: 'var(--mono)',
-              fontSize: '0.58rem',
-              letterSpacing: '0.11em',
-              textTransform: 'uppercase',
-              color: 'var(--text-2)',
-              lineHeight: 1,
-            }}>
-              {presence.label}
-            </span>
-          </div>
+            {presence.label}
+          </span>
         </div>
       </div>
 

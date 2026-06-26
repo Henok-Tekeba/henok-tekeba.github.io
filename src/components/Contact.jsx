@@ -1,86 +1,19 @@
-import { useState } from 'react'
 import useWindowSize from '../hooks/useWindowSize'
-import { Download, FileText, Mail } from 'lucide-react'
+import { Mail } from 'lucide-react'
 import { SiGithub, SiHuggingface, SiX } from 'react-icons/si'
 import { FaLinkedinIn } from 'react-icons/fa6'
 
-const resumeHref = `${import.meta.env.BASE_URL}resume.html`
-
 const links = [
-  { label: 'Email', href: 'mailto:tekebahenok6@gmail.com', Icon: Mail },
-  { label: 'Resume', href: resumeHref, Icon: FileText },
-  { label: 'GitHub', href: 'https://github.com/Henok-Tekeba', Icon: SiGithub, isBrand: true },
-  { label: 'HuggingFace', href: 'https://huggingface.co/Henokk', Icon: SiHuggingface, isBrand: true },
-  { label: 'X', href: 'https://x.com/HenaTeke', Icon: SiX, isBrand: true },
-  { label: 'LinkedIn', href: 'https://www.linkedin.com/in/henok-ayele-6ab58b356?', Icon: FaLinkedinIn, isBrand: true },
+  { label: 'Email', href: 'mailto:tekebahenok6@gmail.com', icon: Mail, isBrand: false },
+  { label: 'GitHub', href: 'https://github.com/Henok-Tekeba', icon: SiGithub, isBrand: true },
+  { label: 'HuggingFace', href: 'https://huggingface.co/Henokk', icon: SiHuggingface, isBrand: true },
+  { label: 'X', href: 'https://x.com/HenaTeke', icon: SiX, isBrand: true },
+  { label: 'LinkedIn', href: 'https://www.linkedin.com/in/henok-ayele-6ab58b356', icon: FaLinkedinIn, isBrand: true },
 ]
 
 export default function Contact() {
   const width = useWindowSize()
   const isMobile = width < 768
-  const [formName, setFormName] = useState('')
-  const [formEmail, setFormEmail] = useState('')
-  const [formMessage, setFormMessage] = useState('')
-
-  function handleSubmit(e) {
-    e.preventDefault()
-    const subject = encodeURIComponent(`Message from ${formName}`)
-    const body = encodeURIComponent(`From: ${formName}\nEmail: ${formEmail}\n\n${formMessage}`)
-    window.location.href = `mailto:tekebahenok6@gmail.com?subject=${subject}&body=${body}`
-  }
-
-  const firstRowLinks = links.slice(0, 3)
-  const secondRowLinks = links.slice(3)
-
-  const renderContactButton = ({ label, href, Icon, isBrand }) => (
-    <a
-      key={label}
-      href={href}
-      target={href.startsWith('mailto') ? '_self' : '_blank'}
-      rel="noreferrer"
-      style={{
-        display: 'inline-flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        gap: '0.55rem',
-        padding: '0.68rem 0.92rem',
-        border: '1px solid var(--border-2)',
-        borderRadius: '999px',
-        textDecoration: 'none',
-        transition: 'all 0.2s ease',
-        color: 'var(--text-2)',
-        background: 'color-mix(in srgb, var(--bg-2) 88%, transparent)',
-        flex: '0 0 auto',
-        lineHeight: 1,
-      }}
-      onMouseEnter={e => {
-        e.currentTarget.style.borderColor = 'var(--accent)'
-        e.currentTarget.style.color = 'var(--text)'
-        e.currentTarget.style.boxShadow = '0 0 0 1px color-mix(in srgb, var(--accent) 35%, transparent)'
-      }}
-      onMouseLeave={e => {
-        e.currentTarget.style.borderColor = 'var(--border-2)'
-        e.currentTarget.style.color = 'var(--text-2)'
-        e.currentTarget.style.boxShadow = 'none'
-      }}
-      aria-label={label}
-    >
-      <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center' }}>
-        {isBrand
-          ? <Icon size={13} style={{ opacity: 0.9 }} />
-          : <Icon size={14} strokeWidth={1.5} style={{ opacity: 0.9 }} />}
-      </span>
-      <span style={{
-        fontFamily: 'var(--mono)',
-        fontSize: '0.62rem',
-        letterSpacing: '0.11em',
-        textTransform: 'uppercase',
-        lineHeight: 1,
-      }}>
-        {label}
-      </span>
-    </a>
-  )
 
   return (
     <section id="contact" style={{
@@ -94,76 +27,181 @@ export default function Contact() {
         <div className="section-heading-rule" />
       </div>
 
-      <div>
-        <h2 className="reveal" style={{
-          fontFamily: 'var(--title)',
-          fontWeight: 'var(--display-weight-thin)',
-          fontSize: 'clamp(2.5rem, 5vw, 4rem)',
-          lineHeight: 1.1,
-          color: 'var(--text)',
-          marginBottom: '1.2rem',
-        }}>
-          Building something useful for Ethiopia?
-          <span style={{ color: 'var(--accent)' }}> I would love to hear about it.</span>
-        </h2>
-
-        <p className="reveal d1" style={{
-          fontFamily: 'var(--display)',
-          fontWeight: 'var(--display-weight-light)',
-          fontSize: '1rem',
-          color: 'var(--text-2)',
-          lineHeight: 1.8,
-          marginBottom: '1.6rem',
-        }}>
-          I am looking for internships, ML engineering work, and teams building products that need technical curiosity, speed, and local context. If that sounds like your world, reach out.
-        </p>
-
-        {!isMobile && (
-          <div className="reveal d1" style={{
-            display: 'flex',
-            flexWrap: 'nowrap',
-            gap: '0.7rem',
-            alignItems: 'center',
-            overflowX: 'auto',
+      <div style={{
+        display: 'grid',
+        gridTemplateColumns: isMobile ? '1fr' : '1fr 1fr',
+        gap: isMobile ? '2.5rem' : '4rem',
+        maxWidth: '960px',
+      }}>
+        <div>
+          <h2 className="reveal" style={{
+            fontFamily: 'var(--title)',
+            fontWeight: 'var(--display-weight-thin)',
+            fontSize: 'clamp(1.8rem, 3.5vw, 2.5rem)',
+            lineHeight: 1.15,
+            color: 'var(--text)',
+            marginBottom: '1.2rem',
           }}>
-            {links.map(renderContactButton)}
-          </div>
-        )}
+            Building something useful for Ethiopia?{' '}
+            <span style={{ color: 'var(--accent)' }}>Reach out.</span>
+          </h2>
 
-        {isMobile && (
-          <div className="reveal d1" style={{ display: 'flex', flexDirection: 'column', gap: '0.7rem' }}>
-            <div style={{ display: 'flex', justifyContent: 'center', gap: '0.7rem', flexWrap: 'nowrap' }}>
-              {firstRowLinks.map(renderContactButton)}
-            </div>
-            <div style={{ display: 'flex', justifyContent: 'center', gap: '0.7rem', flexWrap: 'nowrap' }}>
-              {secondRowLinks.map(renderContactButton)}
-            </div>
-          </div>
-        )}
+          <p className="reveal d1" style={{
+            fontFamily: 'var(--display)',
+            fontWeight: 'var(--display-weight-light)',
+            fontSize: '0.95rem',
+            color: 'var(--text-2)',
+            lineHeight: 1.8,
+            marginBottom: '1.5rem',
+          }}>
+            I am looking for internships, ML engineering work, and teams building products that need technical curiosity, speed, and local context.
+          </p>
 
-        <form className="contact-form reveal d2" onSubmit={handleSubmit}>
-          <input
-            type="text"
-            placeholder="Your name"
-            value={formName}
-            onChange={e => setFormName(e.target.value)}
-            required
-          />
-          <input
-            type="email"
-            placeholder="Your email"
-            value={formEmail}
-            onChange={e => setFormEmail(e.target.value)}
-            required
-          />
-          <textarea
-            placeholder="What are you building?"
-            value={formMessage}
-            onChange={e => setFormMessage(e.target.value)}
-            required
-          />
-          <button type="submit">Send message</button>
-        </form>
+          <div className="reveal d2" style={{
+            display: 'flex',
+            flexWrap: 'wrap',
+            gap: '0.6rem',
+          }}>
+            {links.map(({ label, href, icon: Icon, isBrand }) => (
+              <a
+                key={label}
+                href={href}
+                target={href.startsWith('mailto') ? '_self' : '_blank'}
+                rel="noreferrer"
+                style={{
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '0.45rem',
+                  padding: '0.55rem 0.85rem',
+                  border: '1px solid var(--border)',
+                  borderRadius: '0.6rem',
+                  textDecoration: 'none',
+                  color: 'var(--text-3)',
+                  background: 'color-mix(in srgb, var(--bg-2) 94%, transparent)',
+                  transition: 'all 0.2s ease',
+                  lineHeight: 1,
+                }}
+                onMouseEnter={e => {
+                  e.currentTarget.style.borderColor = 'var(--accent)'
+                  e.currentTarget.style.color = 'var(--accent)'
+                }}
+                onMouseLeave={e => {
+                  e.currentTarget.style.borderColor = 'var(--border)'
+                  e.currentTarget.style.color = 'var(--text-3)'
+                }}
+                aria-label={label}
+              >
+                <span style={{ display: 'inline-flex', alignItems: 'center' }}>
+                  {isBrand
+                    ? <Icon size={13} style={{ opacity: 0.85 }} />
+                    : <Icon size={13} strokeWidth={1.5} style={{ opacity: 0.85 }} />}
+                </span>
+                <span style={{
+                  fontFamily: 'var(--mono)',
+                  fontSize: '0.58rem',
+                  letterSpacing: '0.1em',
+                  textTransform: 'uppercase',
+                  lineHeight: 1,
+                }}>
+                  {label}
+                </span>
+              </a>
+            ))}
+          </div>
+        </div>
+
+        <div className="reveal d1">
+          <form
+            action="https://formspree.io/f/xdkowqgv"
+            method="POST"
+            style={{
+              display: 'grid',
+              gap: '0.9rem',
+            }}
+          >
+            <input
+              type="text"
+              name="name"
+              placeholder="Your name"
+              required
+              style={{
+                fontFamily: 'var(--mono)',
+                fontSize: '0.82rem',
+                padding: '0.75rem 1rem',
+                border: '1px solid var(--border)',
+                borderRadius: '0.6rem',
+                background: 'color-mix(in srgb, var(--bg-2) 94%, transparent)',
+                color: 'var(--text)',
+                outline: 'none',
+                width: '100%',
+              }}
+            />
+            <input
+              type="email"
+              name="email"
+              placeholder="Your email"
+              required
+              style={{
+                fontFamily: 'var(--mono)',
+                fontSize: '0.82rem',
+                padding: '0.75rem 1rem',
+                border: '1px solid var(--border)',
+                borderRadius: '0.6rem',
+                background: 'color-mix(in srgb, var(--bg-2) 94%, transparent)',
+                color: 'var(--text)',
+                outline: 'none',
+                width: '100%',
+              }}
+            />
+            <textarea
+              name="message"
+              placeholder="What are you building?"
+              required
+              rows={4}
+              style={{
+                fontFamily: 'var(--mono)',
+                fontSize: '0.82rem',
+                padding: '0.75rem 1rem',
+                border: '1px solid var(--border)',
+                borderRadius: '0.6rem',
+                background: 'color-mix(in srgb, var(--bg-2) 94%, transparent)',
+                color: 'var(--text)',
+                outline: 'none',
+                width: '100%',
+                resize: 'vertical',
+                minHeight: '100px',
+              }}
+            />
+            <button
+              type="submit"
+              style={{
+                fontFamily: 'var(--mono)',
+                fontSize: '0.6rem',
+                letterSpacing: '0.11em',
+                textTransform: 'uppercase',
+                padding: '0.7rem 1.25rem',
+                border: '1px solid var(--border)',
+                borderRadius: '0.6rem',
+                background: 'color-mix(in srgb, var(--bg-2) 94%, transparent)',
+                color: 'var(--text-2)',
+                cursor: 'pointer',
+                transition: 'all 0.2s ease',
+                width: 'fit-content',
+                lineHeight: 1,
+              }}
+              onMouseEnter={e => {
+                e.currentTarget.style.borderColor = 'var(--accent)'
+                e.currentTarget.style.color = 'var(--text)'
+              }}
+              onMouseLeave={e => {
+                e.currentTarget.style.borderColor = 'var(--border)'
+                e.currentTarget.style.color = 'var(--text-2)'
+              }}
+            >
+              Send message
+            </button>
+          </form>
+        </div>
       </div>
     </section>
   )
