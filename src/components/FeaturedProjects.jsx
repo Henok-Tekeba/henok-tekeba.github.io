@@ -1,4 +1,4 @@
-import { ExternalLink } from 'lucide-react'
+import { Globe } from 'lucide-react'
 import useWindowSize from '../hooks/useWindowSize'
 
 const projects = [
@@ -35,11 +35,8 @@ export default function FeaturedProjects() {
         gap: '1.25rem',
       }}>
         {projects.map((project, i) => (
-          <a
+          <div
             key={project.title}
-            href={project.url}
-            target="_blank"
-            rel="noreferrer"
             className={`reveal ${i > 0 ? `d${i}` : ''}`}
             style={{
               display: 'flex',
@@ -47,12 +44,8 @@ export default function FeaturedProjects() {
               borderRadius: '0.75rem',
               overflow: 'hidden',
               border: '1px solid var(--border)',
-              textDecoration: 'none',
               background: 'var(--bg-2)',
-              transition: 'border-color 0.2s ease',
             }}
-            onMouseEnter={e => e.currentTarget.style.borderColor = 'var(--accent)'}
-            onMouseLeave={e => e.currentTarget.style.borderColor = 'var(--border)'}
           >
             <div style={{
               width: '100%',
@@ -82,16 +75,25 @@ export default function FeaturedProjects() {
                 alignItems: 'center',
                 gap: '0.4rem',
               }}>
-                <span style={{
-                  fontFamily: 'var(--title)',
-                  fontSize: '1.05rem',
-                  fontWeight: 600,
-                  color: 'var(--text)',
-                  lineHeight: 1.2,
-                }}>
+                <a
+                  href={project.url}
+                  target="_blank"
+                  rel="noreferrer"
+                  style={{
+                    fontFamily: 'var(--title)',
+                    fontSize: '1.05rem',
+                    fontWeight: 600,
+                    color: 'var(--text)',
+                    lineHeight: 1.2,
+                    textDecoration: 'none',
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    gap: '0.4rem',
+                  }}
+                >
                   {project.title}
-                </span>
-                <ExternalLink size={12} strokeWidth={1.5} style={{ color: 'var(--text-3)', flexShrink: 0 }} />
+                  <Globe size={12} strokeWidth={1.5} style={{ color: 'var(--text-3)', flexShrink: 0 }} />
+                </a>
               </div>
               <p style={{
                 fontFamily: 'var(--display)',
@@ -104,7 +106,7 @@ export default function FeaturedProjects() {
                 {project.tagline}
               </p>
             </div>
-          </a>
+          </div>
         ))}
       </div>
     </section>
