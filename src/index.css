@@ -127,11 +127,8 @@ body {
 
 .section-heading-title {
   font-size: 1rem;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: var(--text-3);
-  font-weight: 500;
-  white-space: nowrap;
+  color: var(--text);
+  font-weight: 600;
 }
 
 .section-heading-rule {
@@ -401,18 +398,40 @@ body {
 .skills-row {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.6rem;
+  gap: 1rem;
   align-items: center;
+  padding-bottom: 1.5rem;
 }
 
 .skill-item {
   display: inline-flex;
   align-items: center;
+  position: relative;
 }
 
 .skill-item svg {
-  width: 18px;
-  height: 18px;
+  width: 44px;
+  height: 44px;
+}
+
+.skill-item::after {
+  content: attr(data-label);
+  position: absolute;
+  bottom: -1.4rem;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.6rem;
+  color: var(--text-3);
+  white-space: nowrap;
+  opacity: 0;
+  transition: opacity 0.2s;
+  pointer-events: none;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.skill-item:hover::after {
+  opacity: 1;
 }
 
 /* ── PROJECT CARD ── */

@@ -42,8 +42,8 @@ export default function Contact() {
             color: 'var(--text)',
             marginBottom: '1.2rem',
           }}>
-            Building something useful for Ethiopia?{' '}
-            <span style={{ color: 'var(--accent)' }}>Reach out.</span>
+            Have a project or idea?{' '}
+            <span style={{ color: 'var(--accent)' }}>Let's talk.</span>
           </h2>
 
           <p className="reveal d1" style={{
@@ -54,7 +54,7 @@ export default function Contact() {
             lineHeight: 1.8,
             marginBottom: '1.5rem',
           }}>
-            I am looking for internships and teams building products that need technical curiosity, speed, and local context.
+            I'm looking for internships and teams building products that need technical curiosity, speed, and attention to detail.
           </p>
 
           <div className="reveal d2" style={{
