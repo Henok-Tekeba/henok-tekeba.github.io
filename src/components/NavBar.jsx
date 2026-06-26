@@ -28,13 +28,17 @@ export default function NavBar() {
       top: 0, left: 0, right: 0,
       zIndex: 1000,
       display: 'flex',
-      justifyContent: 'space-between',
-      alignItems: 'center',
-      padding: '1rem 3rem',
+      justifyContent: 'center',
       background: 'color-mix(in srgb, var(--bg) 92%, transparent)',
-      borderBottom: '1px solid var(--border)',
       backdropFilter: 'blur(12px)',
     }}>
+      <div style={{
+        width: 'var(--shell-width)',
+        display: 'flex',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        padding: '1rem 0',
+      }}>
       <a href="/" style={{
         fontFamily: 'var(--title)',
         fontSize: '0.8rem',
@@ -53,7 +57,6 @@ export default function NavBar() {
           letterSpacing: '0.12em',
           color: 'var(--text-2)',
           textDecoration: 'none',
-          textTransform: 'lowercase',
           transition: 'color 0.2s',
         }}
           onMouseEnter={e => e.target.style.color = 'var(--accent)'}
@@ -67,7 +70,6 @@ export default function NavBar() {
           letterSpacing: '0.12em',
           color: 'var(--text-2)',
           textDecoration: 'none',
-          textTransform: 'lowercase',
           transition: 'color 0.2s',
         }}
           onMouseEnter={e => e.target.style.color = 'var(--accent)'}
@@ -92,6 +94,7 @@ export default function NavBar() {
         >
           {theme === 'dark' ? <Sun size={13} strokeWidth={1.5} /> : <Moon size={13} strokeWidth={1.5} />}
         </button>
+      </div>
       </div>
     </nav>
   )
