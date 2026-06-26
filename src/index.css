@@ -11,6 +11,12 @@
   --accent:    #555555;
   --green:     #22a84a;
   --font:      'Inter', sans-serif;
+  --title:     'Inter', sans-serif;
+  --display:   'Inter', sans-serif;
+  --mono:      'Inter', sans-serif;
+  --display-weight-thin:  300;
+  --display-weight-light: 300;
+  --display-weight-reg:   400;
   --shell-width: min(820px, calc(100vw - 3rem));
 }
 
