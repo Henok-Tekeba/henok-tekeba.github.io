@@ -11,47 +11,27 @@ export default function Footer() {
       position: 'relative',
       zIndex: 1,
     }}>
-      <figure style={{ textAlign: 'center' }}>
-        <blockquote style={{
-          fontFamily: 'var(--title)',
-          fontSize: 'clamp(1.15rem, 3.1vw, 2rem)',
-          lineHeight: 1,
-          letterSpacing: '0.03em',
-          textTransform: 'uppercase',
-          color: 'var(--text)',
-        }}>
-          BUILD USEFUL THINGS
-        </blockquote>
-        <figcaption style={{
-          marginTop: '0.55rem',
-          fontFamily: 'var(--mono)',
-          fontSize: '0.56rem',
-          letterSpacing: '0.11em',
-          textTransform: 'uppercase',
-          color: 'var(--text-3)',
-        }}>
-          Speech AI, Product Systems, Ethiopia
-        </figcaption>
-      </figure>
+      <blockquote style={{
+        fontFamily: 'var(--title)',
+        fontSize: 'clamp(1.15rem, 3.1vw, 2rem)',
+        lineHeight: 1,
+        letterSpacing: '0.03em',
+        textTransform: 'uppercase',
+        color: 'var(--text)',
+        textAlign: 'center',
+      }}>
+        BUILD USEFUL THINGS
+      </blockquote>
 
-      <div style={{ display: 'flex', gap: '1.6rem', flexWrap: 'wrap', justifyContent: 'center' }}>
-        <p style={{
-          fontFamily: 'var(--mono)',
-          fontSize: '0.65rem',
-          letterSpacing: '0.1em',
-          color: 'var(--text-3)',
-        }}>
-          2026 <span style={{ color: 'var(--text-2)' }}>Henok Tekeba</span>
-        </p>
-        <p style={{
-          fontFamily: 'var(--mono)',
-          fontSize: '0.65rem',
-          letterSpacing: '0.1em',
-          color: 'var(--text-3)',
-        }}>
-          Addis Ababa, Ethiopia
-        </p>
-      </div>
+      <p style={{
+        fontFamily: 'var(--mono)',
+        fontSize: '0.65rem',
+        letterSpacing: '0.1em',
+        color: 'var(--text-3)',
+        textAlign: 'center',
+      }}>
+        2026 <span style={{ color: 'var(--text-2)' }}>Henok Tekeba</span>
+      </p>
     </footer>
   )
 }
