@@ -1,3 +1,43 @@
+@font-face {
+  font-family: 'Geist';
+  src: url('/fonts/geist/geist-sans/Geist-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Geist';
+  src: url('/fonts/geist/geist-sans/Geist-Light.woff2') format('woff2');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Geist';
+  src: url('/fonts/geist/geist-sans/Geist-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Geist';
+  src: url('/fonts/geist/geist-sans/Geist-SemiBold.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Geist';
+  src: url('/fonts/geist/geist-sans/Geist-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
@@ -10,10 +50,10 @@
   --text-3:    #777777;
   --accent:    #555555;
   --green:     #22a84a;
-  --font:      'Inter', sans-serif;
-  --title:     'Inter', sans-serif;
-  --display:   'Inter', sans-serif;
-  --mono:      'Inter', sans-serif;
+  --font:      'Geist', sans-serif;
+  --title:     'Geist', sans-serif;
+  --display:   'Geist', sans-serif;
+  --mono:      'Geist', sans-serif;
   --display-weight-thin:  300;
   --display-weight-light: 300;
   --display-weight-reg:   400;
@@ -37,7 +77,7 @@ html { scroll-behavior: smooth; }
 body {
   background: var(--bg);
   color: var(--text);
-  font-family: 'Inter', sans-serif;
+  font-family: 'Geist', sans-serif;
   font-weight: 300;
   letter-spacing: -0.01em;
   line-height: 1.4;
