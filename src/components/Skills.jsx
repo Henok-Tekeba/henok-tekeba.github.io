@@ -53,12 +53,11 @@ export default function Skills() {
       </div>
 
       <div className="reveal d1 skills-row">
-        {skills.map(({ key, Icon, color }) => (
-          <span key={key} className="skill-item">
-            <Icon style={{ color }} />
-            {key}
-          </span>
-        ))}
+          {skills.map(({ key, Icon, color }) => (
+            <span key={key} className="skill-item" title={key}>
+              <Icon style={{ color }} />
+            </span>
+          ))}
       </div>
     </section>
   )

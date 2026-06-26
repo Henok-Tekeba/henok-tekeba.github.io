@@ -10,7 +10,7 @@
   --text-3:    #777777;
   --accent:    #555555;
   --green:     #22a84a;
-  --font:      system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font:      'Inter', system-ui, -apple-system, sans-serif;
   --shell-width: min(820px, calc(100vw - 3rem));
 }
 
@@ -260,11 +260,11 @@ body {
   cursor: default;
 }
 
-.commit-cell.intensity-0 { background: var(--bg-2); }
-.commit-cell.intensity-1 { background: #0b4f2c; }
-.commit-cell.intensity-2 { background: #0f8a44; }
-.commit-cell.intensity-3 { background: #17b65b; }
-.commit-cell.intensity-4 { background: #2fe06a; }
+.commit-cell.intensity-0 { background: #1a2e1a; }
+.commit-cell.intensity-1 { background: #166b34; }
+.commit-cell.intensity-2 { background: #219d4e; }
+.commit-cell.intensity-3 { background: #30c767; }
+.commit-cell.intensity-4 { background: #4ae67c; }
 
 .commit-cell:focus-visible {
   outline: 1px solid var(--accent);
@@ -367,20 +367,17 @@ body {
 .skill-item {
   display: inline-flex;
   align-items: center;
-  gap: 0.35rem;
-  padding: 0.35rem 0.65rem;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
   border: 1px solid var(--border);
-  border-radius: 0.4rem;
-  font-size: 0.78rem;
-  color: var(--text-2);
+  border-radius: 0.35rem;
   background: var(--bg-2);
-  transition: none;
 }
 
 .skill-item svg {
-  width: 14px;
-  height: 14px;
-  flex-shrink: 0;
+  width: 16px;
+  height: 16px;
 }
 
 /* ── PROJECT CARD ── */
