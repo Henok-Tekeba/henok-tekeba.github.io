@@ -1,5 +1,22 @@
-import { Globe } from 'lucide-react'
+import { Link } from 'lucide-react'
+import { SiNextdotjs, SiExpress, SiPostgresql, SiGithubactions, SiOpenai } from 'react-icons/si'
 import useWindowSize from '../hooks/useWindowSize'
+
+const techIcons = {
+  'Next.js': SiNextdotjs,
+  'Express': SiExpress,
+  'PostgreSQL': SiPostgresql,
+  'GitHub Actions': SiGithubactions,
+  'Whisper': SiOpenai,
+}
+
+const techColors = {
+  'Next.js': '#F5F5F5',
+  'Express': '#B3B3B3',
+  'PostgreSQL': '#336791',
+  'GitHub Actions': '#F5F5F5',
+  'Whisper': '#412991',
+}
 
 const projects = [
   {
@@ -14,7 +31,7 @@ const projects = [
     tagline: 'A production-ready waitlist for Amharic voice AI — speech recognition, transcription, and diarization for users overlooked by mainstream speech tech.',
     image: '/voiet.png',
     url: 'https://voiet.tech',
-    stack: ['Next.js', 'Express', 'PostgreSQL', 'Modal', 'Whisper'],
+    stack: ['Next.js', 'Express', 'PostgreSQL', 'Whisper'],
   },
 ]
 
@@ -93,7 +110,7 @@ export default function FeaturedProjects() {
                   }}
                 >
                   {project.title}
-                  <Globe size={12} strokeWidth={1.5} style={{ color: 'var(--text-3)', flexShrink: 0 }} />
+                  <Link size={12} strokeWidth={1.5} style={{ color: 'var(--text-3)', flexShrink: 0 }} />
                 </a>
               </div>
               <p style={{
@@ -109,23 +126,35 @@ export default function FeaturedProjects() {
               <div style={{
                 display: 'flex',
                 flexWrap: 'wrap',
-                gap: '0.4rem',
+                gap: '0.5rem',
                 marginTop: '0.35rem',
               }}>
-                {project.stack.map(tech => (
-                  <span key={tech} style={{
-                    fontFamily: 'var(--mono)',
-                    fontSize: '0.55rem',
-                    letterSpacing: '0.06em',
-                    color: 'var(--text-3)',
-                    border: '1px solid var(--border)',
-                    borderRadius: '999px',
-                    padding: '0.2rem 0.55rem',
-                    lineHeight: 1.3,
-                  }}>
-                    {tech}
-                  </span>
-                ))}
+                {project.stack.map(tech => {
+                  const Icon = techIcons[tech]
+                  const color = techColors[tech]
+                  return Icon ? (
+                    <span
+                      key={tech}
+                      title={tech}
+                      style={{
+                        display: 'inline-flex',
+                        alignItems: 'center',
+                        gap: '0.3rem',
+                      }}
+                    >
+                      <Icon style={{ color, width: '14px', height: '14px' }} />
+                    </span>
+                  ) : (
+                    <span key={tech} style={{
+                      fontFamily: 'var(--mono)',
+                      fontSize: '0.55rem',
+                      letterSpacing: '0.06em',
+                      color: 'var(--text-3)',
+                    }}>
+                      {tech}
+                    </span>
+                  )
+                })}
               </div>
             </div>
           </div>
