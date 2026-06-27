@@ -1,3 +1,4 @@
+import { flushSync } from 'react-dom'
 import { useCallback, useEffect, useMemo, useState } from 'react'
 import { ThemeContext } from '../context/ThemeContext'
 
@@ -28,7 +29,12 @@ export function ThemeProvider({ children }) {
   }, [theme])
 
   const toggleTheme = useCallback(() => {
-    setTheme(prev => (prev === 'dark' ? 'light' : 'dark'))
+    const from = document.documentElement.getAttribute('data-theme') === 'light' ? 'light' : 'dark'
+    const to = from === 'dark' ? 'light' : 'dark'
+    window.dispatchEvent(new CustomEvent('theme:transition', { detail: { from, to } }))
+    flushSync(() => {
+      setTheme(to)
+    })
   }, [])
 
   const value = useMemo(() => ({ theme, toggleTheme }), [theme, toggleTheme])

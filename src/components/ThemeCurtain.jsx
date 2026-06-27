@@ -1,73 +1,47 @@
-import { useEffect, useRef, useState } from 'react'
-import { useTheme } from '../hooks/useTheme'
-
-const DOWN_MS = 320
-const UP_MS = 420
+import { useEffect, useState } from 'react'
 
 export default function ThemeCurtain() {
-  const { theme } = useTheme()
-  const [runId, setRunId] = useState(0)
-  const [phase, setPhase] = useState('idle')
-  const [fromTheme, setFromTheme] = useState(theme)
-  const [toTheme, setToTheme] = useState(theme)
-  const lastThemeRef = useRef(theme)
-  const timersRef = useRef([])
+  const [transition, setTransition] = useState(null)
 
   useEffect(() => {
-    if (theme === lastThemeRef.current) return
-    const from = lastThemeRef.current
-    lastThemeRef.current = theme
-    setFromTheme(from)
-    setToTheme(theme)
-    setRunId(id => id + 1)
-    setPhase('down')
-  }, [theme])
-
-  useEffect(() => {
-    if (runId === 0) return
-    timersRef.current.forEach(clearTimeout)
-    timersRef.current = []
-    const t1 = setTimeout(() => setPhase('up'), DOWN_MS)
-    const t2 = setTimeout(() => setPhase('idle'), DOWN_MS + UP_MS)
-    timersRef.current.push(t1, t2)
-    return () => {
-      clearTimeout(t1)
-      clearTimeout(t2)
+    const handler = (e) => {
+      const detail = e.detail
+      if (!detail || !detail.from || !detail.to) return
+      if (detail.from === detail.to) return
+      setTransition({ from: detail.from, to: detail.to, id: Date.now() })
     }
-  }, [runId])
-
-  useEffect(() => () => {
-    timersRef.current.forEach(clearTimeout)
-    timersRef.current = []
+    window.addEventListener('theme:transition', handler)
+    return () => window.removeEventListener('theme:transition', handler)
   }, [])
 
   useEffect(() => {
-    if (phase === 'idle') return
+    if (!transition) return
     document.body.classList.add('theme-curtain-active')
-    return () => document.body.classList.remove('theme-curtain-active')
-  }, [phase])
+    const t = setTimeout(() => {
+      setTransition(null)
+      document.body.classList.remove('theme-curtain-active')
+    }, 800)
+    return () => {
+      clearTimeout(t)
+      document.body.classList.remove('theme-curtain-active')
+    }
+  }, [transition])
 
-  if (phase === 'idle') return null
+  if (!transition) return null
 
   return (
     <>
       <div
-        key={`down-${runId}`}
+        key={`down-${transition.id}`}
         aria-hidden
-        className={`theme-curtain theme-curtain--down ${phase === 'down' ? 'is-playing' : ''}`}
-        style={{
-          background: `var(--curtain-${fromTheme})`,
-          animationDuration: `${DOWN_MS}ms`,
-        }}
+        className="theme-curtain theme-curtain--down"
+        style={{ background: `var(--curtain-${transition.from})` }}
       />
       <div
-        key={`up-${runId}`}
+        key={`up-${transition.id}`}
         aria-hidden
-        className={`theme-curtain theme-curtain--up ${phase === 'up' ? 'is-playing' : ''}`}
-        style={{
-          background: `var(--curtain-${toTheme})`,
-          animationDuration: `${UP_MS}ms`,
-        }}
+        className="theme-curtain theme-curtain--up"
+        style={{ background: `var(--curtain-${transition.to})`, animationDelay: '320ms' }}
       />
     </>
   )
