@@ -39,7 +39,7 @@ export default function About() {
             lineHeight: 1.7,
             marginBottom: '1.2rem',
           }}>
-            My work spans frontend, backend, and infrastructure — web apps, APIs, databases, and the unglamorous work of turning ideas into deployed products people actually use.
+            My work spans frontend, backend, and infrastructure - web apps, APIs, databases, and the unglamorous work of turning ideas into deployed products people actually use.
           </p>
 
           <p className="reveal d2" style={{
