@@ -59,7 +59,7 @@ export default function Hero() {
           minHeight: '1.3rem',
           opacity: isHeadlineVisible ? 1 : 0,
           transform: isHeadlineVisible ? 'translateY(0)' : 'translateY(5px)',
-          transition: 'opacity 0.22s ease, transform 0.22s ease',
+          transition: 'opacity 0.22s ease, transform 0.22s ease, color 0.22s ease',
         }}>
           {rotatingHeadlines[headlineIndex]}
         </p>

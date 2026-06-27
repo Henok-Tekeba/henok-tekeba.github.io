@@ -171,7 +171,7 @@ export default function Contact() {
                   color: 'var(--text)',
                   outline: 'none',
                   width: '100%',
-                  transition: 'border-color 0.2s, box-shadow 0.2s',
+                  transition: 'border-color 0.2s, box-shadow 0.2s, background-color 0.2s, color 0.2s',
                 }}
                 onFocus={e => {
                   e.currentTarget.style.borderColor = 'var(--accent)'
@@ -207,7 +207,7 @@ export default function Contact() {
                   color: 'var(--text)',
                   outline: 'none',
                   width: '100%',
-                  transition: 'border-color 0.2s, box-shadow 0.2s',
+                  transition: 'border-color 0.2s, box-shadow 0.2s, background-color 0.2s, color 0.2s',
                 }}
                 onFocus={e => {
                   e.currentTarget.style.borderColor = 'var(--accent)'
@@ -245,7 +245,7 @@ export default function Contact() {
                   width: '100%',
                   resize: 'vertical',
                   minHeight: '100px',
-                  transition: 'border-color 0.2s, box-shadow 0.2s',
+                  transition: 'border-color 0.2s, box-shadow 0.2s, background-color 0.2s, color 0.2s',
                 }}
                 onFocus={e => {
                   e.currentTarget.style.borderColor = 'var(--accent)'
