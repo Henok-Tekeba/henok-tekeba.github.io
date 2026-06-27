@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import useWindowSize from '../hooks/useWindowSize'
 import { GraduationCap, Mail, MapPin, Sparkles } from 'lucide-react'
 import { FaLinkedinIn } from 'react-icons/fa6'
+import { SiGithub } from 'react-icons/si'
 
 const rotatingHeadlines = [
   'full-stack developer',
@@ -69,8 +70,6 @@ export default function Hero() {
           flexWrap: 'wrap',
           gap: '0.5rem 1.25rem',
           alignItems: 'center',
-          marginTop: '1.1rem',
-          marginBottom: '2rem',
         }}>
           <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.45rem' }}>
             <MapPin size={16} strokeWidth={1.5} style={{ color: 'var(--text-3)' }} />
@@ -90,46 +89,6 @@ export default function Hero() {
               Internships & full-stack roles
             </span>
           </div>
-
-          <a
-            href="mailto:me@enoch.et"
-            aria-label="Email me at me@enoch.et"
-            style={{
-              display: 'inline-flex',
-              alignItems: 'center',
-              gap: '0.5rem',
-              color: 'var(--text-2)',
-              textDecoration: 'none',
-              fontFamily: 'var(--mono)',
-              fontSize: '0.85rem',
-              letterSpacing: '0.02em',
-              transition: 'color 0.2s ease',
-            }}
-            onMouseEnter={e => (e.currentTarget.style.color = 'var(--text)')}
-            onMouseLeave={e => (e.currentTarget.style.color = 'var(--text-2)')}
-          >
-            <Mail size={16} strokeWidth={1.5} style={{ opacity: 0.85 }} />
-            <span>me@enoch.et</span>
-          </a>
-
-          <a
-            href="https://www.linkedin.com/in/henok-ayele-6ab58b356"
-            target="_blank"
-            rel="noreferrer"
-            aria-label="LinkedIn profile"
-            title="LinkedIn"
-            style={{
-              display: 'inline-flex',
-              alignItems: 'center',
-              color: 'var(--text-2)',
-              textDecoration: 'none',
-              transition: 'color 0.2s ease',
-            }}
-            onMouseEnter={e => (e.currentTarget.style.color = 'var(--text)')}
-            onMouseLeave={e => (e.currentTarget.style.color = 'var(--text-2)')}
-          >
-            <FaLinkedinIn size={16} style={{ opacity: 0.9 }} />
-          </a>
         </div>
         </div>
 
@@ -139,10 +98,77 @@ export default function Hero() {
         fontSize: 'clamp(0.9rem, 1.8vw, 1.1rem)',
         color: 'var(--text-2)',
         lineHeight: 1.7,
-        marginBottom: '3rem',
+        marginBottom: '1.5rem',
       }}>
         I build full-stack web apps and backend systems that ship. Next.js on the front, Express and PostgreSQL on the back, deployed and used by real people.
       </p>
+
+      <div className="reveal" style={{
+        display: 'flex',
+        flexWrap: 'wrap',
+        gap: '0.75rem',
+        alignItems: 'center',
+        marginBottom: '0.75rem',
+      }}>
+        <a
+          href="mailto:me@enoch.et"
+          aria-label="Email me at me@enoch.et"
+          style={{
+            display: 'inline-flex',
+            alignItems: 'center',
+            gap: '0.45rem',
+            color: 'var(--text-2)',
+            textDecoration: 'none',
+            fontFamily: 'var(--mono)',
+            fontSize: '0.72rem',
+            letterSpacing: '0.02em',
+            transition: 'color 0.2s ease',
+          }}
+          onMouseEnter={e => (e.currentTarget.style.color = 'var(--text)')}
+          onMouseLeave={e => (e.currentTarget.style.color = 'var(--text-2)')}
+        >
+          <Mail size={16} strokeWidth={1.5} style={{ opacity: 0.85 }} />
+          <span>me@enoch.et</span>
+        </a>
+
+        <a
+          href="https://github.com/Henok-Tekeba"
+          target="_blank"
+          rel="noreferrer"
+          aria-label="GitHub profile"
+          title="GitHub"
+          style={{
+            display: 'inline-flex',
+            alignItems: 'center',
+            color: 'var(--text-2)',
+            textDecoration: 'none',
+            transition: 'color 0.2s ease',
+          }}
+          onMouseEnter={e => (e.currentTarget.style.color = 'var(--text)')}
+          onMouseLeave={e => (e.currentTarget.style.color = 'var(--text-2)')}
+        >
+          <SiGithub size={16} style={{ opacity: 0.9 }} />
+        </a>
+
+        <a
+          href="https://www.linkedin.com/in/henok-ayele-6ab58b356"
+          target="_blank"
+          rel="noreferrer"
+          aria-label="LinkedIn profile"
+          title="LinkedIn"
+          style={{
+            display: 'inline-flex',
+            alignItems: 'center',
+            color: 'var(--text-2)',
+            textDecoration: 'none',
+            transition: 'color 0.2s ease',
+          }}
+          onMouseEnter={e => (e.currentTarget.style.color = 'var(--text)')}
+          onMouseLeave={e => (e.currentTarget.style.color = 'var(--text-2)')}
+        >
+          <FaLinkedinIn size={16} style={{ opacity: 0.9 }} />
+        </a>
+      </div>
 
     </section>
   )
