@@ -1,21 +1,31 @@
-import { Link } from 'react-router-dom'
-import { Moon, Sun } from 'lucide-react'
+import { useEffect, useState } from 'react'
+import { Menu, Moon, Sun, X } from 'lucide-react'
 import { useTheme } from '../hooks/useTheme'
 import useWindowSize from '../hooks/useWindowSize'
 
-const navLinks = [
-  { key: 'about', type: 'anchor' },
-  { key: 'activity', type: 'anchor' },
-  { key: 'experience', type: 'anchor' },
-  { key: 'articles', type: 'route' },
-  { key: 'skills', type: 'anchor' },
-  { key: 'contact', type: 'anchor' },
+const menuLinks = [
+  { label: 'Resume', href: '/resume.html', external: true },
+  { label: 'Projects', href: '#experience', external: false },
 ]
 
 export default function PageLayout({ children }) {
   const { theme, toggleTheme } = useTheme()
   const width = useWindowSize()
   const isMobile = width < 768
+  const [menuOpen, setMenuOpen] = useState(false)
+  const [prevIsMobile, setPrevIsMobile] = useState(isMobile)
+
+  if (isMobile !== prevIsMobile) {
+    setPrevIsMobile(isMobile)
+    if (menuOpen) setMenuOpen(false)
+  }
+
+  useEffect(() => {
+    if (!menuOpen) return
+    const onKey = (e) => { if (e.key === 'Escape') setMenuOpen(false) }
+    window.addEventListener('keydown', onKey)
+    return () => window.removeEventListener('keydown', onKey)
+  }, [menuOpen])
 
   return (
     <>
@@ -31,69 +41,14 @@ export default function PageLayout({ children }) {
         <div style={{
           width: 'var(--shell-width)',
           display: 'flex',
-          justifyContent: 'space-between',
+          justifyContent: isMobile ? 'flex-end' : 'space-between',
           alignItems: 'center',
-          padding: '1rem 0',
+          padding: '0.75rem 0',
+          gap: '0.6rem',
         }}>
-          <Link to="/" style={{
-            fontFamily: 'var(--title)',
-            fontSize: '0.8rem',
-            letterSpacing: '0.15em',
-            color: 'var(--accent)',
-            textDecoration: 'none',
-            textTransform: 'uppercase',
-          }}>
-            HT
-          </Link>
+          {!isMobile && <div />}
 
-          <div style={{ display: 'flex', gap: '2rem', alignItems: 'center' }}>
-            {!isMobile && (
-              <div style={{ display: 'flex', gap: '2rem', alignItems: 'center' }}>
-                {navLinks.map((link, i) => {
-                  const sharedStyle = {
-                    fontFamily: 'var(--mono)',
-                    fontSize: '0.7rem',
-                    letterSpacing: '0.12em',
-                    color: 'var(--text-2)',
-                    textDecoration: 'none',
-                    transition: 'color 0.2s',
-                  }
-
-                  if (link.type === 'route') {
-                    return (
-                      <Link
-                        key={link.key}
-                        to="/articles"
-                        style={sharedStyle}
-                        onMouseEnter={e => e.target.style.color = 'var(--accent)'}
-                        onMouseLeave={e => e.target.style.color = 'var(--text-2)'}
-                      >
-                        <span style={{ color: 'var(--text-3)', marginRight: '0.3rem' }}>
-                          0{i + 1}.
-                        </span>
-                        {link.key}
-                      </Link>
-                    )
-                  }
-
-                  return (
-                    <a
-                      key={link.key}
-                      href={`#${link.key}`}
-                      style={sharedStyle}
-                      onMouseEnter={e => e.target.style.color = 'var(--accent)'}
-                      onMouseLeave={e => e.target.style.color = 'var(--text-2)'}
-                    >
-                      <span style={{ color: 'var(--text-3)', marginRight: '0.3rem' }}>
-                        0{i + 1}.
-                      </span>
-                      {link.key}
-                    </a>
-                  )
-                })}
-              </div>
-            )}
-
+          <div style={{ display: 'flex', gap: '0.5rem', alignItems: 'center' }}>
             <button
               onClick={toggleTheme}
               aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
@@ -111,11 +66,99 @@ export default function PageLayout({ children }) {
             >
               {theme === 'dark' ? <Sun size={13} strokeWidth={1.5} /> : <Moon size={13} strokeWidth={1.5} />}
             </button>
+
+            <button
+              onClick={() => setMenuOpen(o => !o)}
+              aria-label={menuOpen ? 'Close menu' : 'Open menu'}
+              aria-expanded={menuOpen}
+              style={{
+                border: '1px solid var(--border-2)',
+                background: 'transparent',
+                color: 'var(--text-2)',
+                width: '2.2rem',
+                height: '2.2rem',
+                borderRadius: '999px',
+                cursor: 'pointer',
+                display: 'grid',
+                placeItems: 'center',
+              }}
+            >
+              {menuOpen ? <X size={14} strokeWidth={1.5} /> : <Menu size={14} strokeWidth={1.5} />}
+            </button>
           </div>
         </div>
       </nav>
 
-      <main style={{ paddingTop: '5rem' }}>
+      {menuOpen && (
+        <div
+          onClick={() => setMenuOpen(false)}
+          style={{
+            position: 'fixed',
+            inset: 0,
+            zIndex: 999,
+            background: 'color-mix(in srgb, var(--bg) 60%, transparent)',
+            backdropFilter: 'blur(4px)',
+          }}
+        />
+      )}
+
+      {menuOpen && (
+        <div
+          role="menu"
+          style={{
+            position: 'fixed',
+            top: '3.5rem',
+            right: '1rem',
+            zIndex: 1001,
+            minWidth: '11rem',
+            padding: '0.4rem',
+            border: '1px solid var(--border)',
+            borderRadius: '0.6rem',
+            background: 'var(--bg)',
+            boxShadow: '0 8px 24px rgba(0,0,0,0.18)',
+            display: 'flex',
+            flexDirection: 'column',
+            gap: '0.15rem',
+          }}
+        >
+          {menuLinks.map(({ label, href, external }) => (
+            <a
+              key={label}
+              href={href}
+              role="menuitem"
+              target={external ? '_blank' : '_self'}
+              rel={external ? 'noreferrer' : undefined}
+              onClick={() => setMenuOpen(false)}
+              style={{
+                display: 'block',
+                padding: '0.6rem 0.8rem',
+                borderRadius: '0.45rem',
+                color: 'var(--text-2)',
+                textDecoration: 'none',
+                fontFamily: 'var(--mono)',
+                fontSize: '0.7rem',
+                letterSpacing: '0.1em',
+                textTransform: 'uppercase',
+                transition: 'background 0.15s, color 0.15s',
+              }}
+              onMouseEnter={e => {
+                e.currentTarget.style.background = 'var(--bg-2)'
+                e.currentTarget.style.color = 'var(--text)'
+              }}
+              onMouseLeave={e => {
+                e.currentTarget.style.background = 'transparent'
+                e.currentTarget.style.color = 'var(--text-2)'
+              }}
+            >
+              {label}
+            </a>
+          ))}
+        </div>
+      )}
+
+      <main style={{
+        paddingTop: isMobile ? '2.25rem' : '5rem',
+      }}>
         <div className="app-shell">
           {children}
         </div>
