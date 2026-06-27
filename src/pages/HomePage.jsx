@@ -2,6 +2,7 @@ import NavBar from '../components/NavBar'
 import useReveal from '../hooks/useReveal'
 import Hero from '../components/Hero'
 import GitHubCommitGraph from '../components/GitHubCommitGraph'
+import About from '../components/About'
 import Projects from '../components/Projects'
 import FeaturedProjects from '../components/FeaturedProjects'
 import Skills from '../components/Skills'
@@ -19,6 +20,7 @@ export default function HomePage() {
       <NavBar />
       <Hero />
       <GitHubCommitGraph />
+      <About />
       <Projects />
 
       <FeaturedProjects />
