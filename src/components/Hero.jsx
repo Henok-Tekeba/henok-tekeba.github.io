@@ -14,7 +14,6 @@ const rotatingHeadlines = [
 export default function Hero() {
   const width = useWindowSize()
   const isMobile = width < 768
-  const iconSize = isMobile ? 24 : 20
   const [headlineIndex, setHeadlineIndex] = useState(0)
   const [isHeadlineVisible, setIsHeadlineVisible] = useState(true)
 
@@ -73,13 +72,13 @@ export default function Hero() {
           alignItems: 'center',
         }}>
           <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.45rem' }}>
-            <MapPin size={iconSize} strokeWidth={1.5} style={{ color: 'var(--text-3)' }} />
+            <MapPin size={18} strokeWidth={1.5} style={{ color: 'var(--text-3)' }} />
             <span style={{ fontFamily: 'var(--mono)', fontSize: '0.65rem', color: 'var(--text-2)', letterSpacing: '0.03em', lineHeight: 1 }}>
               Addis Ababa, Ethiopia
             </span>
           </div>
           <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.45rem' }}>
-            <GraduationCap size={iconSize} strokeWidth={1.5} style={{ color: 'var(--text-3)' }} />
+            <GraduationCap size={18} strokeWidth={1.5} style={{ color: 'var(--text-3)' }} />
             <span style={{ fontFamily: 'var(--mono)', fontSize: '0.65rem', color: 'var(--text-2)', letterSpacing: '0.03em', lineHeight: 1 }}>
               Addis Ababa University
             </span>
@@ -125,7 +124,7 @@ export default function Hero() {
           onMouseEnter={e => (e.currentTarget.style.color = 'var(--text)')}
           onMouseLeave={e => (e.currentTarget.style.color = 'var(--text-2)')}
         >
-          <Mail size={iconSize} strokeWidth={1.5} style={{ opacity: 0.85 }} />
+          <Mail size={18} strokeWidth={1.5} style={{ opacity: 0.85 }} />
           <span>me@enoch.et</span>
         </a>
 
@@ -145,7 +144,7 @@ export default function Hero() {
           onMouseEnter={e => (e.currentTarget.style.color = 'var(--text)')}
           onMouseLeave={e => (e.currentTarget.style.color = 'var(--text-2)')}
         >
-          <SiGithub size={iconSize} style={{ opacity: 0.9 }} />
+          <SiGithub size={18} style={{ opacity: 0.9 }} />
         </a>
 
         <a
@@ -164,7 +163,7 @@ export default function Hero() {
           onMouseEnter={e => (e.currentTarget.style.color = 'var(--text)')}
           onMouseLeave={e => (e.currentTarget.style.color = 'var(--text-2)')}
         >
-          <FaLinkedinIn size={iconSize} style={{ opacity: 0.9 }} />
+          <FaLinkedinIn size={18} style={{ opacity: 0.9 }} />
         </a>
       </div>
 
