@@ -6,9 +6,9 @@ import { FaLinkedinIn } from 'react-icons/fa6'
 const rotatingHeadlines = [
   'full-stack developer',
   'react • node • typescript',
-  'building products end to end',
-  'focused on useful systems',
-]
+  'shipping products end to end',
+  'backend systems that actually scale',
+] 
 
 export default function Hero() {
   const width = useWindowSize()
@@ -121,7 +121,7 @@ export default function Hero() {
         lineHeight: 1.7,
         marginBottom: '3rem',
       }}>
-        I build full-stack web apps and backend systems that ship real value. From Next.js frontends to Express APIs and PostgreSQL databases, I write clean code that solves problems for people who need working software, not buzzwords.
+        I build full-stack web apps and backend systems that ship. Next.js on the front, Express and PostgreSQL on the back, deployed and used by real people — code that solves actual problems for users who usually get treated as edge cases.
       </p>
 
     </section>
