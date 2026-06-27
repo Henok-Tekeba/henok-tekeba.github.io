@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import useWindowSize from '../hooks/useWindowSize'
-import { GraduationCap, Mail, MapPin } from 'lucide-react'
+import { Mail } from 'lucide-react'
 import { FaLinkedinIn } from 'react-icons/fa6'
 import { SiGithub } from 'react-icons/si'
 
@@ -64,29 +64,6 @@ export default function Hero() {
         }}>
           {rotatingHeadlines[headlineIndex]}
         </p>
-
-        <div className="reveal" style={{
-          display: 'flex',
-          flexWrap: 'wrap',
-          gap: '0.5rem 1.25rem',
-          alignItems: 'center',
-        }}>
-          <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.45rem' }}>
-            <MapPin size={16} strokeWidth={1.5} style={{ color: 'var(--text-3)' }} />
-            <span style={{ fontFamily: 'var(--mono)', fontSize: '0.65rem', color: 'var(--text-2)', letterSpacing: '0.03em', lineHeight: 1 }}>
-              Addis Ababa, Ethiopia
-            </span>
-          </div>
-          <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.45rem' }}>
-            <GraduationCap size={16} strokeWidth={1.5} style={{ color: 'var(--text-3)' }} />
-            <span style={{ fontFamily: 'var(--mono)', fontSize: '0.65rem', color: 'var(--text-2)', letterSpacing: '0.03em', lineHeight: 1 }}>
-              Addis Ababa University
-            </span>
-          </div>
-          <span style={{ fontFamily: 'var(--mono)', fontSize: '0.65rem', color: 'var(--text-2)', letterSpacing: '0.03em', lineHeight: 1 }}>
-            Internships & full-stack roles
-          </span>
-        </div>
         </div>
 
       <p style={{
@@ -110,22 +87,18 @@ export default function Hero() {
         <a
           href="mailto:me@enoch.et"
           aria-label="Email me at me@enoch.et"
+          title="Email"
           style={{
             display: 'inline-flex',
             alignItems: 'center',
-            gap: '0.45rem',
             color: 'var(--text-2)',
             textDecoration: 'none',
-            fontFamily: 'var(--mono)',
-            fontSize: '0.72rem',
-            letterSpacing: '0.02em',
             transition: 'color 0.2s ease',
           }}
           onMouseEnter={e => (e.currentTarget.style.color = 'var(--text)')}
           onMouseLeave={e => (e.currentTarget.style.color = 'var(--text-2)')}
         >
           <Mail size={16} strokeWidth={1.5} style={{ opacity: 0.85 }} />
-          <span>me@enoch.et</span>
         </a>
 
         <a
