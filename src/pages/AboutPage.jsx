@@ -68,7 +68,7 @@ export default function AboutPage() {
             color: 'var(--text-2)',
             lineHeight: 1.8,
           }}>
-            The thread through everything is local usefulness. Building software that respects Ethiopian realities instead of assuming Silicon Valley defaults. My recent work includes fine-tuning Whisper for Amharic ASR, building a Telegram opportunity bot, and shipping a real-time Ethiopian AI ecosystem tracker.
+            The thread through everything is local usefulness. Building software that respects Ethiopian realities instead of assuming Silicon Valley defaults. My recent work includes building a full-stack Voice AI platform with real-time streaming via Server-Sent Events, audio chunking pipelines deployed on Modal, and a Telegram opportunity bot that scrapes and summarizes opportunities daily.
           </p>
         </div>
 

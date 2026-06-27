@@ -8,9 +8,9 @@ const experience = [
     highlights: [
       'Built and shipped a full-stack platform end to end: Next.js frontend, Express REST API, PostgreSQL database, deployed across Vercel, Railway, and Modal Labs',
       'Implemented JWT authentication, Server-Sent Events for real-time streaming responses, and parallel audio chunking using Modal\'s starmap for high-throughput inference',
-      'Fine-tuned OpenAI Whisper Medium on 38K+ Amharic audio samples (Google WAXAL dataset) for low-resource language ASR',
-      'Converted fine-tuned model to ONNX format for optimized CPU inference; reduced latency for serverless cold-start environments',
-      'Built and deployed a production diarization + ASR pipeline using pyannote and faster-whisper on Modal, delivering annotated and timestamped output for a paid transcription contract (~30,000 audio chunks)',
+      'Built wrapper APIs and UIs around existing ASR models, deployed inference pipelines on Modal for serverless audio processing',
+      'Designed a responsive frontend with real-time streaming UX, chunked audio upload, and live transcription display',
+      'Delivered a paid transcription contract (~30,000 audio chunks) using a production pipeline on Modal',
     ],
   },
   {
