@@ -5,11 +5,14 @@ import ArticleCard from '../components/ArticleCard'
 import Footer from '../components/Footer'
 import { articles } from '../content/articles'
 import PageLayout from '../components/PageLayout'
+import { useArticleSEO } from '../components/SEO'
 
 export default function ArticlesPage() {
   useReveal()
   const width = useWindowSize()
   const isMobile = width < 768
+
+  useArticleSEO(null)
 
   return (
     <PageLayout>

@@ -4,6 +4,7 @@ import useWindowSize from '../hooks/useWindowSize'
 import Footer from '../components/Footer'
 import { getArticleBySlug } from '../content/articles'
 import PageLayout from '../components/PageLayout'
+import { useArticleSEO } from '../components/SEO'
 
 export default function ArticleDetailPage() {
   useReveal()
@@ -11,6 +12,8 @@ export default function ArticleDetailPage() {
   const isMobile = width < 768
   const { slug } = useParams()
   const article = getArticleBySlug(slug || '')
+
+  useArticleSEO(article)
 
   if (!article || article.status.toLowerCase() !== 'published') {
     return <Navigate to="/articles" replace />
