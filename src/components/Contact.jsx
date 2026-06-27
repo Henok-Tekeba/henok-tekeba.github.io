@@ -1,5 +1,6 @@
+import { useState } from 'react'
 import useWindowSize from '../hooks/useWindowSize'
-import { Mail } from 'lucide-react'
+import { Mail, CheckCircle, AlertCircle, Loader2 } from 'lucide-react'
 import { SiGithub, SiHuggingface, SiX } from 'react-icons/si'
 import { FaLinkedinIn } from 'react-icons/fa6'
 
@@ -14,6 +15,43 @@ const links = [
 export default function Contact() {
   const width = useWindowSize()
   const isMobile = width < 768
+  const [formState, setFormState] = useState('idle')
+  const [message, setMessage] = useState('')
+
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+    setFormState('loading')
+    setMessage('')
+
+    const formData = new FormData(e.currentTarget)
+    // Honeypot field - if filled, it's spam
+    if (formData.get('website')) {
+      setFormState('success')
+      setMessage('Thanks! Your message has been sent.')
+      e.currentTarget.reset()
+      return
+    }
+
+    try {
+      const response = await fetch('https://formspree.io/f/xpqgdezz', {
+        method: 'POST',
+        body: formData,
+        headers: { 'Accept': 'application/json' },
+      })
+
+      if (response.ok) {
+        setFormState('success')
+        setMessage('Thanks! Your message has been sent.')
+        e.currentTarget.reset()
+      } else {
+        setFormState('error')
+        setMessage('Something went wrong. Please try again or email directly.')
+      }
+    } catch {
+      setFormState('error')
+      setMessage('Network error. Please try again or email directly.')
+    }
+  }
 
   return (
     <section id="contact" style={{
@@ -111,14 +149,7 @@ export default function Contact() {
         </div>
 
         <div className="reveal d1">
-          <form
-            action="https://formspree.io/f/xpqgdezz"
-            method="POST"
-            style={{
-              display: 'grid',
-              gap: '1.25rem',
-            }}
-          >
+          <form onSubmit={handleSubmit} style={{ display: 'grid', gap: '1.25rem' }}>
             <label style={{ display: 'grid', gap: '0.4rem' }}>
               <span style={{
                 fontFamily: 'var(--mono)',
@@ -229,8 +260,12 @@ export default function Contact() {
                 }}
               />
             </label>
+            {/* Honeypot field for spam protection */}
+            <input type="hidden" name="website" tabIndex={-1} autoComplete="off" />
+
             <button
               type="submit"
+              disabled={formState === 'loading'}
               style={{
                 fontFamily: 'var(--mono)',
                 fontSize: '0.6rem',
@@ -239,24 +274,46 @@ export default function Contact() {
                 padding: '0.65rem 1.25rem',
                 border: '1px solid var(--border)',
                 borderRadius: '0.5rem',
-                background: 'var(--bg)',
-                color: 'var(--text-2)',
-                cursor: 'pointer',
+                background: formState === 'loading' ? 'var(--bg-2)' : 'var(--bg)',
+                color: formState === 'loading' ? 'var(--text-3)' : 'var(--text-2)',
+                cursor: formState === 'loading' ? 'not-allowed' : 'pointer',
                 transition: 'all 0.2s ease',
                 width: 'fit-content',
                 lineHeight: 1,
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '0.4rem',
               }}
               onMouseEnter={e => {
-                e.currentTarget.style.borderColor = 'var(--accent)'
-                e.currentTarget.style.color = 'var(--text)'
+                if (formState !== 'loading') {
+                  e.currentTarget.style.borderColor = 'var(--accent)'
+                  e.currentTarget.style.color = 'var(--text)'
+                }
               }}
               onMouseLeave={e => {
-                e.currentTarget.style.borderColor = 'var(--border)'
-                e.currentTarget.style.color = 'var(--text-2)'
+                if (formState !== 'loading') {
+                  e.currentTarget.style.borderColor = 'var(--border)'
+                  e.currentTarget.style.color = 'var(--text-2)'
+                }
               }}
             >
-              Send message
+              {formState === 'loading' && <Loader2 size={14} style={{ animation: 'spin 1s linear infinite' }} />}
+              {formState === 'success' && <CheckCircle size={14} />}
+              {formState === 'error' && <AlertCircle size={14} />}
+              {formState === 'loading' ? 'Sending...' : formState === 'success' ? 'Sent!' : formState === 'error' ? 'Failed' : 'Send message'}
             </button>
+
+            {message && (
+              <p style={{
+                fontFamily: 'var(--mono)',
+                fontSize: '0.6rem',
+                letterSpacing: '0.06em',
+                color: formState === 'success' ? 'var(--green)' : formState === 'error' ? 'var(--accent)' : 'var(--text-2)',
+                margin: 0,
+              }}>
+                {message}
+              </p>
+            )}
           </form>
         </div>
       </div>
