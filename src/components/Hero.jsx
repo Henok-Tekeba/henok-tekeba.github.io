@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import useWindowSize from '../hooks/useWindowSize'
-import { GraduationCap, Mail, MapPin, Sparkles } from 'lucide-react'
+import { GraduationCap, Mail, MapPin } from 'lucide-react'
 import { FaLinkedinIn } from 'react-icons/fa6'
 import { SiGithub } from 'react-icons/si'
 
@@ -83,12 +83,9 @@ export default function Hero() {
               Addis Ababa University
             </span>
           </div>
-          <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.45rem' }}>
-            <Sparkles size={16} strokeWidth={1.5} style={{ color: 'var(--text-3)' }} />
-            <span style={{ fontFamily: 'var(--mono)', fontSize: '0.65rem', color: 'var(--text-2)', letterSpacing: '0.03em', lineHeight: 1 }}>
-              Internships & full-stack roles
-            </span>
-          </div>
+          <span style={{ fontFamily: 'var(--mono)', fontSize: '0.65rem', color: 'var(--text-2)', letterSpacing: '0.03em', lineHeight: 1 }}>
+            Internships & full-stack roles
+          </span>
         </div>
         </div>
 
