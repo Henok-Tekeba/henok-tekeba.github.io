@@ -17,7 +17,7 @@ export default function ArticlesPage() {
   return (
     <PageLayout>
       <main style={{
-        padding: isMobile ? '3rem 0 3rem' : '4rem 0 4rem',
+        padding: isMobile ? '3rem 1.25rem 3rem' : '4rem 0 4rem',
       }}>
         <div className="section-heading reveal">
           <h1 className="section-heading-title">Articles</h1>
