@@ -121,7 +121,7 @@ export default function Hero() {
         lineHeight: 1.7,
         marginBottom: '3rem',
       }}>
-        I build full-stack web apps and backend systems that ship. Next.js on the front, Express and PostgreSQL on the back, deployed and used by real people — code that solves actual problems for users who usually get treated as edge cases.
+        I build full-stack web apps and backend systems that ship. Next.js on the front, Express and PostgreSQL on the back, deployed and used by real people.
       </p>
 
     </section>
