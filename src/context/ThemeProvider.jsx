@@ -12,7 +12,7 @@ function readInitialTheme() {
     void err
   }
   if (saved === 'light' || saved === 'dark') return saved
-  return window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark'
+  return 'dark'
 }
 
 export function ThemeProvider({ children }) {
