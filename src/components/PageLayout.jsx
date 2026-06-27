@@ -1,12 +1,13 @@
 import { useEffect, useState } from 'react'
-import { Menu, Moon, Sun, X } from 'lucide-react'
+import { Download, FileText, Menu, Moon, Sun, X } from 'lucide-react'
 import { useTheme } from '../hooks/useTheme'
 import useWindowSize from '../hooks/useWindowSize'
 
 const menuLinks = [
-  { label: 'Resume', href: '/resume.html', external: true },
-  { label: 'Projects', href: '#experience', external: false },
-]
+  { label: 'Resume', href: '/resume.html', external: true, icon: FileText },
+  { label: 'Download PDF', href: '/resume.pdf', external: true, download: true, icon: Download },
+  { label: 'Projects', href: '#experience', external: false, icon: null },
+] 
 
 export default function PageLayout({ children }) {
   const { theme, toggleTheme } = useTheme()
@@ -121,16 +122,19 @@ export default function PageLayout({ children }) {
             gap: '0.15rem',
           }}
         >
-          {menuLinks.map(({ label, href, external }) => (
+          {menuLinks.map(({ label, href, external, download, icon: Icon }) => (
             <a
               key={label}
               href={href}
               role="menuitem"
               target={external ? '_blank' : '_self'}
               rel={external ? 'noreferrer' : undefined}
+              download={download || undefined}
               onClick={() => setMenuOpen(false)}
               style={{
-                display: 'block',
+                display: 'flex',
+                alignItems: 'center',
+                gap: '0.55rem',
                 padding: '0.6rem 0.8rem',
                 borderRadius: '0.45rem',
                 color: 'var(--text-2)',
@@ -150,7 +154,8 @@ export default function PageLayout({ children }) {
                 e.currentTarget.style.color = 'var(--text-2)'
               }}
             >
-              {label}
+              {Icon && <Icon size={13} strokeWidth={1.5} />}
+              <span>{label}</span>
             </a>
           ))}
         </div>
