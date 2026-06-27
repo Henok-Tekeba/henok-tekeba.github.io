@@ -4,6 +4,7 @@ import HomePage from './pages/HomePage'
 import ArticlesPage from './pages/ArticlesPage'
 import ArticleDetailPage from './pages/ArticleDetailPage'
 import NotFoundPage from './pages/NotFoundPage'
+import ThemeCurtain from './components/ThemeCurtain'
 import { useEffect } from 'react'
 
 function App() {
@@ -14,14 +15,17 @@ function App() {
   }, [location.pathname])
 
   return (
-    <div className="page-transition" key={location.pathname}>
-      <Routes location={location}>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/articles" element={<ArticlesPage />} />
-        <Route path="/articles/:slug" element={<ArticleDetailPage />} />
-        <Route path="*" element={<NotFoundPage />} />
-      </Routes>
-    </div>
+    <>
+      <ThemeCurtain />
+      <div className="page-transition" key={location.pathname}>
+        <Routes location={location}>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/articles" element={<ArticlesPage />} />
+          <Route path="/articles/:slug" element={<ArticleDetailPage />} />
+          <Route path="*" element={<NotFoundPage />} />
+        </Routes>
+      </div>
+    </>
   )
 }
 

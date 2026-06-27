@@ -50,6 +50,8 @@
   --text-3:    #777777;
   --accent:    #888888;
   --green:     #3dbe76;
+  --curtain-dark:  #0a0a0a;
+  --curtain-light: #ffffff;
   --font:      'Geist', sans-serif;
   --title:     'Geist', sans-serif;
   --display:   'Geist', sans-serif;
@@ -58,6 +60,7 @@
   --display-weight-light: 400;
   --display-weight-reg:   500;
   --shell-width: min(820px, calc(100vw - 3rem));
+  color-scheme: dark;
 }
 
 [data-theme="light"] {
@@ -70,23 +73,10 @@
   --text-3:    #777777;
   --accent:    #555555;
   --green:     #22a84a;
+  color-scheme: light;
 }
 
 html { scroll-behavior: smooth; }
-
-html,
-body,
-nav,
-.app-shell,
-main,
-section,
-footer,
-.theme-pill,
-input,
-textarea,
-button {
-  transition: background-color 200ms ease, color 200ms ease, border-color 200ms ease, box-shadow 200ms ease, fill 200ms ease, stroke 200ms ease;
-}
 
 body {
   background: var(--bg);
@@ -96,6 +86,15 @@ body {
   letter-spacing: -0.01em;
   line-height: 1.4;
   overflow-x: hidden;
+  transition: background-color 240ms ease, color 240ms ease;
+}
+
+* {
+  transition: background-color 240ms ease, color 240ms ease, border-color 240ms ease, fill 240ms ease, stroke 240ms ease;
+}
+
+body.theme-curtain-active * {
+  transition: none !important;
 }
 
 .app-shell {
@@ -111,16 +110,16 @@ body {
   inset: 0;
   z-index: 9999;
   pointer-events: none;
-  will-change: transform;
   transform: translateY(0);
+  will-change: transform;
 }
 
-.theme-curtain.theme-curtain--down {
-  animation: theme-curtain-down 320ms cubic-bezier(.7,.0,.3,1) forwards;
+.theme-curtain.theme-curtain--down.is-playing {
+  animation: theme-curtain-down forwards;
 }
 
-.theme-curtain.theme-curtain--up {
-  animation: theme-curtain-up 420ms cubic-bezier(.7,.0,.3,1) forwards;
+.theme-curtain.theme-curtain--up.is-playing {
+  animation: theme-curtain-up forwards;
 }
 
 @keyframes theme-curtain-down {
@@ -134,7 +133,7 @@ body {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .theme-curtain { animation: none !important; }
+  .theme-curtain { display: none !important; }
 }
 
 /* ── PAGE TRANSITION ── */
