@@ -10,33 +10,11 @@ const rotatingHeadlines = [
   'focused on useful systems',
 ]
 
-function getPresenceStatus() {
-  const hourString = new Intl.DateTimeFormat('en-US', {
-    hour: '2-digit',
-    hour12: false,
-    timeZone: 'Africa/Addis_Ababa',
-  }).format(new Date())
-
-  const hour = Number.parseInt(hourString, 10)
-
-  if (hour >= 0 && hour < 6) {
-    return { label: 'asleep', color: 'var(--text-3)' }
-  }
-
-  if ((hour >= 6 && hour < 9) || (hour >= 21 && hour < 24)) {
-    return { label: 'taking a break', color: 'var(--accent)' }
-  }
-
-  return { label: 'building', color: 'var(--green)' }
-}
-
 export default function Hero() {
   const width = useWindowSize()
   const isMobile = width < 768
   const [headlineIndex, setHeadlineIndex] = useState(0)
   const [isHeadlineVisible, setIsHeadlineVisible] = useState(true)
-  const [isLiveDotOn, setIsLiveDotOn] = useState(true)
-  const [presence, setPresence] = useState(getPresenceStatus)
 
   useEffect(() => {
     const headlineTimer = setInterval(() => {
@@ -49,22 +27,6 @@ export default function Hero() {
     }, 2500)
 
     return () => clearInterval(headlineTimer)
-  }, [])
-
-  useEffect(() => {
-    const liveDotTimer = setInterval(() => {
-      setIsLiveDotOn(prev => !prev)
-    }, 1000)
-
-    return () => clearInterval(liveDotTimer)
-  }, [])
-
-  useEffect(() => {
-    const presenceTimer = setInterval(() => {
-      setPresence(getPresenceStatus())
-    }, 60000)
-
-    return () => clearInterval(presenceTimer)
   }, [])
 
   return (
@@ -101,33 +63,6 @@ export default function Hero() {
         }}>
           {rotatingHeadlines[headlineIndex]}
         </p>
-
-        <div style={{
-          display: 'inline-flex',
-          alignItems: 'center',
-          gap: '0.5rem',
-          width: 'fit-content',
-        }}>
-          <span style={{
-            width: '7px',
-            height: '7px',
-            borderRadius: '50%',
-            background: presence.color,
-            boxShadow: `0 0 0 4px color-mix(in srgb, ${presence.color} 18%, transparent)`,
-            flexShrink: 0,
-            opacity: isLiveDotOn ? 1 : 0.58,
-            transition: 'opacity 0.65s ease',
-          }} />
-          <span style={{
-            fontFamily: 'var(--mono)',
-            fontSize: '0.58rem',
-            letterSpacing: '0.11em',
-            color: 'var(--text-2)',
-            lineHeight: 1,
-          }}>
-            {presence.label}
-          </span>
-        </div>
 
         <div className="reveal" style={{
           display: 'flex',

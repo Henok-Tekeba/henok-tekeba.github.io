@@ -82,6 +82,12 @@ body {
   letter-spacing: -0.01em;
   line-height: 1.4;
   overflow-x: hidden;
+  transition: background-color 220ms ease, color 220ms ease;
+}
+
+.app-shell,
+.app-shell * {
+  transition: background-color 220ms ease, color 220ms ease, border-color 220ms ease;
 }
 
 .app-shell {
@@ -89,6 +95,21 @@ body {
   margin: 0 auto;
   position: relative;
   min-height: 100vh;
+}
+
+/* ── THEME CURTAIN ── */
+.theme-curtain {
+  position: fixed;
+  z-index: 9999;
+  pointer-events: none;
+  border-radius: 999px;
+  transform: translate(-50%, -50%) scale(0);
+  opacity: 1;
+  will-change: transform, opacity;
+}
+
+.theme-curtain.is-closing {
+  opacity: 0;
 }
 
 /* ── PAGE TRANSITION ── */
