@@ -1,16 +1,13 @@
 import { useState } from 'react'
 import useWindowSize from '../hooks/useWindowSize'
-import { Mail, CheckCircle, AlertCircle, Loader2 } from 'lucide-react'
+import { CheckCircle, AlertCircle, Loader2 } from 'lucide-react'
 import { SiGithub, SiHuggingface, SiX } from 'react-icons/si'
-import { FaLinkedinIn } from 'react-icons/fa6'
 
 const links = [
-  { label: 'Email', href: 'mailto:tekebahenok6@gmail.com', icon: Mail, isBrand: false },
   { label: 'GitHub', href: 'https://github.com/Henok-Tekeba', icon: SiGithub, isBrand: true },
   { label: 'HuggingFace', href: 'https://huggingface.co/Henokk', icon: SiHuggingface, isBrand: true },
   { label: 'X', href: 'https://x.com/HenaTeke', icon: SiX, isBrand: true },
-  { label: 'LinkedIn', href: 'https://www.linkedin.com/in/henok-ayele-6ab58b356', icon: FaLinkedinIn, isBrand: true },
-]
+] 
 
 export default function Contact() {
   const width = useWindowSize()

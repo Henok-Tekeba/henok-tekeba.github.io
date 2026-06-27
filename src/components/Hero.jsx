@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react'
 import useWindowSize from '../hooks/useWindowSize'
+import { Mail } from 'lucide-react'
+import { FaLinkedinIn } from 'react-icons/fa6'
 
 const rotatingHeadlines = [
   'full-stack developer',
@@ -125,6 +127,58 @@ export default function Hero() {
           }}>
             {presence.label}
           </span>
+        </div>
+
+        <div className="reveal" style={{
+          display: 'flex',
+          flexWrap: 'wrap',
+          gap: '0.4rem 1.1rem',
+          alignItems: 'center',
+          marginTop: '0.25rem',
+        }}>
+          <a
+            href="mailto:me@enoch.et"
+            aria-label="Email me at me@enoch.et"
+            style={{
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: '0.45rem',
+              color: 'var(--text-2)',
+              textDecoration: 'none',
+              fontFamily: 'var(--mono)',
+              fontSize: '0.72rem',
+              letterSpacing: '0.02em',
+              transition: 'color 0.2s ease',
+            }}
+            onMouseEnter={e => (e.currentTarget.style.color = 'var(--text)')}
+            onMouseLeave={e => (e.currentTarget.style.color = 'var(--text-2)')}
+          >
+            <Mail size={13} strokeWidth={1.5} style={{ opacity: 0.85 }} />
+            <span>me@enoch.et</span>
+          </a>
+
+          <a
+            href="https://www.linkedin.com/in/henok-ayele-6ab58b356"
+            target="_blank"
+            rel="noreferrer"
+            aria-label="LinkedIn profile"
+            style={{
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: '0.45rem',
+              color: 'var(--text-2)',
+              textDecoration: 'none',
+              fontFamily: 'var(--mono)',
+              fontSize: '0.72rem',
+              letterSpacing: '0.02em',
+              transition: 'color 0.2s ease',
+            }}
+            onMouseEnter={e => (e.currentTarget.style.color = 'var(--text)')}
+            onMouseLeave={e => (e.currentTarget.style.color = 'var(--text-2)')}
+          >
+            <FaLinkedinIn size={12} style={{ opacity: 0.85 }} />
+            <span>linkedin.com/in/henok-ayele-6ab58b356</span>
+          </a>
         </div>
       </div>
 
