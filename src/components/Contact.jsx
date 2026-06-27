@@ -112,7 +112,7 @@ export default function Contact() {
 
         <div className="reveal d1">
           <form
-            action="https://formspree.io/f/xdkowqgv"
+            action="https://formspree.io/f/xpqgdezz"
             method="POST"
             style={{
               display: 'grid',
