@@ -132,9 +132,9 @@ export default function Hero() {
         <div className="reveal" style={{
           display: 'flex',
           flexWrap: 'wrap',
-          gap: '0.4rem 1.1rem',
+          gap: '0.5rem 1.25rem',
           alignItems: 'center',
-          marginTop: '0.25rem',
+          marginTop: '1.1rem',
         }}>
           <a
             href="mailto:me@enoch.et"
@@ -142,18 +142,18 @@ export default function Hero() {
             style={{
               display: 'inline-flex',
               alignItems: 'center',
-              gap: '0.45rem',
+              gap: '0.5rem',
               color: 'var(--text-2)',
               textDecoration: 'none',
               fontFamily: 'var(--mono)',
-              fontSize: '0.72rem',
+              fontSize: '0.85rem',
               letterSpacing: '0.02em',
               transition: 'color 0.2s ease',
             }}
             onMouseEnter={e => (e.currentTarget.style.color = 'var(--text)')}
             onMouseLeave={e => (e.currentTarget.style.color = 'var(--text-2)')}
           >
-            <Mail size={13} strokeWidth={1.5} style={{ opacity: 0.85 }} />
+            <Mail size={16} strokeWidth={1.5} style={{ opacity: 0.85 }} />
             <span>me@enoch.et</span>
           </a>
 
@@ -162,22 +162,18 @@ export default function Hero() {
             target="_blank"
             rel="noreferrer"
             aria-label="LinkedIn profile"
+            title="LinkedIn"
             style={{
               display: 'inline-flex',
               alignItems: 'center',
-              gap: '0.45rem',
               color: 'var(--text-2)',
               textDecoration: 'none',
-              fontFamily: 'var(--mono)',
-              fontSize: '0.72rem',
-              letterSpacing: '0.02em',
               transition: 'color 0.2s ease',
             }}
             onMouseEnter={e => (e.currentTarget.style.color = 'var(--text)')}
             onMouseLeave={e => (e.currentTarget.style.color = 'var(--text-2)')}
           >
-            <FaLinkedinIn size={12} style={{ opacity: 0.85 }} />
-            <span>linkedin.com/in/henok-ayele-6ab58b356</span>
+            <FaLinkedinIn size={16} style={{ opacity: 0.9 }} />
           </a>
         </div>
       </div>
