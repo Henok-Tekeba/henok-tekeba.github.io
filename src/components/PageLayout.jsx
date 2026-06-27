@@ -1,9 +1,11 @@
 import { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
 import { Download, FileText, Menu, Moon, Sun, X } from 'lucide-react'
 import { useTheme } from '../hooks/useTheme'
 import useWindowSize from '../hooks/useWindowSize'
 
 const menuLinks = [
+  { label: 'About', href: '/about', external: false, icon: null },
   { label: 'Resume', href: '/resume.html', external: true, icon: FileText },
   { label: 'Download PDF', href: '/resume.pdf', external: true, download: true, icon: Download },
   { label: 'Projects', href: '#experience', external: false, icon: null },
@@ -122,42 +124,69 @@ export default function PageLayout({ children }) {
             gap: '0.15rem',
           }}
         >
-          {menuLinks.map(({ label, href, external, download, icon: Icon }) => (
-            <a
-              key={label}
-              href={href}
-              role="menuitem"
-              target={external ? '_blank' : '_self'}
-              rel={external ? 'noreferrer' : undefined}
-              download={download || undefined}
-              onClick={() => setMenuOpen(false)}
-              style={{
-                display: 'flex',
-                alignItems: 'center',
-                gap: '0.55rem',
-                padding: '0.6rem 0.8rem',
-                borderRadius: '0.45rem',
-                color: 'var(--text-2)',
-                textDecoration: 'none',
-                fontFamily: 'var(--mono)',
-                fontSize: '0.7rem',
-                letterSpacing: '0.1em',
-                textTransform: 'uppercase',
-                transition: 'background 0.15s, color 0.15s',
-              }}
-              onMouseEnter={e => {
-                e.currentTarget.style.background = 'var(--bg-2)'
-                e.currentTarget.style.color = 'var(--text)'
-              }}
-              onMouseLeave={e => {
-                e.currentTarget.style.background = 'transparent'
-                e.currentTarget.style.color = 'var(--text-2)'
-              }}
-            >
-              {Icon && <Icon size={13} strokeWidth={1.5} />}
-              <span>{label}</span>
-            </a>
-          ))}
+          {menuLinks.map(({ label, href, external, download, icon: Icon }) => {
+            const linkStyle = {
+              display: 'flex',
+              alignItems: 'center',
+              gap: '0.55rem',
+              padding: '0.6rem 0.8rem',
+              borderRadius: '0.45rem',
+              color: 'var(--text-2)',
+              textDecoration: 'none',
+              fontFamily: 'var(--mono)',
+              fontSize: '0.7rem',
+              letterSpacing: '0.1em',
+              textTransform: 'uppercase',
+              transition: 'background 0.15s, color 0.15s',
+            }
+
+            if (!external && href.startsWith('/')) {
+              return (
+                <Link
+                  key={label}
+                  to={href}
+                  role="menuitem"
+                  onClick={() => setMenuOpen(false)}
+                  style={linkStyle}
+                  onMouseEnter={e => {
+                    e.currentTarget.style.background = 'var(--bg-2)'
+                    e.currentTarget.style.color = 'var(--text)'
+                  }}
+                  onMouseLeave={e => {
+                    e.currentTarget.style.background = 'transparent'
+                    e.currentTarget.style.color = 'var(--text-2)'
+                  }}
+                >
+                  {Icon && <Icon size={13} strokeWidth={1.5} />}
+                  <span>{label}</span>
+                </Link>
+              )
+            }
+
+            return (
+              <a
+                key={label}
+                href={href}
+                role="menuitem"
+                target={external ? '_blank' : '_self'}
+                rel={external ? 'noreferrer' : undefined}
+                download={download || undefined}
+                onClick={() => setMenuOpen(false)}
+                style={linkStyle}
+                onMouseEnter={e => {
+                  e.currentTarget.style.background = 'var(--bg-2)'
+                  e.currentTarget.style.color = 'var(--text)'
+                }}
+                onMouseLeave={e => {
+                  e.currentTarget.style.background = 'transparent'
+                  e.currentTarget.style.color = 'var(--text-2)'
+                }}
+              >
+                {Icon && <Icon size={13} strokeWidth={1.5} />}
+                <span>{label}</span>
+              </a>
+            )
+          })}
         </div>
       )}
 
