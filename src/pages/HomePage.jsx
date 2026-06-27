@@ -1,4 +1,4 @@
-import NavBar from '../components/NavBar'
+import PageLayout from '../components/PageLayout'
 import useReveal from '../hooks/useReveal'
 import Hero from '../components/Hero'
 import GitHubCommitGraph from '../components/GitHubCommitGraph'
@@ -16,8 +16,7 @@ export default function HomePage() {
   const publishedArticles = articles.filter(a => a.status.toLowerCase() === 'published')
 
   return (
-    <div className="app-shell">
-      <NavBar />
+    <PageLayout>
       <Hero />
       <GitHubCommitGraph />
       <About />
@@ -45,6 +44,6 @@ export default function HomePage() {
       <Contact />
 
       <Footer />
-    </div>
+    </PageLayout>
   )
 }
