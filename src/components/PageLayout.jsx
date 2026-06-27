@@ -51,7 +51,7 @@ export default function PageLayout({ children }) {
 
           <div style={{ display: 'flex', gap: '0.5rem', alignItems: 'center' }}>
             <button
-              onClick={(e) => toggleTheme(e)}
+              onClick={toggleTheme}
               aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
               style={{
                 border: '1px solid var(--border-2)',
