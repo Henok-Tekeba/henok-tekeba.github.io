@@ -2,10 +2,10 @@ import { useEffect, useState } from 'react'
 import useWindowSize from '../hooks/useWindowSize'
 
 const rotatingHeadlines = [
-  'Full-stack developer',
-  'React • Node • TypeScript',
-  'Shipping products end to end',
-  'Focused on useful systems',
+  'full-stack developer',
+  'react • node • typescript',
+  'building products end to end',
+  'focused on useful systems',
 ]
 
 function getPresenceStatus() {
@@ -18,14 +18,14 @@ function getPresenceStatus() {
   const hour = Number.parseInt(hourString, 10)
 
   if (hour >= 0 && hour < 6) {
-    return { label: 'Currently Asleep', color: 'var(--text-3)' }
+    return { label: 'asleep', color: 'var(--text-3)' }
   }
 
   if ((hour >= 6 && hour < 9) || (hour >= 21 && hour < 24)) {
-    return { label: 'Currently: idle', color: 'var(--accent)' }
+    return { label: 'taking a break', color: 'var(--accent)' }
   }
 
-  return { label: 'Currently: deep in code', color: 'var(--green)' }
+  return { label: 'building', color: 'var(--green)' }
 }
 
 export default function Hero() {
@@ -91,7 +91,6 @@ export default function Hero() {
           fontFamily: 'var(--title)',
           fontSize: isMobile ? '0.72rem' : '0.85rem',
           letterSpacing: '0.08em',
-          textTransform: 'uppercase',
           color: 'var(--text-2)',
           minHeight: '1.3rem',
           opacity: isHeadlineVisible ? 1 : 0,
@@ -121,7 +120,6 @@ export default function Hero() {
             fontFamily: 'var(--mono)',
             fontSize: '0.58rem',
             letterSpacing: '0.11em',
-            textTransform: 'uppercase',
             color: 'var(--text-2)',
             lineHeight: 1,
           }}>
@@ -138,7 +136,7 @@ export default function Hero() {
         lineHeight: 1.7,
         marginBottom: '3rem',
       }}>
-        I am a second-year ECE student at AAU building full-stack web products and backend systems for Ethiopian users. My focus is simple: build things that work for people who are usually overlooked.
+        I build full-stack web apps and backend systems. My focus is shipping useful products for Ethiopian users — the people most tech companies ignore.
       </p>
 
     </section>
