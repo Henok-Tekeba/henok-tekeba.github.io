@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import useWindowSize from '../hooks/useWindowSize'
-import { Mail } from 'lucide-react'
+import { GraduationCap, Mail, MapPin, Sparkles } from 'lucide-react'
 import { FaLinkedinIn } from 'react-icons/fa6'
 
 const rotatingHeadlines = [
@@ -111,7 +111,34 @@ export default function Hero() {
             <FaLinkedinIn size={16} style={{ opacity: 0.9 }} />
           </a>
         </div>
-      </div>
+        </div>
+
+        <div className="reveal d1" style={{
+          display: 'flex',
+          flexWrap: 'wrap',
+          gap: '1rem 1.5rem',
+          alignItems: 'center',
+          marginBottom: '2rem',
+        }}>
+          <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.45rem' }}>
+            <MapPin size={13} strokeWidth={1.5} style={{ color: 'var(--text-3)' }} />
+            <span style={{ fontFamily: 'var(--mono)', fontSize: '0.65rem', color: 'var(--text-2)', letterSpacing: '0.03em' }}>
+              Addis Ababa, Ethiopia
+            </span>
+          </div>
+          <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.45rem' }}>
+            <GraduationCap size={13} strokeWidth={1.5} style={{ color: 'var(--text-3)' }} />
+            <span style={{ fontFamily: 'var(--mono)', fontSize: '0.65rem', color: 'var(--text-2)', letterSpacing: '0.03em' }}>
+              Addis Ababa University
+            </span>
+          </div>
+          <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.45rem' }}>
+            <Sparkles size={13} strokeWidth={1.5} style={{ color: 'var(--text-3)' }} />
+            <span style={{ fontFamily: 'var(--mono)', fontSize: '0.65rem', color: 'var(--text-2)', letterSpacing: '0.03em' }}>
+              Looking for internships & full-stack roles
+            </span>
+          </div>
+        </div>
 
       <p style={{
         fontFamily: 'var(--display)',
