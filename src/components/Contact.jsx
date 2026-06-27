@@ -116,62 +116,119 @@ export default function Contact() {
             method="POST"
             style={{
               display: 'grid',
-              gap: '0.9rem',
+              gap: '1.25rem',
             }}
           >
-            <input
-              type="text"
-              name="name"
-              placeholder="Your name"
-              required
-              style={{
+            <label style={{ display: 'grid', gap: '0.4rem' }}>
+              <span style={{
                 fontFamily: 'var(--mono)',
-                fontSize: '0.82rem',
-                padding: '0.75rem 1rem',
-                border: '1px solid var(--border)',
-                borderRadius: '0.6rem',
-                background: 'color-mix(in srgb, var(--bg-2) 94%, transparent)',
-                color: 'var(--text)',
-                outline: 'none',
-                width: '100%',
-              }}
-            />
-            <input
-              type="email"
-              name="email"
-              placeholder="Your email"
-              required
-              style={{
+                fontSize: '0.65rem',
+                letterSpacing: '0.06em',
+                color: 'var(--text-2)',
+              }}>
+                Name
+              </span>
+              <input
+                type="text"
+                name="name"
+                placeholder="Your name"
+                required
+                style={{
+                  fontFamily: 'var(--mono)',
+                  fontSize: '0.82rem',
+                  padding: '0.65rem 0.85rem',
+                  border: '1px solid var(--border)',
+                  borderRadius: '0.5rem',
+                  background: 'transparent',
+                  color: 'var(--text)',
+                  outline: 'none',
+                  width: '100%',
+                  transition: 'border-color 0.2s, box-shadow 0.2s',
+                }}
+                onFocus={e => {
+                  e.currentTarget.style.borderColor = 'var(--accent)'
+                  e.currentTarget.style.boxShadow = '0 0 0 2px color-mix(in srgb, var(--accent) 20%, transparent)'
+                }}
+                onBlur={e => {
+                  e.currentTarget.style.borderColor = 'var(--border)'
+                  e.currentTarget.style.boxShadow = 'none'
+                }}
+              />
+            </label>
+            <label style={{ display: 'grid', gap: '0.4rem' }}>
+              <span style={{
                 fontFamily: 'var(--mono)',
-                fontSize: '0.82rem',
-                padding: '0.75rem 1rem',
-                border: '1px solid var(--border)',
-                borderRadius: '0.6rem',
-                background: 'color-mix(in srgb, var(--bg-2) 94%, transparent)',
-                color: 'var(--text)',
-                outline: 'none',
-                width: '100%',
-              }}
-            />
-            <textarea
-              name="message"
-              placeholder="What are you building?"
-              required
-              rows={4}
-              style={{
+                fontSize: '0.65rem',
+                letterSpacing: '0.06em',
+                color: 'var(--text-2)',
+              }}>
+                Email
+              </span>
+              <input
+                type="email"
+                name="email"
+                placeholder="Your email"
+                required
+                style={{
+                  fontFamily: 'var(--mono)',
+                  fontSize: '0.82rem',
+                  padding: '0.65rem 0.85rem',
+                  border: '1px solid var(--border)',
+                  borderRadius: '0.5rem',
+                  background: 'transparent',
+                  color: 'var(--text)',
+                  outline: 'none',
+                  width: '100%',
+                  transition: 'border-color 0.2s, box-shadow 0.2s',
+                }}
+                onFocus={e => {
+                  e.currentTarget.style.borderColor = 'var(--accent)'
+                  e.currentTarget.style.boxShadow = '0 0 0 2px color-mix(in srgb, var(--accent) 20%, transparent)'
+                }}
+                onBlur={e => {
+                  e.currentTarget.style.borderColor = 'var(--border)'
+                  e.currentTarget.style.boxShadow = 'none'
+                }}
+              />
+            </label>
+            <label style={{ display: 'grid', gap: '0.4rem' }}>
+              <span style={{
                 fontFamily: 'var(--mono)',
-                fontSize: '0.82rem',
-                padding: '0.75rem 1rem',
-                border: '1px solid var(--border)',
-                borderRadius: '0.6rem',
-                background: 'color-mix(in srgb, var(--bg-2) 94%, transparent)',
-                color: 'var(--text)',
-                outline: 'none',
-                width: '100%',
-                resize: 'vertical',
-                minHeight: '100px',
-              }}
-            />
+                fontSize: '0.65rem',
+                letterSpacing: '0.06em',
+                color: 'var(--text-2)',
+              }}>
+                Message
+              </span>
+              <textarea
+                name="message"
+                placeholder="What are you building?"
+                required
+                rows={4}
+                style={{
+                  fontFamily: 'var(--mono)',
+                  fontSize: '0.82rem',
+                  padding: '0.65rem 0.85rem',
+                  border: '1px solid var(--border)',
+                  borderRadius: '0.5rem',
+                  background: 'transparent',
+                  color: 'var(--text)',
+                  outline: 'none',
+                  width: '100%',
+                  resize: 'vertical',
+                  minHeight: '100px',
+                  transition: 'border-color 0.2s, box-shadow 0.2s',
+                }}
+                onFocus={e => {
+                  e.currentTarget.style.borderColor = 'var(--accent)'
+                  e.currentTarget.style.boxShadow = '0 0 0 2px color-mix(in srgb, var(--accent) 20%, transparent)'
+                }}
+                onBlur={e => {
+                  e.currentTarget.style.borderColor = 'var(--border)'
+                  e.currentTarget.style.boxShadow = 'none'
+                }}
+              />
+            </label>
             <button
               type="submit"
               style={{
@@ -179,10 +236,10 @@ export default function Contact() {
                 fontSize: '0.6rem',
                 letterSpacing: '0.11em',
                 textTransform: 'uppercase',
-                padding: '0.7rem 1.25rem',
+                padding: '0.65rem 1.25rem',
                 border: '1px solid var(--border)',
-                borderRadius: '0.6rem',
-                background: 'color-mix(in srgb, var(--bg-2) 94%, transparent)',
+                borderRadius: '0.5rem',
+                background: 'var(--bg)',
                 color: 'var(--text-2)',
                 cursor: 'pointer',
                 transition: 'all 0.2s ease',
