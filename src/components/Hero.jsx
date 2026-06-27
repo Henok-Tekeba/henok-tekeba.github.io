@@ -136,7 +136,7 @@ export default function Hero() {
         lineHeight: 1.7,
         marginBottom: '3rem',
       }}>
-        I build full-stack web apps and backend systems. My focus is shipping useful products for Ethiopian users - the people most tech companies ignore. Whether it is a voice AI platform, an ecosystem tracker, or an automated opportunity bot, I ship things that actually work for people who need them.
+        I build full-stack web apps and backend systems that ship real value. From Next.js frontends to Express APIs and PostgreSQL databases, I write clean code that solves problems for people who need working software, not buzzwords.
       </p>
 
     </section>

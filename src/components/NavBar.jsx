@@ -51,7 +51,7 @@ export default function NavBar() {
       </a>
 
       <div style={{ display: 'flex', gap: '2rem', alignItems: 'center' }}>
-        <a href="#experience" style={{
+        <a href="#articles" style={{
           fontFamily: 'var(--mono)',
           fontSize: '0.7rem',
           letterSpacing: '0.12em',
@@ -62,7 +62,7 @@ export default function NavBar() {
           onMouseEnter={e => e.target.style.color = 'var(--accent)'}
           onMouseLeave={e => e.target.style.color = 'var(--text-2)'}
         >
-          Projects
+          Articles
         </a>
         <a href="/resume.html" target="_blank" rel="noreferrer" style={{
           fontFamily: 'var(--mono)',
