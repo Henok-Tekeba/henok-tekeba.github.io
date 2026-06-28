@@ -35,6 +35,25 @@ export const articles = [
       'There is a personal layer too. Around the same time I shipped this, I got rejected by one of the companies listed on the site. That stung. But building this reminded me that you do not need permission to contribute. You can build something useful whether or not someone hires you. The work itself is the point.',
     ],
   },
+  {
+    slug: 'why-you-should-start-using-ai-agents',
+    title: 'Why You Should Start Using AI Agents',
+    date: 'JUN 2026',
+    excerpt:
+      'AI agents are not a futuristic concept. They are already here, and they can do tasks for you. Here is why you should care.',
+    status: 'Published',
+    paragraphs: [
+      'There is a shift happening in AI that is not getting enough attention. We have been using chatbots for a while now. You ask a question, it gives an answer. Simple, linear, useful. But AI agents are fundamentally different. Instead of waiting for your prompt to act, they can take initiative. That is a radically different model.',
+      'Think about everything you do today that repeats. Filtering emails. Checking Telegram channels. Scraping prices. Monitoring opportunities. Updating a spreadsheet. Posting content. Following up with clients. Right now, you probably do these yourself. An agent is a piece of software that can do them for you, on its own schedule, following rules you set.',
+      'The difference between a chatbot and an agent is autonomy. A chatbot reacts. An agent acts. It can have a memory. It can use tools. It can decide when to do something based on conditions you define. You tell it the goal and the rules, and it figures out the rest.',
+      'Here is an example. Instead of checking Telegram manually every day, you tell an agent: "Watch these channels, find opportunities posted in the last 24 hours, filter by relevance, and send me a summary at 8 AM." The agent wakes up, does the work, and you wake up to a ready summary. No input from you. That is what makes it powerful.',
+      'AI agents also handle stuff that changes. They can scrape a competitor\'s pricing page every hour and alert you when it drops below a threshold. They can track a GitHub repository and open an issue when a bug pattern appears. They can monitor API status pages and restart services without human intervention. These are all things that currently require human attention.',
+      'For developers, the entry point is simpler than you think. The agentic frameworks are becoming more accessible. LangChain, CrewAI, AutoGen. You don\'t need a huge infrastructure. You can spin up an agent that uses GPT or Claude, give it access to an API or a browser, and let it do its thing.',
+      'The real benefit is freeing up your time. Not just a few minutes, but entire hours per week that were previously occupied by tasks that require low-level attention. When you automate a task that you do every day, you are not just saving that small block of time. You are eliminating the switching cost. The mental overhead.',
+      'The organizations and individuals that adopt agentic workflows earliest will have a compounding advantage. Every day that passes, agents get smarter and the barriers to entry lower. Starting now means building the infrastructure early. Testing the workflows. Understanding failure modes.',
+      'AI agents are not about replacing humans. They are about making humans more capable. You should start using them not because they are impressive but because they let you focus on what actually matters.',
+    ],
+  },
 ]
 
 export function getArticleBySlug(slug) {
