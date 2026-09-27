@@ -33,11 +33,13 @@ export default function Hero() {
           fontSize: '0.7rem',
           fontWeight: 500,
           color: 'var(--text-3)',
+          position: 'relative',
         }}>
+          <span>HT</span>
           <img
             src="/profile.jpg"
             alt="Henok Tekeba"
-            style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
+            style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block', position: 'absolute', inset: 0 }}
             onError={e => { e.currentTarget.style.display = 'none' }}
           />
         </div>
