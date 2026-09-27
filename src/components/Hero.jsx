@@ -74,7 +74,7 @@ export default function Hero() {
         lineHeight: 1.5,
         marginBottom: '1rem',
       }}>
-        I build full stack web apps and backend systems that ship. Next.js on the front, Express and PostgreSQL on the back, with JWT auth, real time streaming, and background pipelines. Deployed across Vercel, Railway, and Modal, and used by real people.
+        I design and ship full-stack systems end to end, comfortable moving between backend logic, data pipelines, and the interface on top. I care more about whether it survives real use than whether it looks good in a demo.
       </p>
 
       <div className="reveal" style={{
