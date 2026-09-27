@@ -2,7 +2,7 @@ import useWindowSize from '../hooks/useWindowSize'
 
 const experience = [
   {
-    period: '2024 – Present',
+    period: '2024 to Present',
     role: 'Founder & Full-Stack Engineer',
     company: 'voiET - Voice AI Platform',
     highlights: [

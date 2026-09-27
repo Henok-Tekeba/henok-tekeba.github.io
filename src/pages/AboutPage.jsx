@@ -58,7 +58,7 @@ export default function AboutPage() {
             color: 'var(--text-2)',
             lineHeight: 1.8,
           }}>
-            My work spans frontend, backend, and infrastructure — web apps, APIs, databases, and the unglamorous work of turning ideas into deployed products people actually use. I'm currently studying at Addis Ababa University and building full-stack products that serve Ethiopian users.
+            My work spans frontend, backend, and infrastructure: web apps, APIs, databases, and the unglamorous work of turning ideas into deployed products people actually use. I'm currently studying at Addis Ababa University and building full-stack products that serve Ethiopian users.
           </p>
 
           <p style={{
@@ -158,7 +158,7 @@ export default function AboutPage() {
             color: 'var(--text-2)',
             lineHeight: 1.7,
           }}>
-            I'm looking for internship and full-stack development opportunities where I can contribute to real products, work with experienced engineers, and keep building. If you're working on something interesting or just want to connect —{' '}
+            I'm looking for internship and full-stack development opportunities where I can contribute to real products, work with experienced engineers, and keep building. If you're working on something interesting or just want to connect,{' '}
             <a href="mailto:me@enoch.et" style={{ color: 'var(--accent)', textDecoration: 'underline' }}>
               reach out
             </a>.
