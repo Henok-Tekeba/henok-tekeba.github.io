@@ -74,7 +74,7 @@ export default function Hero() {
         lineHeight: 1.5,
         marginBottom: '1rem',
       }}>
-        I design and ship full-stack systems end to end, comfortable moving between backend logic, data pipelines, and the interface on top. I care more about whether it survives real use than whether it looks good in a demo.
+        I design and ship full stack systems end to end, comfortable moving between backend logic, data pipelines, and the interface on top. I care more about whether it survives real use than whether it looks good in a demo.
       </p>
 
       <div className="reveal" style={{
