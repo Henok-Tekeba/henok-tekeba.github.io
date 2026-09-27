@@ -11,12 +11,12 @@ export default function Hero() {
       display: 'flex',
       flexDirection: 'column',
       justifyContent: 'center',
-      padding: isMobile ? '1.5rem 1.5rem 2rem' : '2rem 3rem 2.5rem',
+      padding: isMobile ? '1.5rem 1.5rem' : '2rem 3rem 2rem',
       position: 'relative',
       zIndex: 1,
     }}>
 
-      <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '0.7rem' }}>
+      <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '1rem' }}>
         <div style={{
           width: photoSize,
           height: photoSize,
