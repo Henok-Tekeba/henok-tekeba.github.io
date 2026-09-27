@@ -1,34 +1,12 @@
-import { useEffect, useState } from 'react'
 import useWindowSize from '../hooks/useWindowSize'
 import { Mail } from 'lucide-react'
 import { FaLinkedinIn } from 'react-icons/fa6'
 import { SiGithub } from 'react-icons/si'
 
-const rotatingHeadlines = [
-  'full-stack developer',
-  'react • node • typescript',
-  'shipping products end to end',
-  'backend systems that actually scale',
-] 
-
 export default function Hero() {
   const width = useWindowSize()
   const isMobile = width < 768
-  const [headlineIndex, setHeadlineIndex] = useState(0)
-  const [isHeadlineVisible, setIsHeadlineVisible] = useState(true)
-
-  useEffect(() => {
-    const headlineTimer = setInterval(() => {
-      setIsHeadlineVisible(false)
-
-      setTimeout(() => {
-        setHeadlineIndex(prev => (prev + 1) % rotatingHeadlines.length)
-        setIsHeadlineVisible(true)
-      }, 220)
-    }, 2500)
-
-    return () => clearInterval(headlineTimer)
-  }, [])
+  const photoSize = isMobile ? 46 : 54
 
   return (
     <section id="hero" style={{
@@ -40,32 +18,53 @@ export default function Hero() {
       zIndex: 1,
     }}>
 
-      <div style={{ display: 'flex', flexDirection: 'column', gap: '0.3rem', marginBottom: '0.9rem' }}>
-        <h1 style={{
+      <div style={{ display: 'flex', alignItems: 'center', gap: '0.85rem', marginBottom: '0.9rem' }}>
+        <div style={{
+          width: photoSize,
+          height: photoSize,
+          borderRadius: '50%',
+          overflow: 'hidden',
+          flexShrink: 0,
+          border: '1px solid var(--border-2)',
+          background: 'var(--bg-2)',
+          display: 'grid',
+          placeItems: 'center',
           fontFamily: 'var(--title)',
+          fontSize: '0.7rem',
           fontWeight: 500,
-          fontSize: isMobile ? 'clamp(1.15rem, 5vw, 1.4rem)' : 'clamp(1.25rem, 2.2vw, 1.6rem)',
-          lineHeight: 1.2,
-          letterSpacing: '-0.01em',
-          color: 'var(--text)',
+          color: 'var(--text-3)',
         }}>
-          Henok Tekeba
-        </h1>
-
-        <p style={{
-          fontFamily: 'var(--title)',
-          fontSize: isMobile ? '0.72rem' : '0.85rem',
-          letterSpacing: '0.08em',
-          lineHeight: 1.5,
-          color: 'var(--text-2)',
-          minHeight: '1.3rem',
-          opacity: isHeadlineVisible ? 1 : 0,
-          transform: isHeadlineVisible ? 'translateY(0)' : 'translateY(5px)',
-          transition: 'opacity 0.22s ease, transform 0.22s ease, color 0.22s ease',
-        }}>
-          {rotatingHeadlines[headlineIndex]}
-        </p>
+          <img
+            src="/profile.jpg"
+            alt="Henok Tekeba"
+            style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
+            onError={e => { e.currentTarget.style.display = 'none' }}
+          />
         </div>
+
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '0.2rem' }}>
+          <h1 style={{
+            fontFamily: 'var(--title)',
+            fontWeight: 500,
+            fontSize: isMobile ? 'clamp(1.05rem, 4.5vw, 1.25rem)' : 'clamp(1.1rem, 2vw, 1.4rem)',
+            lineHeight: 1.2,
+            letterSpacing: '-0.01em',
+            color: 'var(--text)',
+          }}>
+            Henok Tekeba
+          </h1>
+
+          <p style={{
+            fontFamily: 'var(--display)',
+            fontSize: isMobile ? '0.78rem' : '0.85rem',
+            lineHeight: 1.5,
+            color: 'var(--text-2)',
+            margin: 0,
+          }}>
+            Student at AAU
+          </p>
+        </div>
+      </div>
 
       <p style={{
         fontFamily: 'var(--display)',
