@@ -84,7 +84,7 @@ export default function Contact() {
           <p className="reveal d1" style={{
             fontFamily: 'var(--display)',
             fontWeight: 'var(--display-weight-light)',
-            fontSize: '0.95rem',
+            fontSize: '1.02rem',
             color: 'var(--text-2)',
             lineHeight: 1.8,
             marginBottom: '1.5rem',
@@ -163,7 +163,7 @@ export default function Contact() {
                 required
                 style={{
                   fontFamily: 'var(--mono)',
-                  fontSize: '0.82rem',
+                  fontSize: '0.9rem',
                   padding: '0.65rem 0.85rem',
                   border: '1px solid var(--border)',
                   borderRadius: '0.5rem',
@@ -199,7 +199,7 @@ export default function Contact() {
                 required
                 style={{
                   fontFamily: 'var(--mono)',
-                  fontSize: '0.82rem',
+                  fontSize: '0.9rem',
                   padding: '0.65rem 0.85rem',
                   border: '1px solid var(--border)',
                   borderRadius: '0.5rem',
@@ -235,7 +235,7 @@ export default function Contact() {
                 rows={4}
                 style={{
                   fontFamily: 'var(--mono)',
-                  fontSize: '0.82rem',
+                  fontSize: '0.9rem',
                   padding: '0.65rem 0.85rem',
                   border: '1px solid var(--border)',
                   borderRadius: '0.5rem',

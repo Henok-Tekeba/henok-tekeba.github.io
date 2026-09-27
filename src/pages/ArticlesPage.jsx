@@ -31,7 +31,7 @@ export default function ArticlesPage() {
             marginBottom: '2rem',
             fontFamily: 'var(--display)',
             fontWeight: 'var(--display-weight-light)',
-            fontSize: '0.95rem',
+            fontSize: '1.03rem',
             color: 'var(--text-2)',
             lineHeight: 1.8,
           }}

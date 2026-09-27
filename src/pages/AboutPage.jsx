@@ -54,7 +54,7 @@ export default function AboutPage() {
           <p style={{
             fontFamily: 'var(--display)',
             fontWeight: 'var(--display-weight-light)',
-            fontSize: '0.95rem',
+            fontSize: '1.05rem',
             color: 'var(--text-2)',
             lineHeight: 1.8,
           }}>
@@ -64,7 +64,7 @@ export default function AboutPage() {
           <p style={{
             fontFamily: 'var(--display)',
             fontWeight: 'var(--display-weight-light)',
-            fontSize: '0.95rem',
+            fontSize: '1.05rem',
             color: 'var(--text-2)',
             lineHeight: 1.8,
           }}>
@@ -93,7 +93,7 @@ export default function AboutPage() {
                 </div>
                 <div style={{
                   fontFamily: 'var(--display)',
-                  fontSize: '0.82rem',
+                  fontSize: '0.92rem',
                   color: 'var(--text-2)',
                 }}>
                   {value}
@@ -154,7 +154,7 @@ export default function AboutPage() {
           <p style={{
             fontFamily: 'var(--display)',
             fontWeight: 'var(--display-weight-light)',
-            fontSize: '0.9rem',
+            fontSize: '1rem',
             color: 'var(--text-2)',
             lineHeight: 1.7,
           }}>

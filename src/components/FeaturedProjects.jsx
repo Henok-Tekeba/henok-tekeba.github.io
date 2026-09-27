@@ -116,9 +116,9 @@ export default function FeaturedProjects() {
               <p style={{
                 fontFamily: 'var(--display)',
                 fontWeight: 'var(--display-weight-light)',
-                fontSize: '0.82rem',
+                fontSize: '0.95rem',
                 color: 'var(--text-2)',
-                lineHeight: 1.6,
+                lineHeight: 1.7,
                 margin: 0,
               }}>
                 {project.tagline}

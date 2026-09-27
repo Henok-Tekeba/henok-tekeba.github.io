@@ -62,7 +62,7 @@ export default function ArticleDetailPage() {
               style={{
                 fontFamily: 'var(--display)',
                 fontWeight: 'var(--display-weight-light)',
-                fontSize: '0.98rem',
+                fontSize: '1.06rem',
                 color: 'var(--text-2)',
                 lineHeight: 1.95,
               }}

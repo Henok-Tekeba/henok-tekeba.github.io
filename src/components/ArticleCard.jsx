@@ -43,9 +43,9 @@ export default function ArticleCard({ article, delayClass = '' }) {
         style={{
           fontFamily: 'var(--display)',
           fontWeight: 'var(--display-weight-light)',
-          fontSize: '0.9rem',
+          fontSize: '0.98rem',
           color: 'var(--text-2)',
-          lineHeight: 1.75,
+          lineHeight: 1.8,
         }}
       >
         {article.excerpt}

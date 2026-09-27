@@ -69,9 +69,9 @@ export default function Hero() {
       <p style={{
         fontFamily: 'var(--display)',
         fontWeight: 'var(--display-weight-light)',
-        fontSize: 'clamp(0.9rem, 1.8vw, 1.1rem)',
+        fontSize: 'clamp(1rem, 2vw, 1.2rem)',
         color: 'var(--text-2)',
-        lineHeight: 1.7,
+        lineHeight: 1.8,
         marginBottom: '1.5rem',
       }}>
         I build full-stack web apps and backend systems that ship. Next.js on the front, Express and PostgreSQL on the back, deployed and used by real people.
