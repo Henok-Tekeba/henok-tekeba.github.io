@@ -35,18 +35,18 @@ export default function Hero() {
       display: 'flex',
       flexDirection: 'column',
       justifyContent: 'center',
-      padding: isMobile ? '2rem 1.5rem 1.25rem' : '3.5rem 3rem 1.25rem',
+      padding: isMobile ? '1.5rem 1.5rem 1.25rem' : '2rem 3rem 1.25rem',
       position: 'relative',
       zIndex: 1,
     }}>
 
-      <div style={{ display: 'flex', flexDirection: 'column', gap: '0.35rem', marginBottom: '1rem' }}>
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '0.3rem', marginBottom: '0.9rem' }}>
         <h1 style={{
           fontFamily: 'var(--title)',
-          fontWeight: 600,
-          fontSize: isMobile ? 'clamp(1.35rem, 5.5vw, 1.75rem)' : 'clamp(1.5rem, 2.8vw, 2rem)',
-          lineHeight: 1.15,
-          letterSpacing: '-0.02em',
+          fontWeight: 500,
+          fontSize: isMobile ? 'clamp(1.15rem, 5vw, 1.4rem)' : 'clamp(1.25rem, 2.2vw, 1.6rem)',
+          lineHeight: 1.2,
+          letterSpacing: '-0.01em',
           color: 'var(--text)',
         }}>
           Henok Tekeba

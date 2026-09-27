@@ -191,7 +191,7 @@ export default function PageLayout({ children }) {
       )}
 
       <main style={{
-        paddingTop: isMobile ? '2.25rem' : '5rem',
+        paddingTop: isMobile ? '2.25rem' : '3.5rem',
       }}>
         <div className="app-shell">
           {children}
