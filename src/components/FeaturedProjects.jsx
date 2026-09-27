@@ -41,7 +41,7 @@ export default function FeaturedProjects() {
 
   return (
     <section id="featured-projects" style={{
-      padding: isMobile ? '3rem 1.5rem' : '4rem 3rem',
+      padding: isMobile ? '1.5rem 1.5rem' : '2rem 3rem',
     }}>
       <div className="section-heading reveal">
         <h2 className="section-heading-title">Featured Projects</h2>

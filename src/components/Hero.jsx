@@ -13,7 +13,7 @@ export default function Hero() {
       display: 'flex',
       flexDirection: 'column',
       justifyContent: 'center',
-      padding: isMobile ? '1.5rem 1.5rem 1.25rem' : '2rem 3rem 1.25rem',
+      padding: isMobile ? '1.5rem 1.5rem' : '2rem 3rem 2rem',
       position: 'relative',
       zIndex: 1,
     }}>
