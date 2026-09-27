@@ -9,7 +9,7 @@ import PageLayout from '../components/PageLayout'
 const facts = [
   { label: 'Location', value: 'Addis Ababa, Ethiopia', Icon: MapPinIcon },
   { label: 'University', value: 'Addis Ababa University', Icon: UniversityIcon },
-  { label: 'Looking for', value: 'Internships & full-stack roles', Icon: Sparkles },
+  { label: 'Looking for', value: 'Internships & full stack roles', Icon: Sparkles },
 ]
 
 const socials = [
@@ -46,7 +46,7 @@ export default function AboutPage() {
             lineHeight: 1.6,
             color: 'var(--text)',
           }}>
-            I build full-stack web products and backend systems for users who are usually treated as edge cases by the mainstream market.
+            I build full stack web products and backend systems for users who are usually treated as edge cases by the mainstream market.
           </p>
 
           <p style={{
@@ -56,7 +56,7 @@ export default function AboutPage() {
             color: 'var(--text-2)',
             lineHeight: 1.7,
           }}>
-            My work spans frontend, backend, and infrastructure: web apps, APIs, databases, and the unglamorous work of turning ideas into deployed products people actually use. I'm currently studying at Addis Ababa University and building full-stack products that serve Ethiopian users.
+            My work spans frontend, backend, and infrastructure: web apps, APIs, databases, and the unglamorous work of turning ideas into deployed products people actually use. I'm currently studying at Addis Ababa University and building full stack products that serve Ethiopian users.
           </p>
 
           <p style={{
@@ -66,7 +66,7 @@ export default function AboutPage() {
             color: 'var(--text-2)',
             lineHeight: 1.7,
           }}>
-            The thread through everything is local usefulness. Building software that respects Ethiopian realities instead of assuming Silicon Valley defaults. My recent work includes building a full-stack Voice AI platform with real-time streaming via Server-Sent Events, audio chunking pipelines deployed on Modal, and a Telegram opportunity bot that scrapes and summarizes opportunities daily.
+            The thread through everything is local usefulness. Building software that respects Ethiopian realities instead of assuming Silicon Valley defaults. My recent work includes building a full stack Voice AI platform with real time streaming via Server Sent Events, audio chunking pipelines deployed on Modal, and a Telegram opportunity bot that scrapes and summarizes opportunities daily.
           </p>
         </div>
 
@@ -157,7 +157,7 @@ export default function AboutPage() {
             color: 'var(--text-2)',
             lineHeight: 1.7,
           }}>
-            I'm looking for internship and full-stack development opportunities where I can contribute to real products, work with experienced engineers, and keep building. If you're working on something interesting or just want to connect,{' '}
+            I'm looking for internship and full stack development opportunities where I can contribute to real products, work with experienced engineers, and keep building. If you're working on something interesting or just want to connect,{' '}
             <a href="mailto:me@enoch.et" style={{ color: 'var(--accent)', textDecoration: 'underline' }}>
               reach out
             </a>.
