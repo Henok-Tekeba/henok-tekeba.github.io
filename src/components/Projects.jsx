@@ -46,7 +46,6 @@ export default function Projects() {
 
       <div className="section-heading reveal">
         <h2 className="section-heading-title">Experience</h2>
-        <div className="section-heading-rule" />
       </div>
 
       <div className="experience-list">

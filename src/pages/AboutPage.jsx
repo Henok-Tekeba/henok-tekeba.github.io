@@ -27,11 +27,10 @@ export default function AboutPage() {
   return (
     <PageLayout>
       <main style={{
-        padding: isMobile ? '3rem 1.25rem 3rem' : '4rem 0 4rem',
+        padding: isMobile ? '3rem 1.5rem' : '4rem 3rem',
       }}>
         <div className="section-heading reveal">
           <h1 className="section-heading-title">About</h1>
-          <div className="section-heading-rule" />
         </div>
 
         <div className="reveal d1" style={{
@@ -56,7 +55,7 @@ export default function AboutPage() {
             fontWeight: 'var(--display-weight-light)',
             fontSize: '1.05rem',
             color: 'var(--text-2)',
-            lineHeight: 1.8,
+            lineHeight: 1.7,
           }}>
             My work spans frontend, backend, and infrastructure: web apps, APIs, databases, and the unglamorous work of turning ideas into deployed products people actually use. I'm currently studying at Addis Ababa University and building full-stack products that serve Ethiopian users.
           </p>
@@ -66,7 +65,7 @@ export default function AboutPage() {
             fontWeight: 'var(--display-weight-light)',
             fontSize: '1.05rem',
             color: 'var(--text-2)',
-            lineHeight: 1.8,
+            lineHeight: 1.7,
           }}>
             The thread through everything is local usefulness. Building software that respects Ethiopian realities instead of assuming Silicon Valley defaults. My recent work includes building a full-stack Voice AI platform with real-time streaming via Server-Sent Events, audio chunking pipelines deployed on Modal, and a Telegram opportunity bot that scrapes and summarizes opportunities daily.
           </p>
@@ -75,17 +74,18 @@ export default function AboutPage() {
         <div className="reveal d2" style={{
           display: 'flex',
           flexDirection: isMobile ? 'column' : 'row',
-          gap: isMobile ? '1rem' : '3rem',
+          gap: isMobile ? '1rem' : '2rem',
           marginBottom: '2.5rem',
         }}>
           {facts.map(({ label, value, Icon }) => (
-            <div key={label} style={{ display: 'flex', alignItems: 'center', gap: '0.65rem' }}>
+            <div key={label} style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
               <Icon size={16} strokeWidth={1.5} style={{ color: 'var(--accent)', flexShrink: 0 }} />
               <div>
                 <div style={{
                   fontFamily: 'var(--mono)',
                   fontSize: '0.6rem',
-                  letterSpacing: '0.06em',
+                  letterSpacing: '0.1em',
+                  lineHeight: 1.5,
                   textTransform: 'uppercase',
                   color: 'var(--text-3)',
                 }}>
@@ -106,7 +106,7 @@ export default function AboutPage() {
         <div className="reveal d2" style={{
           display: 'flex',
           flexWrap: 'wrap',
-          gap: '0.65rem',
+          gap: '0.5rem',
           marginBottom: '2.5rem',
         }}>
           {socials.map(({ label, href, icon: Icon }) => (
@@ -130,7 +130,7 @@ export default function AboutPage() {
                 fontSize: '0.6rem',
                 letterSpacing: '0.1em',
                 textTransform: 'uppercase',
-                lineHeight: 1,
+                lineHeight: 1.5,
               }}
               onMouseEnter={e => {
                 e.currentTarget.style.borderColor = 'var(--accent)'

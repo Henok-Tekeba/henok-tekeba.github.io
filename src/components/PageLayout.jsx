@@ -47,7 +47,7 @@ export default function PageLayout({ children }) {
           justifyContent: isMobile ? 'flex-end' : 'space-between',
           alignItems: 'center',
           padding: '0.75rem 0',
-          gap: '0.6rem',
+          gap: '0.5rem',
         }}>
           {!isMobile && <div />}
 
@@ -128,9 +128,9 @@ export default function PageLayout({ children }) {
             const linkStyle = {
               display: 'flex',
               alignItems: 'center',
-              gap: '0.55rem',
+              gap: '0.5rem',
               padding: '0.6rem 0.8rem',
-              borderRadius: '0.45rem',
+              borderRadius: '0.5rem',
               color: 'var(--text-2)',
               textDecoration: 'none',
               fontFamily: 'var(--mono)',

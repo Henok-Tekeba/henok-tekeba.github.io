@@ -18,7 +18,7 @@ export default function Hero() {
       zIndex: 1,
     }}>
 
-      <div style={{ display: 'flex', alignItems: 'center', gap: '0.85rem', marginBottom: '0.7rem' }}>
+      <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '0.7rem' }}>
         <div style={{
           width: photoSize,
           height: photoSize,
@@ -44,7 +44,7 @@ export default function Hero() {
           />
         </div>
 
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '0.2rem' }}>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '0.25rem' }}>
           <h1 style={{
             fontFamily: 'var(--title)',
             fontWeight: 500,

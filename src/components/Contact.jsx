@@ -59,13 +59,12 @@ export default function Contact() {
 
       <div className="section-heading reveal">
         <h2 className="section-heading-title">Contact</h2>
-        <div className="section-heading-rule" />
       </div>
 
       <div style={{
         display: 'grid',
         gridTemplateColumns: isMobile ? '1fr' : '1fr 1fr',
-        gap: isMobile ? '2.5rem' : '4rem',
+        gap: isMobile ? '1.5rem' : '2.5rem',
         maxWidth: '960px',
       }}>
         <div>
@@ -86,7 +85,7 @@ export default function Contact() {
             fontWeight: 'var(--display-weight-light)',
             fontSize: '1.02rem',
             color: 'var(--text-2)',
-            lineHeight: 1.8,
+            lineHeight: 1.7,
             marginBottom: '1.5rem',
           }}>
             I'm looking for internships and teams building products that need technical curiosity, speed, and attention to detail.
@@ -95,7 +94,7 @@ export default function Contact() {
           <div className="reveal d2" style={{
             display: 'flex',
             flexWrap: 'wrap',
-            gap: '0.6rem',
+            gap: '0.5rem',
           }}>
             {links.map(({ label, href, icon: Icon, isBrand }) => (
               <a
@@ -133,10 +132,10 @@ export default function Contact() {
                 </span>
                 <span style={{
                   fontFamily: 'var(--mono)',
-                  fontSize: '0.58rem',
+                  fontSize: '0.6rem',
                   letterSpacing: '0.1em',
                   textTransform: 'uppercase',
-                  lineHeight: 1,
+                  lineHeight: 1.5,
                 }}>
                   {label}
                 </span>
@@ -150,8 +149,9 @@ export default function Contact() {
             <label style={{ display: 'grid', gap: '0.4rem' }}>
               <span style={{
                 fontFamily: 'var(--mono)',
-                fontSize: '0.65rem',
+                fontSize: '0.7rem',
                 letterSpacing: '0.06em',
+                lineHeight: 1.5,
                 color: 'var(--text-2)',
               }}>
                 Name
@@ -186,8 +186,9 @@ export default function Contact() {
             <label style={{ display: 'grid', gap: '0.4rem' }}>
               <span style={{
                 fontFamily: 'var(--mono)',
-                fontSize: '0.65rem',
+                fontSize: '0.7rem',
                 letterSpacing: '0.06em',
+                lineHeight: 1.5,
                 color: 'var(--text-2)',
               }}>
                 Email
@@ -222,8 +223,9 @@ export default function Contact() {
             <label style={{ display: 'grid', gap: '0.4rem' }}>
               <span style={{
                 fontFamily: 'var(--mono)',
-                fontSize: '0.65rem',
+                fontSize: '0.7rem',
                 letterSpacing: '0.06em',
+                lineHeight: 1.5,
                 color: 'var(--text-2)',
               }}>
                 Message

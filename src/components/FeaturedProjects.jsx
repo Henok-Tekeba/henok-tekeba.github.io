@@ -11,10 +11,10 @@ const techIcons = {
 }
 
 const techColors = {
-  'Next.js': '#F5F5F5',
-  'Express': '#B3B3B3',
+  'Next.js': 'var(--text)',
+  'Express': 'var(--text-2)',
   'PostgreSQL': '#336791',
-  'GitHub Actions': '#F5F5F5',
+  'GitHub Actions': 'var(--text)',
   'Whisper': '#412991',
 }
 
@@ -45,13 +45,12 @@ export default function FeaturedProjects() {
     }}>
       <div className="section-heading reveal">
         <h2 className="section-heading-title">Featured Projects</h2>
-        <div className="section-heading-rule" />
       </div>
 
       <div style={{
         display: 'grid',
         gridTemplateColumns: isMobile ? '1fr' : '1fr 1fr',
-        gap: '1.25rem',
+        gap: '1rem',
       }}>
         {projects.map((project, i) => (
           <div
@@ -147,8 +146,9 @@ export default function FeaturedProjects() {
                   ) : (
                     <span key={tech} style={{
                       fontFamily: 'var(--mono)',
-                      fontSize: '0.55rem',
-                      letterSpacing: '0.06em',
+                      fontSize: '0.6rem',
+                      letterSpacing: '0.1em',
+                      lineHeight: 1.5,
                       color: 'var(--text-3)',
                     }}>
                       {tech}

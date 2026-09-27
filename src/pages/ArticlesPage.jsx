@@ -17,11 +17,10 @@ export default function ArticlesPage() {
   return (
     <PageLayout>
       <main style={{
-        padding: isMobile ? '3rem 1.25rem 3rem' : '4rem 0 4rem',
+        padding: isMobile ? '3rem 1.5rem' : '4rem 3rem',
       }}>
         <div className="section-heading reveal">
           <h1 className="section-heading-title">Articles</h1>
-          <div className="section-heading-rule" />
         </div>
 
         <p
@@ -33,7 +32,7 @@ export default function ArticlesPage() {
             fontWeight: 'var(--display-weight-light)',
             fontSize: '1.03rem',
             color: 'var(--text-2)',
-            lineHeight: 1.8,
+            lineHeight: 1.7,
           }}
         >
           I am documenting my journey with practical notes on product building, AI work, and student engineering.

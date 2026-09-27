@@ -27,7 +27,6 @@ export default function HomePage() {
       <section id="articles" className="section-body">
         <div className="section-heading reveal">
           <h2 className="section-heading-title">Latest Writing</h2>
-          <div className="section-heading-rule" />
         </div>
         <div style={{
           display: 'grid',

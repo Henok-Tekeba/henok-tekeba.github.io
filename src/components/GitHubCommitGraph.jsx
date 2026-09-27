@@ -171,7 +171,7 @@ export default function GitHubCommitGraph() {
               </div>
               <span style={{
                 fontFamily: 'var(--mono)',
-                fontSize: '0.55rem',
+                fontSize: '0.6rem',
                 color: 'var(--text-3)',
                 letterSpacing: '0.1em',
                 textTransform: 'uppercase',

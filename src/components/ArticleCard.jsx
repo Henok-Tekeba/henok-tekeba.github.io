@@ -11,15 +11,16 @@ export default function ArticleCard({ article, delayClass = '' }) {
         gap: '0.9rem',
         padding: '1.35rem',
         border: '1px solid var(--border)',
-        borderRadius: '0.9rem',
+        borderRadius: '0.75rem',
         background: 'color-mix(in srgb, var(--bg-2) 92%, transparent)',
       }}
     >
       <span
         style={{
           fontFamily: 'var(--mono)',
-          fontSize: '0.58rem',
-          letterSpacing: '0.11em',
+          fontSize: '0.6rem',
+          letterSpacing: '0.1em',
+          lineHeight: 1.5,
           color: 'var(--accent)',
           textTransform: 'uppercase',
         }}
@@ -45,7 +46,7 @@ export default function ArticleCard({ article, delayClass = '' }) {
           fontWeight: 'var(--display-weight-light)',
           fontSize: '0.98rem',
           color: 'var(--text-2)',
-          lineHeight: 1.8,
+          lineHeight: 1.7,
         }}
       >
         {article.excerpt}
@@ -54,8 +55,9 @@ export default function ArticleCard({ article, delayClass = '' }) {
       <span
         style={{
           fontFamily: 'var(--mono)',
-          fontSize: '0.58rem',
+          fontSize: '0.6rem',
           letterSpacing: '0.1em',
+          lineHeight: 1.5,
           textTransform: 'uppercase',
           color: 'var(--text-3)',
         }}
@@ -68,10 +70,11 @@ export default function ArticleCard({ article, delayClass = '' }) {
           to={`/articles/${article.slug}`}
           style={{
             fontFamily: 'var(--mono)',
-            fontSize: '0.62rem',
-            letterSpacing: '0.1em',
-            textTransform: 'uppercase',
-            color: 'var(--accent)',
+          fontSize: '0.6rem',
+          letterSpacing: '0.1em',
+          lineHeight: 1.5,
+          textTransform: 'uppercase',
+          color: 'var(--accent)',
             textDecoration: 'none',
             width: 'fit-content',
           }}

@@ -22,7 +22,7 @@ export default function NotFoundPage() {
         alignItems: 'flex-start',
         justifyContent: 'center',
         minHeight: 'calc(100vh - 12rem)',
-        padding: '2rem 3rem 4rem',
+        padding: '2rem 3rem',
         maxWidth: '640px',
       }}>
         <div style={{
@@ -41,7 +41,8 @@ export default function NotFoundPage() {
           <span style={{
             fontFamily: 'var(--mono)',
             fontSize: '0.6rem',
-            letterSpacing: '0.12em',
+            letterSpacing: '0.1em',
+            lineHeight: 1.5,
             textTransform: 'uppercase',
             color: 'var(--text-3)',
           }}>
@@ -54,7 +55,7 @@ export default function NotFoundPage() {
           fontSize: 'clamp(3rem, 8vw, 5.5rem)',
           fontWeight: 700,
           color: 'var(--text)',
-          lineHeight: 1,
+          lineHeight: 1.05,
           letterSpacing: '-0.03em',
           marginBottom: '1rem',
         }}>
@@ -74,12 +75,13 @@ export default function NotFoundPage() {
 
         <p style={{
           fontFamily: 'var(--mono)',
-          fontSize: '0.72rem',
+          fontSize: '0.7rem',
+          lineHeight: 1.5,
           color: 'var(--text-3)',
-          marginBottom: '2.25rem',
+          marginBottom: '2rem',
           padding: '0.4rem 0.7rem',
           border: '1px solid var(--border)',
-          borderRadius: '0.4rem',
+          borderRadius: '0.5rem',
           background: 'var(--bg-2)',
           wordBreak: 'break-all',
           maxWidth: '100%',
@@ -109,7 +111,7 @@ export default function NotFoundPage() {
                 textDecoration: 'none',
                 padding: '0.45rem 0.8rem',
                 border: '1px solid var(--border)',
-                borderRadius: '0.45rem',
+                borderRadius: '0.5rem',
                 background: 'color-mix(in srgb, var(--bg-2) 94%, transparent)',
                 transition: 'all 0.18s ease',
               }}
@@ -134,8 +136,9 @@ export default function NotFoundPage() {
             alignItems: 'center',
             gap: '0.5rem',
             fontFamily: 'var(--mono)',
-            fontSize: '0.72rem',
+            fontSize: '0.7rem',
             letterSpacing: '0.1em',
+            lineHeight: 1.5,
             textTransform: 'uppercase',
             color: 'var(--text)',
             textDecoration: 'none',

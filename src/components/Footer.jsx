@@ -6,14 +6,14 @@ export default function Footer() {
       flexDirection: 'column',
       justifyContent: 'center',
       alignItems: 'center',
-      gap: '1.1rem',
+      gap: '1rem',
       position: 'relative',
       zIndex: 1,
     }}>
       <blockquote style={{
         fontFamily: 'var(--title)',
         fontSize: 'clamp(1.15rem, 3.1vw, 2rem)',
-        lineHeight: 1,
+        lineHeight: 1.05,
         letterSpacing: '0.03em',
         textTransform: 'uppercase',
         color: 'var(--text)',
@@ -24,8 +24,9 @@ export default function Footer() {
 
       <p style={{
         fontFamily: 'var(--mono)',
-        fontSize: '0.65rem',
+        fontSize: '0.7rem',
         letterSpacing: '0.1em',
+        lineHeight: 1.5,
         color: 'var(--text-3)',
         textAlign: 'center',
       }}>

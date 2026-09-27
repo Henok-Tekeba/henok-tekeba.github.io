@@ -22,7 +22,7 @@ export default function ArticleDetailPage() {
   return (
     <PageLayout>
       <main style={{
-        padding: isMobile ? '3rem 1.25rem 3rem' : '4rem 0 4rem',
+        padding: isMobile ? '3rem 1.5rem' : '4rem 3rem',
         maxWidth: '860px',
         margin: '0 auto',
       }}>
@@ -31,7 +31,8 @@ export default function ArticleDetailPage() {
           style={{
             fontFamily: 'var(--mono)',
             fontSize: '0.6rem',
-            letterSpacing: '0.12em',
+            letterSpacing: '0.1em',
+            lineHeight: 1.5,
             textTransform: 'uppercase',
             color: 'var(--accent)',
             marginBottom: '0.85rem',
@@ -64,7 +65,7 @@ export default function ArticleDetailPage() {
                 fontWeight: 'var(--display-weight-light)',
                 fontSize: '1.06rem',
                 color: 'var(--text-2)',
-                lineHeight: 1.95,
+                lineHeight: 1.8,
               }}
             >
               {paragraph}
