@@ -1,8 +1,9 @@
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
-import { Download, FileText, Menu, Moon, Sun, X } from 'lucide-react'
+import { Download, FileText, Menu, X } from 'lucide-react'
 import { useTheme } from '../hooks/useTheme'
 import useWindowSize from '../hooks/useWindowSize'
+import { MoonIcon, SunIcon } from './icons'
 
 const menuLinks = [
   { label: 'About', href: '/about', external: false, icon: null },
@@ -67,7 +68,7 @@ export default function PageLayout({ children }) {
                 placeItems: 'center',
               }}
             >
-              {theme === 'dark' ? <Sun size={13} strokeWidth={1.5} /> : <Moon size={13} strokeWidth={1.5} />}
+              {theme === 'dark' ? <SunIcon size={13} /> : <MoonIcon size={13} />}
             </button>
 
             <button

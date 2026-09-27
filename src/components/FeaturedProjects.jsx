@@ -1,4 +1,4 @@
-import { Globe } from 'lucide-react'
+import { LinkIcon } from './icons'
 import { SiNextdotjs, SiExpress, SiPostgresql, SiGithubactions, SiOpenai } from 'react-icons/si'
 import useWindowSize from '../hooks/useWindowSize'
 
@@ -109,7 +109,7 @@ export default function FeaturedProjects() {
                   }}
                 >
                   {project.title}
-                  <Globe size={12} strokeWidth={1.5} style={{ color: 'var(--text-3)', flexShrink: 0 }} />
+                  <LinkIcon size={12} style={{ color: 'var(--text-3)', flexShrink: 0 }} />
                 </a>
               </div>
               <p style={{

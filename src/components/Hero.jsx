@@ -1,7 +1,5 @@
 import useWindowSize from '../hooks/useWindowSize'
-import { Mail } from 'lucide-react'
-import { FaLinkedinIn } from 'react-icons/fa6'
-import { SiGithub } from 'react-icons/si'
+import { GithubIcon, LinkedinIcon, MailIcon } from './icons'
 
 export default function Hero() {
   const width = useWindowSize()
@@ -100,7 +98,7 @@ export default function Hero() {
           onMouseEnter={e => (e.currentTarget.style.color = 'var(--text)')}
           onMouseLeave={e => (e.currentTarget.style.color = 'var(--text-2)')}
         >
-          <Mail size={16} strokeWidth={1.5} style={{ opacity: 0.85 }} />
+          <MailIcon size={16} style={{ opacity: 0.85 }} />
         </a>
 
         <a
@@ -119,7 +117,7 @@ export default function Hero() {
           onMouseEnter={e => (e.currentTarget.style.color = 'var(--text)')}
           onMouseLeave={e => (e.currentTarget.style.color = 'var(--text-2)')}
         >
-          <SiGithub size={16} style={{ opacity: 0.9 }} />
+          <GithubIcon size={16} style={{ opacity: 0.9 }} />
         </a>
 
         <a
@@ -138,7 +136,7 @@ export default function Hero() {
           onMouseEnter={e => (e.currentTarget.style.color = 'var(--text)')}
           onMouseLeave={e => (e.currentTarget.style.color = 'var(--text-2)')}
         >
-          <FaLinkedinIn size={16} style={{ opacity: 0.9 }} />
+          <LinkedinIcon size={16} style={{ opacity: 0.9 }} />
         </a>
       </div>
 

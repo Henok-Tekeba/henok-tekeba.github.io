@@ -1,10 +1,11 @@
 import { useState } from 'react'
 import useWindowSize from '../hooks/useWindowSize'
 import { CheckCircle, AlertCircle, Loader2 } from 'lucide-react'
-import { SiGithub, SiHuggingface, SiX } from 'react-icons/si'
+import { SiHuggingface, SiX } from 'react-icons/si'
+import { GithubIcon } from './icons'
 
 const links = [
-  { label: 'GitHub', href: 'https://github.com/Henok-Tekeba', icon: SiGithub, isBrand: true },
+  { label: 'GitHub', href: 'https://github.com/Henok-Tekeba', icon: GithubIcon, isBrand: true },
   { label: 'HuggingFace', href: 'https://huggingface.co/Henokk', icon: SiHuggingface, isBrand: true },
   { label: 'X', href: 'https://x.com/HenaTeke', icon: SiX, isBrand: true },
 ] 

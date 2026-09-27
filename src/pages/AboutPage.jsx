@@ -1,7 +1,6 @@
 import { Link } from 'react-router-dom'
-import { GraduationCap, Mail, MapPin, Sparkles } from 'lucide-react'
-import { FaLinkedinIn } from 'react-icons/fa6'
-import { SiGithub } from 'react-icons/si'
+import { GraduationCap, MapPin, Sparkles } from 'lucide-react'
+import { GithubIcon, LinkedinIcon, MailIcon } from '../components/icons'
 import useReveal from '../hooks/useReveal'
 import useWindowSize from '../hooks/useWindowSize'
 import Footer from '../components/Footer'
@@ -14,9 +13,9 @@ const facts = [
 ]
 
 const socials = [
-  { label: 'Email', href: 'mailto:me@enoch.et', icon: Mail },
-  { label: 'GitHub', href: 'https://github.com/Henok-Tekeba', icon: SiGithub },
-  { label: 'LinkedIn', href: 'https://www.linkedin.com/in/henok-ayele-6ab58b356', icon: FaLinkedinIn },
+  { label: 'Email', href: 'mailto:me@enoch.et', icon: MailIcon },
+  { label: 'GitHub', href: 'https://github.com/Henok-Tekeba', icon: GithubIcon },
+  { label: 'LinkedIn', href: 'https://www.linkedin.com/in/henok-ayele-6ab58b356', icon: LinkedinIcon },
 ]
 
 export default function AboutPage() {
