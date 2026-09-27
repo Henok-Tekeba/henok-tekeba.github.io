@@ -1,14 +1,14 @@
 import { Link } from 'react-router-dom'
-import { GraduationCap, MapPin, Sparkles } from 'lucide-react'
-import { GithubIcon, LinkedinIcon, MailIcon } from '../components/icons'
+import { Sparkles } from 'lucide-react'
+import { GithubIcon, LinkedinIcon, MailIcon, MapPinIcon, UniversityIcon } from '../components/icons'
 import useReveal from '../hooks/useReveal'
 import useWindowSize from '../hooks/useWindowSize'
 import Footer from '../components/Footer'
 import PageLayout from '../components/PageLayout'
 
 const facts = [
-  { label: 'Location', value: 'Addis Ababa, Ethiopia', Icon: MapPin },
-  { label: 'University', value: 'Addis Ababa University', Icon: GraduationCap },
+  { label: 'Location', value: 'Addis Ababa, Ethiopia', Icon: MapPinIcon },
+  { label: 'University', value: 'Addis Ababa University', Icon: UniversityIcon },
   { label: 'Looking for', value: 'Internships & full-stack roles', Icon: Sparkles },
 ]
 

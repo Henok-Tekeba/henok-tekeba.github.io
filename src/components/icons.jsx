@@ -88,3 +88,42 @@ export function MoonIcon({ size = 13, style }) {
     </svg>
   )
 }
+
+export function MapPinIcon({ size = 16, style }) {
+  return (
+    <svg {...baseProps(size, style)}>
+      <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+      <circle cx="12" cy="10" r="3" />
+    </svg>
+  )
+}
+
+export function UniversityIcon({ size = 16, style }) {
+  return (
+    <svg {...baseProps(size, style)} strokeWidth={2}>
+      <path d="M14 21v-3a2 2 0 0 0-4 0v3" />
+      <path d="M18 12h.01" />
+      <path d="M18 16h.01" />
+      <path d="M22 7a1 1 0 0 0-1-1h-2a2 2 0 0 1-1.143-.359L13.143 2.36a2 2 0 0 0-2.286-.001L6.143 5.64A2 2 0 0 1 5 6H3a1 1 0 0 0-1 1v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2z" />
+      <path d="M6 12h.01" />
+      <path d="M6 16h.01" />
+      <circle cx="12" cy="10" r="2" />
+    </svg>
+  )
+}
+
+export function DownloadIcon({ size = 13, style }) {
+  return (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 16 16"
+      fill="currentColor"
+      style={{ flexShrink: 0, ...style }}
+      aria-hidden="true"
+    >
+      <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5" />
+      <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708z" />
+    </svg>
+  )
+}

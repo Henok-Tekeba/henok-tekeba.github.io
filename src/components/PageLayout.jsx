@@ -1,14 +1,14 @@
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
-import { Download, FileText, Menu, X } from 'lucide-react'
+import { FileText, Menu, X } from 'lucide-react'
 import { useTheme } from '../hooks/useTheme'
 import useWindowSize from '../hooks/useWindowSize'
-import { MoonIcon, SunIcon } from './icons'
+import { MoonIcon, SunIcon, DownloadIcon } from './icons'
 
 const menuLinks = [
   { label: 'About', href: '/about', external: false, icon: null },
   { label: 'Resume', href: '/resume.html', external: true, icon: FileText },
-  { label: 'Download PDF', href: '/resume.pdf', external: true, download: true, icon: Download },
+  { label: 'Download PDF', href: '/resume.pdf', external: true, download: true, icon: DownloadIcon },
   { label: 'Projects', href: '#experience', external: false, icon: null },
 ] 
 
