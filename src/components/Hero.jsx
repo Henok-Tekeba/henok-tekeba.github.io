@@ -18,7 +18,7 @@ export default function Hero() {
       zIndex: 1,
     }}>
 
-      <div style={{ display: 'flex', alignItems: 'center', gap: '0.85rem', marginBottom: '0.9rem' }}>
+      <div style={{ display: 'flex', alignItems: 'center', gap: '0.85rem', marginBottom: '0.7rem' }}>
         <div style={{
           width: photoSize,
           height: photoSize,
@@ -71,10 +71,10 @@ export default function Hero() {
       <p style={{
         fontFamily: 'var(--display)',
         fontWeight: 'var(--display-weight-light)',
-        fontSize: 'clamp(1rem, 2vw, 1.2rem)',
+        fontSize: 'clamp(0.9rem, 1.7vw, 1.02rem)',
         color: 'var(--text-2)',
-        lineHeight: 1.6,
-        marginBottom: '1.25rem',
+        lineHeight: 1.5,
+        marginBottom: '1rem',
       }}>
         I build full-stack web apps and backend systems that ship. Next.js on the front, Express and PostgreSQL on the back, with JWT auth, real-time streaming, and background pipelines. Deployed across Vercel, Railway, and Modal, and used by real people.
       </p>
