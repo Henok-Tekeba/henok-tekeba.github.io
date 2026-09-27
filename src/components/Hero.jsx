@@ -35,17 +35,17 @@ export default function Hero() {
       display: 'flex',
       flexDirection: 'column',
       justifyContent: 'center',
-      padding: isMobile ? '2rem 1.5rem 1.5rem' : '5.5rem 3rem 1.5rem',
+      padding: isMobile ? '2rem 1.5rem 1.25rem' : '3.5rem 3rem 1.25rem',
       position: 'relative',
       zIndex: 1,
     }}>
 
-      <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem', marginBottom: '1.7rem' }}>
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '0.35rem', marginBottom: '1rem' }}>
         <h1 style={{
           fontFamily: 'var(--title)',
           fontWeight: 600,
-          fontSize: isMobile ? 'clamp(1.6rem, 6vw, 2.2rem)' : 'clamp(1.8rem, 3.5vw, 2.8rem)',
-          lineHeight: 1.05,
+          fontSize: isMobile ? 'clamp(1.35rem, 5.5vw, 1.75rem)' : 'clamp(1.5rem, 2.8vw, 2rem)',
+          lineHeight: 1.15,
           letterSpacing: '-0.02em',
           color: 'var(--text)',
         }}>
@@ -56,6 +56,7 @@ export default function Hero() {
           fontFamily: 'var(--title)',
           fontSize: isMobile ? '0.72rem' : '0.85rem',
           letterSpacing: '0.08em',
+          lineHeight: 1.5,
           color: 'var(--text-2)',
           minHeight: '1.3rem',
           opacity: isHeadlineVisible ? 1 : 0,
@@ -71,8 +72,8 @@ export default function Hero() {
         fontWeight: 'var(--display-weight-light)',
         fontSize: 'clamp(1rem, 2vw, 1.2rem)',
         color: 'var(--text-2)',
-        lineHeight: 1.8,
-        marginBottom: '1.5rem',
+        lineHeight: 1.6,
+        marginBottom: '1.25rem',
       }}>
         I build full-stack web apps and backend systems that ship. Next.js on the front, Express and PostgreSQL on the back, deployed and used by real people.
       </p>
