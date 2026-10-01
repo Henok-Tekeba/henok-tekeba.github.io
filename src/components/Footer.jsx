@@ -12,11 +12,11 @@ export default function Footer() {
     }}>
       <blockquote style={{
         fontFamily: 'var(--title)',
-        fontSize: 'clamp(1.15rem, 3.1vw, 2rem)',
-        lineHeight: 1.05,
+        fontSize: 'clamp(0.85rem, 2vw, 1.1rem)',
+        lineHeight: 1.2,
         letterSpacing: '0.03em',
         textTransform: 'uppercase',
-        color: 'var(--text)',
+        color: 'var(--text-2)',
         textAlign: 'center',
       }}>
         BUILD USEFUL THINGS
