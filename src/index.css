@@ -170,46 +170,45 @@ body {
 }
 
 .experience-period {
-  font-size: clamp(0.9rem, 1.7vw, 1.02rem);
-  line-height: 1.5;
-  font-weight: 400;
   color: var(--text-3);
 }
 
-.experience-content {
-  display: flex;
-  flex-direction: column;
-  gap: 0.25rem;
+.experience-dot {
+  color: var(--text-3);
 }
 
 .experience-role {
-  font-size: clamp(0.9rem, 1.7vw, 1.02rem);
-  line-height: 1.5;
-  color: var(--text-2);
-  font-weight: 400;
+  color: var(--text);
+  font-weight: 500;
 }
 
 .experience-company {
+  color: var(--text-3);
+}
+
+.experience-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  column-gap: 0.5rem;
   font-size: clamp(0.9rem, 1.7vw, 1.02rem);
   line-height: 1.5;
-  color: var(--text-2);
-  font-weight: 400;
 }
 
 .experience-highlights {
-  margin: 0;
-  padding: 0;
+  margin: 0.25rem 0 0;
+  padding: 0 0 0 0.75rem;
   list-style: none;
   display: flex;
   flex-direction: column;
   gap: 0.25rem;
-  padding-top: 0.25rem;
+  border-left: 1px solid var(--border);
 }
 
 .experience-highlights li {
-  font-size: clamp(0.9rem, 1.7vw, 1.02rem);
+  font-size: 0.88rem;
   color: var(--text-2);
-  line-height: 1.5;
+  line-height: 1.6;
 }
 
 /* ── GITHUB COMMIT GRAPH ── */

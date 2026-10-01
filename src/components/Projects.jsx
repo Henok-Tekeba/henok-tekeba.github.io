@@ -4,28 +4,28 @@ const experience = [
   {
     period: '2024 to Present',
     role: 'Founder & Full Stack Engineer',
-    company: 'voiET: Voice AI Platform',
+    company: 'voiET Voice AI Platform',
     highlights: [
-      'Built and shipped a full stack platform end to end: Next.js frontend, Express REST API, PostgreSQL database, deployed across Vercel, Railway, and Modal Labs',
-      'Implemented JWT authentication, Server Sent Events for real time streaming responses, and parallel audio chunking using Modal\'s starmap for high throughput inference',
-      'Delivered a paid transcription contract (~30,000 audio chunks) using a production pipeline on Modal',
+      'Shipped a full stack voice AI platform end to end, from Next.js frontend to PostgreSQL database to production deploy',
+      'Added login, live response streaming, and parallel audio processing for fast inference',
+      'Delivered a paid contract transcribing 30,000 audio chunks in production',
     ],
   },
   {
     period: '2024',
     role: 'Full Stack Engineer',
-    company: 'goha.et: Ecosystem Tracker',
+    company: 'goha.et Ecosystem Tracker',
     highlights: [
-      'Designed and shipped a full stack product from zero to production in a single day: Next.js + Express, automated GitHub Actions cron job for live data updates, deployed on Vercel and Render',
+      'Designed and shipped a live ecosystem tracker in one day, with automatic daily data updates',
     ],
   },
   {
     period: '2024',
     role: 'Automation Engineer',
-    company: 'Personal: Telegram Opportunity Digest',
+    company: 'Telegram Opportunity Digest',
     highlights: [
-      'Built an automated Telegram channel pipeline using Telethon + Groq (llama-3.3-70b-versatile) to scrape, summarize, and deliver curated opportunities',
-      'Deployed via GitHub Actions cron; zero maintenance system running continuously in production',
+      'Built a Telegram pipeline that scrapes, summarizes, and delivers opportunities every day',
+      'Runs on its own with zero maintenance',
     ],
   },
 ]
@@ -51,20 +51,19 @@ export default function Projects() {
             key={i}
             className={`experience-entry reveal ${i > 0 ? `d${i}` : ''}`}
           >
-            <div className="experience-period">
-              <span className="experience-period-line" />
-              <span>{entry.period}</span>
-            </div>
+            <p className="experience-header">
+              <span className="experience-period">{entry.period}</span>
+              <span className="experience-dot" aria-hidden="true">·</span>
+              <span className="experience-role">{entry.role}</span>
+              <span className="experience-dot" aria-hidden="true">·</span>
+              <span className="experience-company">{entry.company}</span>
+            </p>
 
-            <div className="experience-content">
-              <h3 className="experience-role">{entry.role}</h3>
-              <p className="experience-company">{entry.company}</p>
-              <ul className="experience-highlights">
-                {entry.highlights.map((item, j) => (
-                  <li key={j}>{item}</li>
-                ))}
-              </ul>
-            </div>
+            <ul className="experience-highlights">
+              {entry.highlights.map((item, j) => (
+                <li key={j}>{item}</li>
+              ))}
+            </ul>
           </div>
         ))}
       </div>
