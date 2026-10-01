@@ -4,7 +4,7 @@ import { GithubIcon, LinkedinIcon, MailIcon } from './icons'
 export default function Hero() {
   const width = useWindowSize()
   const isMobile = width < 768
-  const photoSize = isMobile ? 46 : 54
+  const photoSize = isMobile ? 52 : 64
 
   return (
     <section id="hero" style={{
