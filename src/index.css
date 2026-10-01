@@ -178,7 +178,6 @@ body {
   display: flex;
   flex-direction: column;
   gap: 0.25rem;
-  padding-left: 1rem;
 }
 
 .experience-role {
@@ -209,19 +208,6 @@ body {
   font-size: clamp(0.9rem, 1.7vw, 1.02rem);
   color: var(--text-2);
   line-height: 1.5;
-  padding-left: 1rem;
-  position: relative;
-}
-
-.experience-highlights li::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 0.65em;
-  width: 3px;
-  height: 3px;
-  border-radius: 50%;
-  background: var(--text-3);
 }
 
 /* ── GITHUB COMMIT GRAPH ── */
