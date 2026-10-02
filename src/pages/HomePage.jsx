@@ -13,9 +13,10 @@ export default function HomePage() {
   return (
     <PageLayout>
       <Hero />
-      <Projects />
 
       <FeaturedProjects />
+
+      <Projects />
 
       <Skills />
 

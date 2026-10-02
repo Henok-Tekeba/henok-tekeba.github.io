@@ -1,11 +1,11 @@
 import useWindowSize from '../hooks/useWindowSize'
-import { SiHuggingface, SiX } from 'react-icons/si'
-import { GithubIcon } from './icons'
+import { SiX } from 'react-icons/si'
+import { GithubIcon, MailIcon } from './icons'
 
 const links = [
   { label: 'GitHub', href: 'https://github.com/Henok-Tekeba', icon: GithubIcon, isBrand: true },
-  { label: 'HuggingFace', href: 'https://huggingface.co/Henokk', icon: SiHuggingface, isBrand: true },
   { label: 'X', href: 'https://x.com/HenaTeke', icon: SiX, isBrand: true },
+  { label: 'Mail', href: 'mailto:me@enoch.et', icon: MailIcon, isBrand: true },
 ]
 
 export default function Contact() {

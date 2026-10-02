@@ -51,19 +51,19 @@ export default function Projects() {
             key={i}
             className={`experience-entry reveal ${i > 0 ? `d${i}` : ''}`}
           >
-            <p className="experience-header">
-              <span className="experience-period">{entry.period}</span>
-              <span className="experience-dot" aria-hidden="true">·</span>
-              <span className="experience-role">{entry.role}</span>
-              <span className="experience-dot" aria-hidden="true">·</span>
-              <span className="experience-company">{entry.company}</span>
-            </p>
+            <div className="experience-period">
+              <span>{entry.period}</span>
+            </div>
 
-            <ul className="experience-highlights">
-              {entry.highlights.map((item, j) => (
-                <li key={j}>{item}</li>
-              ))}
-            </ul>
+            <div className="experience-content">
+              <h3 className="experience-role">{entry.role}</h3>
+              <p className="experience-company">{entry.company}</p>
+              <ul className="experience-highlights">
+                {entry.highlights.map((item, j) => (
+                  <li key={j}>{item}</li>
+                ))}
+              </ul>
+            </div>
           </div>
         ))}
       </div>
