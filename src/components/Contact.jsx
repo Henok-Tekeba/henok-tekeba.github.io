@@ -19,10 +19,6 @@ export default function Contact() {
       zIndex: 1,
     }}>
 
-      <div className="section-heading reveal">
-        <h2 className="section-heading-title">Contact</h2>
-      </div>
-
       <div style={{ maxWidth: '640px' }}>
         <h2 className="reveal" style={{
           fontFamily: 'var(--title)',
