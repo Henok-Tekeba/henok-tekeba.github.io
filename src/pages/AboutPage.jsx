@@ -13,7 +13,7 @@ const facts = [
 ]
 
 const socials = [
-  { label: 'Email', href: 'mailto:me@enoch.et', icon: MailIcon },
+  { label: 'Email', href: 'mailto:tekebahenok6@gmail.com', icon: MailIcon },
   { label: 'GitHub', href: 'https://github.com/Henok-Tekeba', icon: GithubIcon },
   { label: 'LinkedIn', href: 'https://www.linkedin.com/in/henok-ayele-6ab58b356', icon: LinkedinIcon },
 ]
@@ -158,7 +158,7 @@ export default function AboutPage() {
             lineHeight: 1.7,
           }}>
             I'm looking for internship and full stack development opportunities where I can contribute to real products, work with experienced engineers, and keep building. If you're working on something interesting or just want to connect,{' '}
-            <a href="mailto:me@enoch.et" style={{ color: 'var(--accent)', textDecoration: 'underline' }}>
+            <a href="mailto:tekebahenok6@gmail.com" style={{ color: 'var(--accent)', textDecoration: 'underline' }}>
               reach out
             </a>.
           </p>

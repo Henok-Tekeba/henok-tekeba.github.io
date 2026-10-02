@@ -85,8 +85,8 @@ export default function Hero() {
         marginBottom: '0.75rem',
       }}>
         <a
-          href="mailto:me@enoch.et"
-          aria-label="Email me at me@enoch.et"
+          href="mailto:tekebahenok6@gmail.com"
+          aria-label="Email me at tekebahenok6@gmail.com"
           title="Email"
           style={{
             display: 'inline-flex',

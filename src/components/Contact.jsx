@@ -5,7 +5,7 @@ import { GithubIcon, MailIcon } from './icons'
 const links = [
   { label: 'GitHub', href: 'https://github.com/Henok-Tekeba', icon: GithubIcon, isBrand: true },
   { label: 'X', href: 'https://x.com/HenaTeke', icon: SiX, isBrand: true },
-  { label: 'Mail', href: 'mailto:me@enoch.et', icon: MailIcon, isBrand: true },
+  { label: 'Mail', href: 'mailto:tekebahenok6@gmail.com', icon: MailIcon, isBrand: true },
 ]
 
 export default function Contact() {
@@ -32,8 +32,7 @@ export default function Contact() {
           color: 'var(--text)',
           marginBottom: '1rem',
         }}>
-          Have a project or idea?{' '}
-          <span style={{ color: 'var(--accent)' }}>Let's talk.</span>
+          Get in touch.
         </h2>
 
         <p className="reveal d1" style={{
@@ -44,10 +43,7 @@ export default function Contact() {
           lineHeight: 1.7,
           marginBottom: '1.25rem',
         }}>
-          I'm looking for internships and teams building products that need technical curiosity, speed, and attention to detail. The fastest way to reach me is email:{' '}
-          <a href="mailto:me@enoch.et" style={{ color: 'var(--accent)' }}>
-            me@enoch.et
-          </a>
+          I'm looking for internships and teams building products that need technical curiosity, speed, and attention to detail.
         </p>
 
         <div className="reveal d2" style={{
