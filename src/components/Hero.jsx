@@ -1,10 +1,28 @@
+import { useEffect, useState } from 'react'
 import useWindowSize from '../hooks/useWindowSize'
 import { GithubIcon, LinkedinIcon, MailIcon } from './icons'
+
+const rotatingSubheadlines = ['21', 'Engineer', 'Full stack dev']
 
 export default function Hero() {
   const width = useWindowSize()
   const isMobile = width < 768
   const photoSize = isMobile ? 52 : 64
+  const [subIndex, setSubIndex] = useState(0)
+  const [isSubVisible, setIsSubVisible] = useState(true)
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setIsSubVisible(false)
+
+      setTimeout(() => {
+        setSubIndex(prev => (prev + 1) % rotatingSubheadlines.length)
+        setIsSubVisible(true)
+      }, 220)
+    }, 2500)
+
+    return () => clearInterval(timer)
+  }, [])
 
   return (
     <section id="hero" style={{
@@ -60,8 +78,12 @@ export default function Hero() {
             lineHeight: 1.5,
             color: 'var(--text-2)',
             margin: 0,
+            minHeight: '1.3rem',
+            opacity: isSubVisible ? 1 : 0,
+            transform: isSubVisible ? 'translateY(0)' : 'translateY(5px)',
+            transition: 'opacity 0.22s ease, transform 0.22s ease',
           }}>
-            Student at AAU
+            {rotatingSubheadlines[subIndex]}
           </p>
         </div>
       </div>
