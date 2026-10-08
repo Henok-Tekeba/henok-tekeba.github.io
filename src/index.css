@@ -181,13 +181,13 @@ body {
 }
 
 .experience-role {
-  font-size: 1.1rem;
+  font-size: 1rem;
   color: var(--text);
   font-weight: 600;
 }
 
 .experience-company {
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   color: var(--accent);
   font-weight: 500;
 }

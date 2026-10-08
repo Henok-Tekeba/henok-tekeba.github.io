@@ -23,7 +23,7 @@ export default function Contact() {
         <h2 className="reveal" style={{
           fontFamily: 'var(--title)',
           fontWeight: 'var(--display-weight-thin)',
-          fontSize: 'clamp(1.8rem, 3.5vw, 2.5rem)',
+          fontSize: 'clamp(1.5rem, 2.5vw, 1.9rem)',
           lineHeight: 1.15,
           color: 'var(--text)',
           marginBottom: '1rem',
