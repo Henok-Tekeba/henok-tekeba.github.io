@@ -22,7 +22,6 @@ const projects = [
   {
     title: 'goha.et',
     tagline: 'A live tracker of the Ethiopian AI ecosystem: companies, tools, researchers, and initiatives, updating automatically.',
-    metric: 'Daily auto updates',
     image: '/goha.png',
     url: 'https://goha.et',
     stack: ['Next.js', 'Express', 'PostgreSQL', 'GitHub Actions'],
@@ -30,7 +29,6 @@ const projects = [
   {
     title: 'voiET',
     tagline: 'A production ready waitlist for Amharic voice AI: speech recognition, transcription, and diarization for users overlooked by mainstream speech tech.',
-    metric: '30,000 chunks transcribed',
     image: '/voiet.png',
     url: 'https://voiet.tech',
     stack: ['Next.js', 'Express', 'PostgreSQL', 'Whisper'],
@@ -124,24 +122,6 @@ export default function FeaturedProjects() {
               }}>
                 {project.tagline}
               </p>
-              <span style={{
-                display: 'inline-flex',
-                alignItems: 'center',
-                gap: '0.35rem',
-                alignSelf: 'flex-start',
-                fontSize: '0.6rem',
-                fontFamily: 'var(--mono)',
-                letterSpacing: '0.1em',
-                lineHeight: 1.5,
-                textTransform: 'uppercase',
-                color: 'var(--green)',
-                border: '1px solid color-mix(in srgb, var(--green) 35%, transparent)',
-                borderRadius: '999px',
-                padding: '0.25rem 0.6rem',
-                marginTop: '0.25rem',
-              }}>
-                {project.metric}
-              </span>
               <div style={{
                 display: 'flex',
                 flexWrap: 'wrap',

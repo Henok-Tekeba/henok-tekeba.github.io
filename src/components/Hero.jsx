@@ -61,8 +61,7 @@ export default function Hero() {
         </div>
 
         <div style={{ display: 'flex', flexDirection: 'column', gap: '0.25rem' }}>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', flexWrap: 'wrap' }}>
-            <h1 style={{
+          <h1 style={{
               fontFamily: 'var(--title)',
               fontWeight: 500,
               fontSize: isMobile ? 'clamp(1.05rem, 4.5vw, 1.25rem)' : 'clamp(1.1rem, 2vw, 1.4rem)',
@@ -72,30 +71,6 @@ export default function Hero() {
             }}>
               Henok Tekeba
             </h1>
-            <span style={{
-              display: 'inline-flex',
-              alignItems: 'center',
-              gap: '0.3rem',
-              fontSize: '0.6rem',
-              fontFamily: 'var(--mono)',
-              letterSpacing: '0.1em',
-              textTransform: 'uppercase',
-              color: 'var(--green)',
-              border: '1px solid color-mix(in srgb, var(--green) 35%, transparent)',
-              borderRadius: '999px',
-              padding: '0.2rem 0.55rem',
-              lineHeight: 1.5,
-              whiteSpace: 'nowrap',
-            }}>
-              <span style={{
-                width: '5px',
-                height: '5px',
-                borderRadius: '50%',
-                background: 'var(--green)',
-                flexShrink: 0,
-              }} />
-              Open to internships
-            </span>
           </div>
 
           <p style={{
@@ -141,28 +116,20 @@ export default function Hero() {
           style={{
             display: 'inline-flex',
             alignItems: 'center',
-            gap: '0.4rem',
-            fontSize: '0.6rem',
-            fontFamily: 'var(--mono)',
-            letterSpacing: '0.1em',
-            textTransform: 'uppercase',
             color: 'var(--text-2)',
             textDecoration: 'none',
-            border: '1px solid var(--border)',
-            borderRadius: '0.5rem',
-            padding: '0.45rem 0.75rem',
-            transition: 'color 0.2s ease, border-color 0.2s ease',
+            transition: 'color 0.2s ease',
           }}
-          onMouseEnter={e => {
-            e.currentTarget.style.color = 'var(--text)'
-            e.currentTarget.style.borderColor = 'var(--accent)'
-          }}
-          onMouseLeave={e => {
-            e.currentTarget.style.color = 'var(--text-2)'
-            e.currentTarget.style.borderColor = 'var(--border)'
-          }}
+          onMouseEnter={e => (e.currentTarget.style.color = 'var(--text)')}
+          onMouseLeave={e => (e.currentTarget.style.color = 'var(--text-2)')}
         >
-          Resume
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, opacity: 0.85 }} aria-hidden="true">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+            <polyline points="14 2 14 8 20 8" />
+            <line x1="16" y1="13" x2="8" y2="13" />
+            <line x1="16" y1="17" x2="8" y2="17" />
+            <polyline points="10 9 9 9 8 9" />
+          </svg>
         </a>
 
         <a
