@@ -359,14 +359,13 @@
 .home .r-circle-btn {
   width: 2.25rem;
   height: 2.25rem;
-  border-radius: 9999px;
-  border: 1px solid var(--line-strong);
-  background: var(--paper-raised);
+  border: 0;
+  background: transparent;
   color: var(--ink-muted);
   display: grid;
   place-items: center;
   cursor: pointer;
-  transition: color 0.2s ease, border-color 0.2s ease;
+  transition: color 0.2s ease;
 }
 
 .home .r-circle-btn:hover {
