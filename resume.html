@@ -230,5 +230,12 @@
         </ul>
       </section>
     </main>
+      <script>
+      if (window.location.search.includes('print')) {
+        window.addEventListener('load', function() {
+          setTimeout(function() { window.print() }, 600)
+        })
+      }
+    </script>
   </body>
 </html>

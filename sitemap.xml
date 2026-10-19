@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://henok-tekeba.github.io/</loc>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://henok-tekeba.github.io/articles</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://henok-tekeba.github.io/articles/building-ai-for-under-served-languages</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://henok-tekeba.github.io/articles/what-shipping-taught-me-early</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://henok-tekeba.github.io/articles/i-built-a-bot-to-stop-missing-opportunities</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://henok-tekeba.github.io/articles/one-day-ship-goha-et</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://henok-tekeba.github.io/resume.html</loc>
+    <priority>0.5</priority>
+  </url>
+</urlset>
