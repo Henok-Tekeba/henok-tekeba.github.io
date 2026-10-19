@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { Moon, Menu, Sun, Send, FileText, Globe, AudioWaveform } from 'lucide-react'
+import { Moon, Menu, Sun, FileText } from 'lucide-react'
 import { FaGithub, FaLinkedinIn } from 'react-icons/fa'
 import { MailSolidIcon } from '../components/icons'
 import { useTheme } from '../hooks/useTheme'
@@ -11,19 +11,19 @@ const projects = [
   {
     title: 'goha.et',
     desc: 'A live tracker of the Ethiopian AI ecosystem: companies, tools, researchers, and initiatives, updating automatically.',
-    icon: Globe,
+    icon: '/replica-icons/xsplit.svg',
     href: 'https://goha.et',
   },
   {
     title: 'voiET',
     desc: 'A production ready waitlist for Amharic voice AI: speech recognition, transcription, and diarization for users overlooked by mainstream speech tech.',
-    icon: AudioWaveform,
+    icon: '/replica-icons/agent-skills.svg',
     href: 'https://voiet.tech',
   },
   {
     title: 'Telegram Opportunity Digest',
     desc: 'A Telegram pipeline that scrapes, summarizes, and delivers opportunities every day. Runs on its own with zero maintenance.',
-    icon: Send,
+    icon: '/replica-icons/toolist.svg',
   },
 ]
 
@@ -86,9 +86,7 @@ export default function ReplicaPage() {
               const body = (
                 <>
                   <span className="r-tile">
-                    {project.image
-                      ? <img src={project.image} alt="" width="64" height="64" loading="lazy" />
-                      : <project.icon width={24} height={24} strokeWidth={1.5} />}
+                    <img className="r-tile-icon" src={project.icon} alt="" width="24" height="24" loading="lazy" />
                   </span>
                   <span className="r-row-body">
                     <h3 className="r-row-title">{project.title}</h3>
