@@ -25,6 +25,11 @@ const projects = [
     desc: 'A Telegram pipeline that scrapes, summarizes, and delivers opportunities every day. Runs on its own with zero maintenance.',
     icon: '/icons/toolist.svg',
   },
+  {
+    title: 'jobcopilot',
+    desc: 'A scoring pipeline that pulls internships from dozens of company ATS boards daily, checks each posting\u2019s text for visa/location limits, and grades the fit against your skills. Runs on its own, zero maintenance.',
+    icon: '/icons/open-icons.svg',
+  },
 ]
 
 export default function HomePage() {
