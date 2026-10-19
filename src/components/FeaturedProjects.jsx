@@ -1,22 +1,4 @@
 import { LinkIcon } from './icons'
-import { SiNextdotjs, SiExpress, SiPostgresql, SiGithubactions, SiOpenai } from 'react-icons/si'
-import useWindowSize from '../hooks/useWindowSize'
-
-const techIcons = {
-  'Next.js': SiNextdotjs,
-  'Express': SiExpress,
-  'PostgreSQL': SiPostgresql,
-  'GitHub Actions': SiGithubactions,
-  'Whisper': SiOpenai,
-}
-
-const techColors = {
-  'Next.js': 'var(--text)',
-  'Express': 'var(--text-2)',
-  'PostgreSQL': '#336791',
-  'GitHub Actions': 'var(--text)',
-  'Whisper': '#412991',
-}
 
 const projects = [
   {
@@ -36,128 +18,33 @@ const projects = [
 ]
 
 export default function FeaturedProjects() {
-  const width = useWindowSize()
-  const isMobile = width < 768
-
   return (
-    <section id="featured-projects" style={{
-      padding: isMobile ? '1.5rem 1.5rem' : '2rem 3rem',
-    }}>
+    <section id="featured-projects" className="section">
       <div className="section-heading reveal">
         <h2 className="section-heading-title">Featured Projects</h2>
       </div>
 
-      <div style={{
-        display: 'grid',
-        gridTemplateColumns: isMobile ? '1fr' : '1fr 1fr',
-        gap: '1rem',
-      }}>
-        {projects.map((project, i) => (
-          <div
+      <div className="rows reveal d1">
+        {projects.map(project => (
+          <a
             key={project.title}
-            className={`reveal ${i > 0 ? `d${i}` : ''}`}
-            style={{
-              display: 'flex',
-              flexDirection: 'column',
-              borderRadius: '0.75rem',
-              overflow: 'hidden',
-              border: '1px solid var(--border)',
-            }}
+            className="row"
+            href={project.url}
+            target="_blank"
+            rel="noreferrer"
           >
-            <div style={{
-              width: '100%',
-              aspectRatio: '16 / 9',
-              overflow: 'hidden',
-              flexShrink: 0,
-            }}>
-              <img
-                src={project.image}
-                alt={project.title}
-                style={{
-                  width: '100%',
-                  height: '100%',
-                  objectFit: 'cover',
-                  display: 'block',
-                }}
-              />
-            </div>
-            <div style={{
-              padding: '1rem 1.25rem 1.25rem',
-              display: 'flex',
-              flexDirection: 'column',
-              gap: '0.35rem',
-            }}>
-              <div style={{
-                display: 'flex',
-                alignItems: 'center',
-                gap: '0.4rem',
-              }}>
-                <a
-                  href={project.url}
-                  target="_blank"
-                  rel="noreferrer"
-                  style={{
-                    fontFamily: 'var(--title)',
-                    fontSize: '1.05rem',
-                    fontWeight: 600,
-                    color: 'var(--text)',
-                    lineHeight: 1.2,
-                    textDecoration: 'none',
-                    display: 'inline-flex',
-                    alignItems: 'center',
-                    gap: '0.4rem',
-                  }}
-                >
-                  {project.title}
-                  <LinkIcon size={12} style={{ color: 'var(--text-3)', flexShrink: 0 }} />
-                </a>
-              </div>
-              <p style={{
-                fontFamily: 'var(--display)',
-                fontWeight: 'var(--display-weight-light)',
-                fontSize: '0.95rem',
-                color: 'var(--text-2)',
-                lineHeight: 1.7,
-                margin: 0,
-              }}>
-                {project.tagline}
-              </p>
-              <div style={{
-                display: 'flex',
-                flexWrap: 'wrap',
-                gap: '0.5rem',
-                marginTop: '0.35rem',
-              }}>
-                {project.stack.map(tech => {
-                  const Icon = techIcons[tech]
-                  const color = techColors[tech]
-                  return Icon ? (
-                    <span
-                      key={tech}
-                      title={tech}
-                      style={{
-                        display: 'inline-flex',
-                        alignItems: 'center',
-                        gap: '0.3rem',
-                      }}
-                    >
-                      <Icon style={{ color, width: '14px', height: '14px' }} />
-                    </span>
-                  ) : (
-                    <span key={tech} style={{
-                      fontFamily: 'var(--mono)',
-                      fontSize: '0.6rem',
-                      letterSpacing: '0.1em',
-                      lineHeight: 1.5,
-                      color: 'var(--text-3)',
-                    }}>
-                      {tech}
-                    </span>
-                  )
-                })}
-              </div>
-            </div>
-          </div>
+            <span className="row-tile">
+              <img src={project.image} alt="" width="64" height="64" loading="lazy" />
+            </span>
+            <span className="row-body">
+              <h3 className="row-title">
+                {project.title}
+                <LinkIcon size={14} style={{ color: 'var(--text-3)', flexShrink: 0 }} />
+              </h3>
+              <span className="row-desc">{project.tagline}</span>
+              <span className="row-meta">{project.stack.join(' · ')}</span>
+            </span>
+          </a>
         ))}
       </div>
     </section>

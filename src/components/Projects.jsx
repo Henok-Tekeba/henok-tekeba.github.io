@@ -1,5 +1,3 @@
-import useWindowSize from '../hooks/useWindowSize'
-
 const experience = [
   {
     period: '2024 to Present',
@@ -31,29 +29,16 @@ const experience = [
 ]
 
 export default function Projects() {
-  const width = useWindowSize()
-  const isMobile = width < 768
-
   return (
-    <section id="experience" style={{
-      padding: isMobile ? '1.5rem 1.5rem' : '2rem 3rem',
-      position: 'relative',
-      zIndex: 1,
-    }}>
-
+    <section id="experience" className="section">
       <div className="section-heading reveal">
         <h2 className="section-heading-title">Experience</h2>
       </div>
 
-      <div className="experience-list">
+      <div className="rows reveal d1">
         {experience.map((entry, i) => (
-          <div
-            key={i}
-            className={`experience-entry reveal ${i > 0 ? `d${i}` : ''}`}
-          >
-            <div className="experience-period">
-              <span>{entry.period}</span>
-            </div>
+          <div key={i} className="experience-entry">
+            <span className="experience-period">{entry.period}</span>
 
             <div className="experience-content">
               <h3 className="experience-role">{entry.role}</h3>

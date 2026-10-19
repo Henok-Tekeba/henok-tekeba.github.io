@@ -1,37 +1,8 @@
 export default function Footer() {
   return (
-    <footer style={{
-      borderTop: '1px solid var(--border)',
-      display: 'flex',
-      flexDirection: 'column',
-      justifyContent: 'center',
-      alignItems: 'center',
-      gap: '1rem',
-      position: 'relative',
-      zIndex: 1,
-    }}>
-      <blockquote style={{
-        fontFamily: 'var(--title)',
-        fontSize: 'clamp(0.85rem, 2vw, 1.1rem)',
-        lineHeight: 1.2,
-        letterSpacing: '0.03em',
-        textTransform: 'uppercase',
-        color: 'var(--text-2)',
-        textAlign: 'center',
-      }}>
-        BUILD USEFUL THINGS
-      </blockquote>
-
-      <p style={{
-        fontFamily: 'var(--mono)',
-        fontSize: '0.7rem',
-        letterSpacing: '0.1em',
-        lineHeight: 1.5,
-        color: 'var(--text-3)',
-        textAlign: 'center',
-      }}>
-        2026 <span style={{ color: 'var(--text-2)' }}>Henok Tekeba</span>
-      </p>
+    <footer>
+      <p className="footer-motto">Build useful things</p>
+      <p className="footer-copy">© 2026 Henok Tekeba</p>
     </footer>
   )
 }

@@ -1,17 +1,9 @@
 import { useEffect, useState } from 'react'
 import { FileText } from 'lucide-react'
-import { FaGithub } from 'react-icons/fa'
-import { FaLinkedinIn } from 'react-icons/fa'
+import { FaGithub, FaLinkedinIn } from 'react-icons/fa'
+import { MailSolidIcon } from './icons'
 
 const rotatingSubheadlines = ['21', 'Engineer', 'Full stack dev']
-
-function MailSolidIcon({ size = 16 }) {
-  return (
-    <svg viewBox="0 0 16 16" fill="currentColor" width={size} height={size} aria-hidden="true" focusable="false" style={{ flexShrink: 0 }}>
-      <path fillRule="evenodd" clipRule="evenodd" d="M1.33333 1.83333C1.05719 1.83333 0.833333 2.05719 0.833333 2.33333V13.6667C0.833333 13.9428 1.05719 14.1667 1.33333 14.1667H14.6667C14.9428 14.1667 15.1667 13.9428 15.1667 13.6667V2.33333C15.1667 2.05719 14.9428 1.83333 14.6667 1.83333H1.33333ZM4.27735 4.91732L3.72265 5.74937L8 8.60093L12.2773 5.74937L11.7227 4.91732L8 7.39907L4.27735 4.91732Z" />
-    </svg>
-  )
-}
 
 export default function Hero() {
   const [subIndex, setSubIndex] = useState(0)

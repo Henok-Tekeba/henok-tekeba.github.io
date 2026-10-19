@@ -1,8 +1,7 @@
-import { Link } from 'react-router-dom'
 import { Sparkles } from 'lucide-react'
-import { GithubIcon, LinkedinIcon, MailIcon, MapPinIcon, UniversityIcon } from '../components/icons'
+import { FaGithub, FaLinkedinIn } from 'react-icons/fa'
+import { MailSolidIcon, MapPinIcon, UniversityIcon } from '../components/icons'
 import useReveal from '../hooks/useReveal'
-import useWindowSize from '../hooks/useWindowSize'
 import Footer from '../components/Footer'
 import PageLayout from '../components/PageLayout'
 
@@ -12,158 +11,69 @@ const facts = [
   { label: 'Looking for', value: 'Internships & full stack roles', Icon: Sparkles },
 ]
 
-const socials = [
-  { label: 'Email', href: 'mailto:tekebahenok6@gmail.com', icon: MailIcon },
-  { label: 'GitHub', href: 'https://github.com/Henok-Tekeba', icon: GithubIcon },
-  { label: 'LinkedIn', href: 'https://www.linkedin.com/in/henok-ayele-6ab58b356', icon: LinkedinIcon },
-]
-
 export default function AboutPage() {
   useReveal()
-  const width = useWindowSize()
-  const isMobile = width < 768
 
   return (
     <PageLayout>
-      <main style={{
-        padding: isMobile ? '3rem 1.5rem' : '4rem 3rem',
-      }}>
+      <section className="section">
         <div className="section-heading reveal">
           <h1 className="section-heading-title">About</h1>
         </div>
 
-        <div className="reveal d1" style={{
-          display: 'flex',
-          flexDirection: 'column',
-          gap: '1.5rem',
-          maxWidth: '700px',
-          marginBottom: '2.5rem',
-        }}>
-          <p style={{
-            fontFamily: 'var(--display)',
-            fontWeight: 'var(--display-weight-light)',
-            fontSize: 'clamp(1.1rem, 2vw, 1.4rem)',
-            lineHeight: 1.6,
-            color: 'var(--text)',
-          }}>
+        <div className="about-intro reveal d1">
+          <p className="page-intro">
             I build full stack web products and backend systems for users who are usually treated as edge cases by the mainstream market.
           </p>
 
-          <p style={{
-            fontFamily: 'var(--display)',
-            fontWeight: 'var(--display-weight-light)',
-            fontSize: '1.05rem',
-            color: 'var(--text-2)',
-            lineHeight: 1.7,
-          }}>
+          <p className="page-intro">
             My work spans frontend, backend, and infrastructure: web apps, APIs, databases, and the unglamorous work of turning ideas into deployed products people actually use. I'm currently studying at Addis Ababa University and building full stack products that serve Ethiopian users.
           </p>
 
-          <p style={{
-            fontFamily: 'var(--display)',
-            fontWeight: 'var(--display-weight-light)',
-            fontSize: '1.05rem',
-            color: 'var(--text-2)',
-            lineHeight: 1.7,
-          }}>
+          <p className="page-intro">
             The thread through everything is local usefulness. Building software that respects Ethiopian realities instead of assuming Silicon Valley defaults. My recent work includes building a full stack Voice AI platform with real time streaming via Server Sent Events, audio chunking pipelines deployed on Modal, and a Telegram opportunity bot that scrapes and summarizes opportunities daily.
           </p>
         </div>
 
-        <div className="reveal d2" style={{
-          display: 'flex',
-          flexDirection: isMobile ? 'column' : 'row',
-          gap: isMobile ? '1rem' : '2rem',
-          marginBottom: '2.5rem',
-        }}>
+        <div className="about-facts reveal d2">
           {facts.map(({ label, value, Icon }) => (
-            <div key={label} style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-              <Icon size={16} strokeWidth={1.5} style={{ color: 'var(--accent)', flexShrink: 0 }} />
+            <div key={label} className="about-fact">
+              <Icon size={16} strokeWidth={1.5} style={{ color: 'var(--text-3)', flexShrink: 0 }} />
               <div>
-                <div style={{
-                  fontFamily: 'var(--mono)',
-                  fontSize: '0.6rem',
-                  letterSpacing: '0.1em',
-                  lineHeight: 1.5,
-                  textTransform: 'uppercase',
-                  color: 'var(--text-3)',
-                }}>
-                  {label}
-                </div>
-                <div style={{
-                  fontFamily: 'var(--display)',
-                  fontSize: '0.92rem',
-                  color: 'var(--text-2)',
-                }}>
-                  {value}
-                </div>
+                <div className="about-fact-label">{label}</div>
+                <div className="about-fact-value">{value}</div>
               </div>
             </div>
           ))}
         </div>
 
-        <div className="reveal d2" style={{
-          display: 'flex',
-          flexWrap: 'wrap',
-          gap: '0.5rem',
-          marginBottom: '2.5rem',
-        }}>
-          {socials.map(({ label, href, icon: Icon }) => (
-            <a
-              key={label}
-              href={href}
-              target={href.startsWith('mailto') ? '_self' : '_blank'}
-              rel="noreferrer"
-              style={{
-                display: 'inline-flex',
-                alignItems: 'center',
-                gap: '0.5rem',
-                padding: '0.55rem 0.9rem',
-                border: '1px solid var(--border)',
-                borderRadius: '0.6rem',
-                textDecoration: 'none',
-                color: 'var(--text-3)',
-                background: 'color-mix(in srgb, var(--bg-2) 94%, transparent)',
-                transition: 'all 0.2s ease',
-                fontFamily: 'var(--mono)',
-                fontSize: '0.6rem',
-                letterSpacing: '0.1em',
-                textTransform: 'uppercase',
-                lineHeight: 1.5,
-              }}
-              onMouseEnter={e => {
-                e.currentTarget.style.borderColor = 'var(--accent)'
-                e.currentTarget.style.color = 'var(--accent)'
-              }}
-              onMouseLeave={e => {
-                e.currentTarget.style.borderColor = 'var(--border)'
-                e.currentTarget.style.color = 'var(--text-3)'
-              }}
-            >
-              <Icon size={13} strokeWidth={1.5} />
-              {label}
-            </a>
-          ))}
-        </div>
+        <p className="hero-reach reveal d2">
+          You can reach me via{' '}
+          <a className="hero-link" href="mailto:tekebahenok6@gmail.com" title="Email">
+            <MailSolidIcon size={16} />
+            <span>email</span>
+          </a>
+          ,{' '}
+          <a className="hero-link" href="https://github.com/Henok-Tekeba" target="_blank" rel="noreferrer" title="GitHub">
+            <FaGithub size={16} />
+            <span>GitHub</span>
+          </a>{' '}
+          or{' '}
+          <a className="hero-link" href="https://www.linkedin.com/in/henok-ayele-6ab58b356" target="_blank" rel="noreferrer" title="LinkedIn">
+            <FaLinkedinIn size={16} />
+            <span>LinkedIn</span>
+          </a>.
+        </p>
 
-        <div className="reveal d3" style={{
-          borderTop: '1px solid var(--border)',
-          paddingTop: '2rem',
-        }}>
-          <p style={{
-            fontFamily: 'var(--display)',
-            fontWeight: 'var(--display-weight-light)',
-            fontSize: '1rem',
-            color: 'var(--text-2)',
-            lineHeight: 1.7,
-          }}>
+        <div className="about-outro reveal d3">
+          <p className="page-intro">
             I'm looking for internship and full stack development opportunities where I can contribute to real products, work with experienced engineers, and keep building. If you're working on something interesting or just want to connect,{' '}
-            <a href="mailto:tekebahenok6@gmail.com" style={{ color: 'var(--accent)', textDecoration: 'underline' }}>
-              reach out
+            <a className="hero-link" href="mailto:tekebahenok6@gmail.com">
+              <span>reach out</span>
             </a>.
           </p>
         </div>
-      </main>
+      </section>
 
       <Footer />
     </PageLayout>

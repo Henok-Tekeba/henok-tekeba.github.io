@@ -38,9 +38,9 @@ const skills = [
 
 export default function Skills() {
   return (
-    <section id="skills" className="section-body">
+    <section id="skills" className="section">
       <div className="section-heading reveal">
-        <h2 className="section-heading-title">Skills & Tools</h2>
+        <h2 className="section-heading-title">Skills &amp; Tools</h2>
       </div>
 
       <div className="reveal d1 skills-row">
