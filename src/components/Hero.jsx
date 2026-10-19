@@ -1,13 +1,12 @@
 import { useEffect, useState } from 'react'
-import useWindowSize from '../hooks/useWindowSize'
-import { GithubIcon, LinkedinIcon, MailIcon } from './icons'
+import { FileText } from 'lucide-react'
+import { FaLinkedinIn } from 'react-icons/fa'
+import { MdEmail } from 'react-icons/md'
+import { SiGithub } from 'react-icons/si'
 
 const rotatingSubheadlines = ['21', 'Engineer', 'Full stack dev']
 
 export default function Hero() {
-  const width = useWindowSize()
-  const isMobile = width < 768
-  const photoSize = isMobile ? 52 : 64
   const [subIndex, setSubIndex] = useState(0)
   const [isSubVisible, setIsSubVisible] = useState(true)
 
@@ -25,168 +24,50 @@ export default function Hero() {
   }, [])
 
   return (
-    <section id="hero" style={{
-      display: 'flex',
-      flexDirection: 'column',
-      justifyContent: 'center',
-      padding: isMobile ? '1.5rem 1.5rem' : '2rem 3rem 2rem',
-      position: 'relative',
-      zIndex: 1,
-    }}>
+    <section id="hero">
+      <div className="hero-inner">
+        <header className="hero-header reveal">
+          <img className="hero-avatar" src="/profile.jpg" alt="Henok Tekeba" />
+          <div>
+            <h1 className="hero-name">Henok Tekeba</h1>
+            <p
+              className="hero-subtitle"
+              style={{
+                opacity: isSubVisible ? 1 : 0,
+                transform: isSubVisible ? 'translateY(0)' : 'translateY(4px)',
+                transition: 'opacity 0.22s ease, transform 0.22s ease',
+              }}
+            >
+              {rotatingSubheadlines[subIndex]}
+            </p>
+          </div>
+        </header>
 
-      <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '1rem' }}>
-        <div style={{
-          width: photoSize,
-          height: photoSize,
-          borderRadius: '50%',
-          overflow: 'hidden',
-          flexShrink: 0,
-          border: '1px solid var(--border-2)',
-          background: 'var(--bg-2)',
-          display: 'grid',
-          placeItems: 'center',
-          fontFamily: 'var(--title)',
-          fontSize: '0.7rem',
-          fontWeight: 500,
-          color: 'var(--text-3)',
-          position: 'relative',
-        }}>
-          <span>HT</span>
-          <img
-            src="/profile.jpg"
-            alt="Henok Tekeba"
-            style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block', position: 'absolute', inset: 0 }}
-            onError={e => { e.currentTarget.style.display = 'none' }}
-          />
-        </div>
+        <p className="hero-bio reveal d1">
+          I design and ship full stack systems end to end, comfortable moving between backend
+          logic, data pipelines, and the interface on top. I care more about whether it survives
+          real use than whether it looks good in a demo.
+        </p>
 
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '0.25rem' }}>
-          <h1 style={{
-              fontFamily: 'var(--title)',
-              fontWeight: 500,
-              fontSize: isMobile ? 'clamp(1.05rem, 4.5vw, 1.25rem)' : 'clamp(1.1rem, 2vw, 1.4rem)',
-              lineHeight: 1.2,
-              letterSpacing: '-0.01em',
-              color: 'var(--text)',
-            }}>
-              Henok Tekeba
-            </h1>
-
-          <p style={{
-            fontFamily: 'var(--display)',
-            fontSize: isMobile ? '0.78rem' : '0.85rem',
-            lineHeight: 1.5,
-            color: 'var(--text-2)',
-            margin: 0,
-            minHeight: '1.3rem',
-            opacity: isSubVisible ? 1 : 0,
-            transform: isSubVisible ? 'translateY(0)' : 'translateY(5px)',
-            transition: 'opacity 0.22s ease, transform 0.22s ease',
-          }}>
-            {rotatingSubheadlines[subIndex]}
-          </p>
-        </div>
+        <p className="hero-reach reveal d2">
+          Grab my{' '}
+          <a className="hero-link" href="/resume.pdf" target="_blank" rel="noreferrer" title="View resume">
+            <FileText size={15} strokeWidth={1.5} /> <span>resume</span>
+          </a>
+          , or reach me via{' '}
+          <a className="hero-link" href="mailto:tekebahenok6@gmail.com" title="Email">
+            <MdEmail size={16} /> <span>email</span>
+          </a>
+          ,{' '}
+          <a className="hero-link" href="https://github.com/Henok-Tekeba" target="_blank" rel="noreferrer" title="GitHub">
+            <SiGithub size={15} /> <span>GitHub</span>
+          </a>{' '}
+          or{' '}
+          <a className="hero-link" href="https://www.linkedin.com/in/henok-ayele-6ab58b356" target="_blank" rel="noreferrer" title="LinkedIn">
+            <FaLinkedinIn size={15} /> <span>LinkedIn</span>
+          </a>.
+        </p>
       </div>
-
-      <p style={{
-        fontFamily: 'var(--display)',
-        fontWeight: 'var(--display-weight-light)',
-        fontSize: 'clamp(0.9rem, 1.7vw, 1.02rem)',
-        color: 'var(--text-2)',
-        lineHeight: 1.5,
-        marginBottom: '1rem',
-      }}>
-        I design and ship full stack systems end to end, comfortable moving between backend logic, data pipelines, and the interface on top. I care more about whether it survives real use than whether it looks good in a demo.
-      </p>
-
-      <div className="reveal" style={{
-        display: 'flex',
-        flexWrap: 'wrap',
-        gap: '0.75rem',
-        alignItems: 'center',
-        marginBottom: '0.75rem',
-      }}>
-        <a
-          href="/resume.pdf"
-          target="_blank"
-          rel="noreferrer"
-          aria-label="View resume"
-          title="View resume"
-          style={{
-            display: 'inline-flex',
-            alignItems: 'center',
-            color: 'var(--text-2)',
-            textDecoration: 'none',
-            transition: 'color 0.2s ease',
-          }}
-          onMouseEnter={e => (e.currentTarget.style.color = 'var(--text)')}
-          onMouseLeave={e => (e.currentTarget.style.color = 'var(--text-2)')}
-        >
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, opacity: 0.85 }} aria-hidden="true">
-            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
-            <polyline points="14 2 14 8 20 8" />
-            <line x1="16" y1="13" x2="8" y2="13" />
-            <line x1="16" y1="17" x2="8" y2="17" />
-            <polyline points="10 9 9 9 8 9" />
-          </svg>
-        </a>
-
-        <a
-          href="mailto:tekebahenok6@gmail.com"
-          aria-label="Email me at tekebahenok6@gmail.com"
-          title="Email"
-          style={{
-            display: 'inline-flex',
-            alignItems: 'center',
-            color: 'var(--text-2)',
-            textDecoration: 'none',
-            transition: 'color 0.2s ease',
-          }}
-          onMouseEnter={e => (e.currentTarget.style.color = 'var(--text)')}
-          onMouseLeave={e => (e.currentTarget.style.color = 'var(--text-2)')}
-        >
-          <MailIcon size={16} style={{ opacity: 0.85 }} />
-        </a>
-
-        <a
-          href="https://github.com/Henok-Tekeba"
-          target="_blank"
-          rel="noreferrer"
-          aria-label="GitHub profile"
-          title="GitHub"
-          style={{
-            display: 'inline-flex',
-            alignItems: 'center',
-            color: 'var(--text-2)',
-            textDecoration: 'none',
-            transition: 'color 0.2s ease',
-          }}
-          onMouseEnter={e => (e.currentTarget.style.color = 'var(--text)')}
-          onMouseLeave={e => (e.currentTarget.style.color = 'var(--text-2)')}
-        >
-          <GithubIcon size={16} style={{ opacity: 0.9 }} />
-        </a>
-
-        <a
-          href="https://www.linkedin.com/in/henok-ayele-6ab58b356"
-          target="_blank"
-          rel="noreferrer"
-          aria-label="LinkedIn profile"
-          title="LinkedIn"
-          style={{
-            display: 'inline-flex',
-            alignItems: 'center',
-            color: 'var(--text-2)',
-            textDecoration: 'none',
-            transition: 'color 0.2s ease',
-          }}
-          onMouseEnter={e => (e.currentTarget.style.color = 'var(--text)')}
-          onMouseLeave={e => (e.currentTarget.style.color = 'var(--text-2)')}
-        >
-          <LinkedinIcon size={16} style={{ opacity: 0.9 }} />
-        </a>
-      </div>
-
     </section>
   )
 }
