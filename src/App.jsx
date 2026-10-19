@@ -5,6 +5,7 @@ import AboutPage from './pages/AboutPage'
 import ArticlesPage from './pages/ArticlesPage'
 import ArticleDetailPage from './pages/ArticleDetailPage'
 import NotFoundPage from './pages/NotFoundPage'
+import ReplicaPage from './replica/ReplicaPage'
 import { useEffect } from 'react'
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
         <Route path="/about" element={<AboutPage />} />
         <Route path="/articles" element={<ArticlesPage />} />
         <Route path="/articles/:slug" element={<ArticleDetailPage />} />
+        <Route path="/replica" element={<ReplicaPage />} />
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
     </div>
