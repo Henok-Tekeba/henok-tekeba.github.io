@@ -71,7 +71,6 @@ export default function Hero() {
             }}>
               Henok Tekeba
             </h1>
-          </div>
 
           <p style={{
             fontFamily: 'var(--display)',
