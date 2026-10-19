@@ -1,13 +1,10 @@
-import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
-import { Moon, Menu, Sun, Send, FileText } from 'lucide-react'
+import { Moon, Menu, Sun, Send } from 'lucide-react'
 import { MailSolidIcon } from '../components/icons'
 import { useTheme } from '../hooks/useTheme'
 import useReveal from '../hooks/useReveal'
 import { articles } from '../content/articles'
 import './replica.css'
-
-const rotatingSubheadlines = ['21', 'Engineer', 'Full stack dev']
 
 const projects = [
   {
@@ -32,19 +29,6 @@ const projects = [
 export default function ReplicaPage() {
   useReveal()
   const { theme, toggleTheme } = useTheme()
-  const [subIndex, setSubIndex] = useState(0)
-  const [isSubVisible, setIsSubVisible] = useState(true)
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setIsSubVisible(false)
-      setTimeout(() => {
-        setSubIndex(prev => (prev + 1) % rotatingSubheadlines.length)
-        setIsSubVisible(true)
-      }, 220)
-    }, 2500)
-    return () => clearInterval(timer)
-  }, [])
 
   return (
     <div className="replica">
@@ -56,16 +40,7 @@ export default function ReplicaPage() {
               <img className="r-avatar" src="/profile.jpg" alt="Henok Tekeba" width="44" height="44" />
               <div className="r-avatar-col">
                 <h1 className="r-name">Henok Tekeba</h1>
-                <p
-                  className="r-role"
-                  style={{
-                    opacity: isSubVisible ? 1 : 0,
-                    transform: isSubVisible ? 'translateY(0)' : 'translateY(4px)',
-                    transition: 'opacity 0.22s ease, transform 0.22s ease',
-                  }}
-                >
-                  {rotatingSubheadlines[subIndex]}
-                </p>
+                <p className="r-role">Founder of voiET</p>
               </div>
             </div>
 
@@ -159,7 +134,7 @@ export default function ReplicaPage() {
             {articles.map(article => (
               <Link key={article.slug} to={`/articles/${article.slug}`} className="r-row items-top">
                 <span className="r-tile">
-                  <FileText width={24} height={24} strokeWidth={1.5} />
+                  <img className="r-tile-icon" src="/replica-icons/article.svg" alt="" width="24" height="24" loading="lazy" />
                 </span>
                 <span className="r-row-body">
                   <h3 className="r-row-title">{article.title}</h3>

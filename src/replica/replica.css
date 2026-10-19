@@ -221,6 +221,12 @@
   object-fit: cover;
 }
 
+.replica .r-tile img.r-tile-icon {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
+
 .replica .r-tile svg {
   width: 24px;
   height: 24px;
