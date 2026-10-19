@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { Moon, Menu, Sun, FileText } from 'lucide-react'
+import { Moon, Sun, FileText } from 'lucide-react'
 import { FaGithub, FaLinkedinIn } from 'react-icons/fa'
 import { MailSolidIcon } from '../components/icons'
 import { useTheme } from '../hooks/useTheme'
@@ -144,9 +144,6 @@ export default function HomePage() {
       <div className="r-topnav">
         <button type="button" onClick={toggleTheme} aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`} className="r-circle-btn">
           {theme === 'dark' ? <Sun size={14} strokeWidth={1.5} /> : <Moon size={14} strokeWidth={1.5} />}
-        </button>
-        <button type="button" aria-label="Open menu" className="r-circle-btn">
-          <Menu size={14} strokeWidth={1.5} />
         </button>
       </div>
     </div>
