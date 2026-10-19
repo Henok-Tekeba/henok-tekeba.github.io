@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
-import { Moon, Menu, Sun, Send } from 'lucide-react'
+import { Moon, Menu, Sun, Send, FileText, Globe, AudioWaveform } from 'lucide-react'
+import { FaGithub, FaLinkedinIn } from 'react-icons/fa'
 import { MailSolidIcon } from '../components/icons'
 import { useTheme } from '../hooks/useTheme'
 import useReveal from '../hooks/useReveal'
@@ -10,13 +11,13 @@ const projects = [
   {
     title: 'goha.et',
     desc: 'A live tracker of the Ethiopian AI ecosystem: companies, tools, researchers, and initiatives, updating automatically.',
-    image: '/goha.png',
+    icon: Globe,
     href: 'https://goha.et',
   },
   {
     title: 'voiET',
     desc: 'A production ready waitlist for Amharic voice AI: speech recognition, transcription, and diarization for users overlooked by mainstream speech tech.',
-    image: '/voiet.png',
+    icon: AudioWaveform,
     href: 'https://voiet.tech',
   },
   {
@@ -40,58 +41,39 @@ export default function ReplicaPage() {
               <img className="r-avatar" src="/profile.jpg" alt="Henok Tekeba" width="44" height="44" />
               <div className="r-avatar-col">
                 <h1 className="r-name">Henok Tekeba</h1>
-                <p className="r-role">Founder of voiET</p>
+                <p className="r-role">Full stack dev</p>
               </div>
             </div>
 
             <p className="r-p">
-              I'm a founding engineer at{' '}
-              <a href="https://voiet.tech" target="_blank" rel="noopener noreferrer" className="r-link">
-                <span>voiET</span>
+              I design and ship full stack systems end to end, comfortable moving between backend logic, data pipelines, and the interface on top. I care more about whether it survives real use than whether it looks good in a demo.
+            </p>
+
+            <p className="r-p">
+              Grab my{' '}
+              <a href="/resume.pdf" target="_blank" rel="noreferrer" className="r-link">
+                <FileText width={16} height={16} strokeWidth={1.5} />
+                <span>resume</span>
+              </a>{' '}
+              or reach me via{' '}
+              <a href="mailto:tekebahenok6@gmail.com" className="r-link">
+                <MailSolidIcon width={16} height={16} />
+                <span>email</span>
               </a>
-              , where we're building Amharic voice AI for users overlooked by mainstream speech tech.
-            </p>
-
-            <p className="r-p">
-              Earlier, I started solo. I designed and shipped goha.et, a live ecosystem tracker, in one day, and built a Telegram pipeline that delivers opportunities daily with zero maintenance.
-            </p>
-
-            <p className="r-p">
-              I own my philosophy{' '}
-              <Link to="/about" className="r-link">
-                <span>Build useful things</span>
-              </Link>{' '}
-              and an{' '}
+              ,{' '}
               <a href="https://github.com/Henok-Tekeba" target="_blank" rel="noopener noreferrer" className="r-link">
-                <span>Opportunity Digest</span>
+                <FaGithub width={16} height={16} />
+                <span>GitHub</span>
+              </a>{' '}
+              or{' '}
+              <a href="https://www.linkedin.com/in/henok-ayele-6ab58b356" target="_blank" rel="noopener noreferrer" className="r-link">
+                <FaLinkedinIn width={16} height={16} />
+                <span>LinkedIn</span>
               </a>.
             </p>
 
             <p className="r-p">
-              You can reach me at{' '}
-              <a href="https://x.com/HenaTeke" target="_blank" rel="noopener noreferrer" className="r-link">
-                <span>@HenaTeke</span>
-              </a>{' '}
-              and via{' '}
-              <a href="mailto:tekebahenok6@gmail.com" className="r-link">
-                <MailSolidIcon width={16} height={16} />
-                <span>email</span>
-              </a>{' '}
-              or{' '}
-              <a href="https://www.linkedin.com/in/henok-ayele-6ab58b356" target="_blank" rel="noopener noreferrer" className="r-link">
-                <span>LinkedIn</span>
-              </a>
-            </p>
-
-            <p className="r-p">
-              See my live projects on{' '}
-              <a href="https://goha.et" target="_blank" rel="noopener noreferrer" className="r-link">
-                <span>goha.et</span>
-              </a>{' '}
-              and open source codes on{' '}
-              <a href="https://github.com/Henok-Tekeba" target="_blank" rel="noopener noreferrer" className="r-link">
-                <span>GitHub</span>
-              </a>
+              I'm looking for internships and teams building products that need technical curiosity, speed, and attention to detail.
             </p>
           </div>
         </section>
