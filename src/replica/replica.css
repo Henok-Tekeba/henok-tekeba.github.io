@@ -155,6 +155,12 @@
   margin-right: 0.25rem;
 }
 
+.replica .r-link svg {
+  display: inline-block;
+  vertical-align: -3px;
+  margin-right: 0.45rem;
+}
+
 .replica .r-link span {
   border-bottom: 1px solid var(--line);
 }
