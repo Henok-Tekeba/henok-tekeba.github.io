@@ -20,7 +20,7 @@ const experience = [
   {
     period: '2024',
     role: 'Automation Engineer',
-    company: 'Telegram Opportunity Digest',
+    company: 'Never Miss',
     highlights: [
       'Built a Telegram pipeline that scrapes, summarizes, and delivers opportunities every day',
       'Runs on its own with zero maintenance',

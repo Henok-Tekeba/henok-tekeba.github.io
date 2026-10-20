@@ -6,6 +6,7 @@ import { MailSolidIcon } from '../components/icons'
 import useReveal from '../hooks/useReveal'
 import PageLayout from '../components/PageLayout'
 import { articles } from '../content/articles'
+import { projects } from '../content/projects'
 import './home.css'
 
 function ComputerIcon(props) {
@@ -28,30 +29,6 @@ function ComputerIcon(props) {
   )
 }
 
-const projects = [
-  {
-    title: 'goha.et',
-    desc: 'A live tracker of the Ethiopian AI ecosystem: companies, tools, researchers, and initiatives, updating automatically.',
-    icon: '/icons/xsplit.svg',
-    href: 'https://goha.et',
-  },
-  {
-    title: 'voiET',
-    desc: 'A production ready waitlist for Amharic voice AI: speech recognition, transcription, and diarization for users overlooked by mainstream speech tech.',
-    icon: '/icons/agent-skills.svg',
-    href: 'https://voiet.tech',
-  },
-  {
-    title: 'Telegram Opportunity Digest',
-    desc: 'A Telegram pipeline that scrapes, summarizes, and delivers opportunities every day. Runs on its own with zero maintenance.',
-    icon: '/icons/toolist.svg',
-  },
-  {
-    title: 'jobcopilot',
-    desc: 'A scoring pipeline that pulls internships from dozens of company ATS boards daily, checks each posting\u2019s text for visa/location limits, and grades the fit against your skills. Runs on its own, zero maintenance.',
-    icon: '/icons/open-icons.svg',
-  },
-]
 
 export default function HomePage() {
   useReveal()
@@ -112,28 +89,17 @@ export default function HomePage() {
         <section id="r-projects" className="r-section">
           <h2 className="r-h2">Projects</h2>
           <div className="r-rows reveal">
-            {projects.map(project => {
-              const body = (
-                <>
-                  <span className="r-tile">
-                    <img className="r-tile-icon" src={project.icon} alt="" width="24" height="24" loading="lazy" />
-                  </span>
-                  <span className="r-row-body">
-                    <h3 className="r-row-title">{project.title}</h3>
-                    <span className="r-row-desc">{project.desc}</span>
-                  </span>
-                </>
-              )
-              return project.href ? (
-                <a key={project.title} href={project.href} target="_blank" rel="noopener noreferrer" className="r-row items-top">
-                  {body}
-                </a>
-              ) : (
-                <div key={project.title} className="r-row items-top">
-                  {body}
-                </div>
-              )
-            })}
+            {projects.map(project => (
+              <Link key={project.slug} to={`/projects/${project.slug}`} className="r-row items-top">
+                <span className="r-tile">
+                  <img className="r-tile-icon" src={project.icon} alt="" width="24" height="24" loading="lazy" />
+                </span>
+                <span className="r-row-body">
+                  <h3 className="r-row-title">{project.name}</h3>
+                  <span className="r-row-desc">{project.tagline}</span>
+                </span>
+              </Link>
+            ))}
           </div>
         </section>
 

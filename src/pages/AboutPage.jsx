@@ -31,7 +31,7 @@ export default function AboutPage() {
           </p>
 
           <p className="page-intro">
-            The thread through everything is local usefulness. Building software that respects Ethiopian realities instead of assuming Silicon Valley defaults. My recent work includes building a full stack Voice AI platform with real time streaming via Server Sent Events, audio chunking pipelines deployed on Modal, and a Telegram opportunity bot that scrapes and summarizes opportunities daily.
+            The thread through everything is local usefulness. Building software that respects Ethiopian realities instead of assuming Silicon Valley defaults. My recent work includes building a full stack Voice AI platform with real time streaming via Server Sent Events, audio chunking pipelines deployed on Modal, and Never Miss, a Telegram opportunity bot that scrapes and summarizes opportunities daily.
           </p>
         </div>
 
