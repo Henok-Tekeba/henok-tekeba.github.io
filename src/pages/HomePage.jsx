@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import { useEffect, useState } from 'react'
 import { FileText, Monitor } from 'lucide-react'
 import { FaGithub, FaLinkedinIn } from 'react-icons/fa'
 import { MailSolidIcon } from '../components/icons'
@@ -54,6 +55,12 @@ const projects = [
 
 export default function HomePage() {
   useReveal()
+  const [time, setTime] = useState(() => new Date())
+
+  useEffect(() => {
+    const timer = setInterval(() => setTime(new Date()), 15000)
+    return () => clearInterval(timer)
+  }, [])
 
   return (
     <PageLayout>
@@ -151,15 +158,15 @@ export default function HomePage() {
         {/* ── FOOTER ── */}
         <footer className="r-footer">
           <p className="r-footer-updated">
-            <span className="r-faint">Last updated on</span>
-            <time dateTime="2026-10-19" className="r-muted">Oct 19, 2026</time>
+            <span className="r-faint">Local time</span>
+            <time className="r-muted">{time.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}</time>
           </p>
           <nav className="r-footer-nav" aria-label="More pages">
             <Link to="/about">About</Link>
             <Link to="/articles">Articles</Link>
             <a href="/resume.pdf" target="_blank" rel="noreferrer">Resume</a>
           </nav>
-          <p className="r-muted">© Henok Tekeba <span>2026</span> - All rights reserved</p>
+          <p className="r-muted">© Henok Tekeba <span>{time.getFullYear()}</span> - All rights reserved</p>
         </footer>
     </PageLayout>
   )
