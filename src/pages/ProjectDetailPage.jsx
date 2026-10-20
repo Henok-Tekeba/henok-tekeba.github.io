@@ -1,8 +1,9 @@
 import { Link, Navigate, useParams } from 'react-router-dom'
-import { ArrowUpRight, ArrowRight } from 'lucide-react'
+import { ArrowRight } from 'lucide-react'
 import useReveal from '../hooks/useReveal'
 import PageLayout from '../components/PageLayout'
 import Footer from '../components/Footer'
+import { LinkIcon } from '../components/icons'
 import { getProjectBySlug, projects } from '../content/projects'
 import { useProjectSEO } from '../components/SEO'
 
@@ -26,22 +27,25 @@ export default function ProjectDetailPage() {
           <span className="project-icon">
             <img src={project.icon} alt="" width="28" height="28" loading="lazy" />
           </span>
-          <h1 className="project-title">{project.name}</h1>
+          <div className="project-title-row">
+            <h1 className="project-title">{project.name}</h1>
+            {project.live && (
+              <a
+                className="project-live-icon"
+                href={project.live}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Visit live site"
+                title="Visit live site"
+              >
+                <LinkIcon size={15} />
+              </a>
+            )}
+          </div>
           <p className="project-tagline">{project.tagline}</p>
           <p className="project-meta">
             {project.year} · {project.role}
           </p>
-          {project.live && (
-            <a
-              className="project-live-link"
-              href={project.live}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <span>Visit live site</span>
-              <ArrowUpRight size={14} strokeWidth={1.5} />
-            </a>
-          )}
         </header>
 
         <div className="project-body reveal d1">

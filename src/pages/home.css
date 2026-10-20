@@ -329,26 +329,29 @@
   color: var(--ink-faint);
 }
 
-.home .project-live-link {
-  display: inline-flex;
+.home .project-title-row {
+  display: flex;
   align-items: center;
-  gap: 0.35rem;
-  margin-top: 0.25rem;
-  padding: 0.4rem 0.85rem;
+  gap: 0.75rem;
+}
+
+.home .project-live-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
   border-radius: 999px;
-  border: 1px solid var(--line);
+  border: 1px solid var(--line-soft);
   background: var(--paper-raised);
-  font-size: 14px;
-  line-height: 1.4;
-  letter-spacing: -0.28px;
-  color: var(--ink);
-  text-decoration: none;
+  color: var(--ink-muted);
   transition: border-color 0.2s ease, color 0.2s ease;
 }
 
-.home .project-live-link:hover {
-  border-color: var(--ink-muted);
-  color: var(--ink-muted);
+.home .project-live-icon:hover {
+  border-color: var(--line);
+  color: var(--ink);
 }
 
 .home .project-body {
