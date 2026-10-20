@@ -1,11 +1,31 @@
 import { Link } from 'react-router-dom'
-import { FileText } from 'lucide-react'
+import { FileText, Monitor } from 'lucide-react'
 import { FaGithub, FaLinkedinIn } from 'react-icons/fa'
 import { MailSolidIcon } from '../components/icons'
 import useReveal from '../hooks/useReveal'
 import PageLayout from '../components/PageLayout'
 import { articles } from '../content/articles'
 import './home.css'
+
+function ComputerIcon(props) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" {...props}>
+      <defs>
+        <linearGradient id="r-pc-screen" x1="5" y1="6" x2="19" y2="14" gradientUnits="userSpaceOnUse">
+          <stop stopColor="#c9a86a" />
+          <stop offset="1" stopColor="#7a5c33" />
+        </linearGradient>
+      </defs>
+      <rect x="2.75" y="3.75" width="18.5" height="12.5" rx="2" stroke="currentColor" strokeWidth="1.5" />
+      <rect x="5" y="6" width="14" height="8" rx="1" fill="url(#r-pc-screen)" />
+      <path d="M9.5 8 7.5 10l2 2" stroke="#f5f5f4" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" />
+      <path d="M14.5 8l2 2-2 2" stroke="#f5f5f4" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" />
+      <path d="M13 7.5l-2 5" stroke="#f5f5f4" strokeWidth="1.3" strokeLinecap="round" />
+      <path d="M12 16.25v3.25" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+      <path d="M7.5 20.75h9" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+    </svg>
+  )
+}
 
 const projects = [
   {
@@ -40,14 +60,12 @@ export default function HomePage() {
         {/* ── ABOUT / HERO ── */}
         <section className="r-section">
           <div className="r-hero reveal">
-            <div className="r-avatar-row">
-              <span className="r-avatar-wrap">
-                <img className="r-avatar" src="/profile.jpg" alt="Henok Tekeba" width="44" height="44" />
-              </span>
-              <div className="r-avatar-col">
-                <h1 className="r-name">Henok Tekeba</h1>
-                <p className="r-role">Full stack dev</p>
-              </div>
+            <span className="r-computer-tile">
+              <ComputerIcon width={30} height={30} />
+            </span>
+            <div className="r-id">
+              <h1 className="r-name">Henok Tekeba</h1>
+              <p className="r-role">Engineer</p>
             </div>
 
             <p className="r-p">
