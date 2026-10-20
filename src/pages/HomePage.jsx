@@ -1,9 +1,9 @@
 import { Link } from 'react-router-dom'
-import { Moon, Sun, FileText } from 'lucide-react'
+import { FileText } from 'lucide-react'
 import { FaGithub, FaLinkedinIn } from 'react-icons/fa'
 import { MailSolidIcon } from '../components/icons'
-import { useTheme } from '../hooks/useTheme'
 import useReveal from '../hooks/useReveal'
+import PageLayout from '../components/PageLayout'
 import { articles } from '../content/articles'
 import './home.css'
 
@@ -34,11 +34,9 @@ const projects = [
 
 export default function HomePage() {
   useReveal()
-  const { theme, toggleTheme } = useTheme()
 
   return (
-    <div className="home">
-      <main className="r-main">
+    <PageLayout>
         {/* ── ABOUT / HERO ── */}
         <section className="r-section">
           <div className="r-hero reveal">
@@ -143,14 +141,6 @@ export default function HomePage() {
           </nav>
           <p className="r-muted">© Henok Tekeba <span>2026</span> - All rights reserved</p>
         </footer>
-      </main>
-
-      {/* ── FLOATING UI ── */}
-      <div className="r-topnav">
-        <button type="button" onClick={toggleTheme} aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`} className="r-circle-btn">
-          {theme === 'dark' ? <Sun size={14} strokeWidth={1.5} /> : <Moon size={14} strokeWidth={1.5} />}
-        </button>
-      </div>
-    </div>
+    </PageLayout>
   )
 }

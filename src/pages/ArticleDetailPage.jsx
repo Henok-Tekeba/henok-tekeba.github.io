@@ -21,60 +21,54 @@ export default function ArticleDetailPage() {
 
   return (
     <PageLayout>
-      <main style={{
-        padding: isMobile ? '3rem 1.5rem' : '4rem 3rem',
-        maxWidth: '860px',
-        margin: '0 auto',
-      }}>
-        <p
-          className="reveal"
-          style={{
-            fontFamily: 'var(--mono)',
-            fontSize: '0.6rem',
-            letterSpacing: '0.1em',
-            lineHeight: 1.5,
-            textTransform: 'uppercase',
-            color: 'var(--accent)',
-            marginBottom: '0.85rem',
-          }}
-        >
-          {article.date}
-        </p>
+      <article className="r-section">
+      <p
+        className="reveal"
+        style={{
+          fontFamily: 'var(--mono)',
+          fontSize: '0.6rem',
+          letterSpacing: '0.1em',
+          lineHeight: 1.5,
+          textTransform: 'uppercase',
+          color: 'var(--accent)',
+          marginBottom: '0.85rem',
+        }}
+      >
+        {article.date}
+      </p>
 
-        <h1
-          className="reveal d1"
-          style={{
-            fontFamily: 'var(--title)',
-            fontWeight: 'var(--display-weight-reg)',
-            fontSize: isMobile ? 'clamp(1.35rem, 7vw, 2rem)' : 'clamp(1.7rem, 4vw, 2.6rem)',
-            lineHeight: 1.2,
-            color: 'var(--text)',
-            marginBottom: '2rem',
-          }}
-        >
-          {article.title}
-        </h1>
+      <h1
+        className="reveal d1"
+        style={{
+          fontFamily: 'var(--title)',
+          fontWeight: 'var(--display-weight-reg)',
+          fontSize: isMobile ? 'clamp(1.35rem, 7vw, 2rem)' : 'clamp(1.7rem, 4vw, 2.6rem)',
+          lineHeight: 1.2,
+          color: 'var(--text)',
+          marginBottom: '2rem',
+        }}
+      >
+        {article.title}
+      </h1>
 
-        <div style={{ display: 'grid', gap: '1.15rem' }}>
-          {article.paragraphs.map((paragraph, index) => (
-            <p
-              key={index}
-              className={`reveal ${index === 0 ? 'd1' : index === 1 ? 'd2' : 'd3'}`}
-              style={{
-                fontFamily: 'var(--display)',
-                fontWeight: 'var(--display-weight-light)',
-                fontSize: '1.06rem',
-                color: 'var(--text-2)',
-                lineHeight: 1.8,
-              }}
-            >
-              {paragraph}
-            </p>
-          ))}
-        </div>
-      </main>
-
-      <Footer />
+      <div style={{ display: 'grid', gap: '1.15rem' }}>
+        {article.paragraphs.map((paragraph, index) => (
+          <p
+            key={index}
+            className={`reveal ${index === 0 ? 'd1' : index === 1 ? 'd2' : 'd3'}`}
+            style={{
+              fontFamily: 'var(--display)',
+              fontWeight: 'var(--display-weight-light)',
+              fontSize: '1.06rem',
+              color: 'var(--text-2)',
+              lineHeight: 1.8,
+            }}
+          >
+            {paragraph}
+          </p>
+        ))}
+      </div>
+      </article>
     </PageLayout>
   )
 }

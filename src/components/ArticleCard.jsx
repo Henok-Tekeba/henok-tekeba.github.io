@@ -1,25 +1,24 @@
 import { Link } from 'react-router-dom'
-import { FileText } from 'lucide-react'
 
 export default function ArticleCard({ article, delayClass = '' }) {
   const isPublished = article.status.toLowerCase() === 'published'
 
   const body = (
     <>
-      <span className="row-tile">
-        <FileText size={24} strokeWidth={1.5} />
+      <span className="r-tile">
+        <img className="r-tile-icon" src="/icons/article.svg" alt="" width="24" height="24" loading="lazy" />
       </span>
-      <span className="row-body">
-        <h3 className="row-title">{article.title}</h3>
-        <span className="row-desc">{article.excerpt}</span>
-        <span className="row-meta">{article.date} · {article.status}</span>
+      <span className="r-row-body">
+        <h3 className="r-row-title">{article.title}</h3>
+        <span className="r-row-desc">{article.excerpt}</span>
+        <span className="r-meta">{article.date} · {article.status}</span>
       </span>
     </>
   )
 
   if (!isPublished) {
     return (
-      <article className={`row article-row reveal ${delayClass}`.trim()}>
+      <article className={`r-row reveal ${delayClass}`.trim()}>
         {body}
       </article>
     )
@@ -28,7 +27,7 @@ export default function ArticleCard({ article, delayClass = '' }) {
   return (
     <Link
       to={`/articles/${article.slug}`}
-      className={`row article-row reveal ${delayClass}`.trim()}
+      className={`r-row reveal ${delayClass}`.trim()}
     >
       {body}
     </Link>

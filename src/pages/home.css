@@ -17,6 +17,7 @@
   --panze-tip: #e9edee;
 
   min-height: 100vh;
+  position: relative;
   background: var(--paper);
   color: var(--ink);
   font-family: 'Geist', sans-serif;
@@ -345,15 +346,12 @@
   transform: translateY(0);
 }
 
-/* ── FLOATING UI ── */
-.home .r-topnav {
-  position: fixed;
+/* ── THEME TOGGLE ── */
+.home .r-theme-btn {
+  position: absolute;
   top: 1.5rem;
   right: 1.5rem;
   z-index: 40;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
 }
 
 .home .r-circle-btn {
