@@ -41,7 +41,9 @@ export default function HomePage() {
         <section className="r-section">
           <div className="r-hero reveal">
             <div className="r-avatar-row">
-              <img className="r-avatar" src="/profile.jpg" alt="Henok Tekeba" width="44" height="44" />
+              <span className="r-avatar-wrap">
+                <img className="r-avatar" src="/profile.jpg" alt="Henok Tekeba" width="44" height="44" />
+              </span>
               <div className="r-avatar-col">
                 <h1 className="r-name">Henok Tekeba</h1>
                 <p className="r-role">Full stack dev</p>
