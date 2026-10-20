@@ -35,41 +35,6 @@ export const projects = [
     ],
   },
   {
-    slug: 'voiet',
-    name: 'voiET',
-    tagline: 'A production ready waitlist for Amharic voice AI: speech recognition, transcription, and diarization for users overlooked by mainstream speech tech.',
-    year: '2024 — Present',
-    role: 'Founder & full stack engineer',
-    stack: ['Next.js', 'Express', 'PostgreSQL', 'Whisper (Modal)'],
-    live: 'https://voiet.tech',
-    icon: '/icons/agent-skills.svg',
-    screenshots: [],
-    why: [
-      'Mainstream speech tools treat Amharic as an afterthought. Voice is becoming the primary way people interact with software, and Ethiopian users should not have to switch languages to be understood. I wanted to build the infrastructure that lets Amharic audio work as well as English does elsewhere.',
-    ],
-    problem: [
-      'Long-form Amharic audio needed to be transcribed and diarized reliably, and inference had to be fast enough that people would not leave the waitlist before trying it. Recording is one problem; processing hours of audio without the queue collapsing is another.',
-    ],
-    architecture: [
-      'Next.js in front, Express and PostgreSQL behind it. Audio is chunked and processed in parallel on Modal, with results streamed back over Server-Sent Events so users watch progress instead of waiting on a spinner. Models are Whisper-family, adapted for Amharic.',
-      'The pipeline survived a paid contract transcribing 30,000 audio chunks in production. The architectural decision that mattered was streaming everything that could stream and making every step retryable — failures become a retry, not a lost file.',
-    ],
-    decisions: [
-      {
-        title: 'Stream everything that can stream',
-        detail: 'Results are streamed over Server-Sent Events so users watch progress instead of staring at a spinner. Perceived latency is a design decision, not just an infrastructure one.',
-      },
-      {
-        title: 'Chunk, parallelize, retry',
-        detail: 'Audio is split into chunks processed in parallel on Modal. A failed chunk becomes a retry, not a lost file — the pipeline degrades gracefully instead of dropping work.',
-      },
-      {
-        title: 'Built for production, not demos',
-        detail: 'The same pipeline survived a paid contract transcribing 30,000 audio chunks. Reliability decisions were made before the first real customer, not after the first failure.',
-      },
-    ],
-  },
-  {
     slug: 'never-miss',
     name: 'Never Miss',
     tagline: 'A daily digest that scrapes, summarizes, and delivers opportunities before they close. Runs on its own, zero maintenance.',
