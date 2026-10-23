@@ -2,10 +2,10 @@ import { LinkIcon } from './icons'
 
 const projects = [
   {
-    title: 'goha.et',
+    title: 'goha.enoch.et',
     tagline: 'A live tracker of the Ethiopian AI ecosystem: companies, tools, researchers, and initiatives, updating automatically.',
     image: '/goha.png',
-    url: 'https://goha.et',
+    url: 'https://goha.enoch.et',
     stack: ['Next.js', 'Express', 'PostgreSQL', 'GitHub Actions'],
   },
   {

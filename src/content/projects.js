@@ -6,7 +6,7 @@ export const projects = [
     year: '2024',
     role: 'Design & full stack engineer',
     stack: ['Next.js', 'Express', 'PostgreSQL', 'GitHub Actions'],
-    live: 'https://goha.et',
+    live: 'https://goha.enoch.et',
     icon: '/icons/xsplit.svg',
     screenshots: [],
     why: [
@@ -76,6 +76,7 @@ export const projects = [
     role: 'Automation engineer',
     stack: ['Python', 'ATS APIs', 'LLM scoring', 'Scheduled jobs'],
     icon: '/icons/open-icons.svg',
+    live: 'https://shortlist.enoch.et',
     screenshots: [],
     why: [
       'Internship hunting is a search problem with invisible constraints. Most postings are wrong for you in ways the title never says: they cannot sponsor a visa, they require a location you are not in, or they want a stack you do not use.',
