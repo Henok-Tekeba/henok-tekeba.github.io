@@ -5,7 +5,7 @@ import { FaGithub, FaLinkedinIn } from 'react-icons/fa'
 import { MailSolidIcon } from '../components/icons'
 import useReveal from '../hooks/useReveal'
 import PageLayout from '../components/PageLayout'
-import GithubContributionCard from '../components/GithubContributionCard'
+import GithubContributions from '../components/socials/github-contributions'
 import { articles } from '../content/articles'
 import { projects } from '../content/projects'
 import './home.css'
@@ -126,7 +126,7 @@ export default function HomePage() {
         <section id="r-github" className="r-section">
           <h2 className="r-h2">GitHub</h2>
           <div className="r-rows reveal">
-            <GithubContributionCard />
+            <GithubContributions />
           </div>
         </section>
 
