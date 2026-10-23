@@ -593,3 +593,279 @@
 .home .r-circle-btn:hover {
   color: var(--ink);
 }
+
+/* ── GITHUB CONTRIBUTION CARD (ported from Opensource UI) ── */
+.home .ghc-card {
+  --ghc-cell: 9px;
+  --ghc-gap: 2px;
+  --ghc-months-h: 1rem;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.home .ghc-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  width: 100%;
+  margin-bottom: 0.85rem;
+}
+
+.home .ghc-total {
+  font-size: 14px;
+  line-height: 1.4;
+  letter-spacing: -0.28px;
+  color: var(--ink-muted);
+  min-width: 0;
+}
+
+.home .ghc-total strong {
+  font-weight: 500;
+  color: var(--ink);
+  font-variant-numeric: tabular-nums;
+}
+
+/* year dropdown */
+.home .ghc-year {
+  position: relative;
+  flex-shrink: 0;
+}
+
+.home .ghc-year-btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  min-width: 4.5rem;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.375rem;
+  border: 1px solid var(--line-soft);
+  background: var(--paper-raised);
+  color: var(--ink-muted);
+  font: inherit;
+  font-size: 12px;
+  line-height: 1.3;
+  font-variant-numeric: tabular-nums;
+  cursor: pointer;
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+.home .ghc-year-btn:hover,
+.home .ghc-year-btn.is-open {
+  border-color: var(--line);
+  color: var(--ink);
+}
+
+.home .ghc-year-btn:focus-visible {
+  outline: 1px solid var(--line);
+  outline-offset: 1px;
+}
+
+.home .ghc-year-list {
+  position: absolute;
+  top: calc(100% - 1px);
+  right: 0;
+  min-width: 100%;
+  margin: 0;
+  padding: 0.25rem 0;
+  list-style: none;
+  border: 1px solid var(--line-soft);
+  border-radius: 0.375rem;
+  background: var(--paper-raised);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  z-index: 20;
+  max-height: 10rem;
+  overflow-y: auto;
+}
+
+.home .ghc-year-item {
+  display: block;
+  width: 100%;
+  padding: 0.25rem 0.6rem;
+  border: 0;
+  background: transparent;
+  color: var(--ink-muted);
+  font: inherit;
+  font-size: 12px;
+  line-height: 1.4;
+  text-align: left;
+  font-variant-numeric: tabular-nums;
+  cursor: pointer;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.home .ghc-year-item:hover,
+.home .ghc-year-item.is-selected {
+  background: var(--paper-sunken);
+  color: var(--ink);
+}
+
+.home .ghc-year-item.is-selected {
+  font-weight: 500;
+}
+
+.home .ghc-year-item:focus-visible {
+  outline: 1px solid var(--line);
+  outline-offset: -1px;
+}
+
+/* graph body */
+.home .ghc-body {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.375rem;
+  width: 100%;
+}
+
+.home .ghc-days {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ghc-gap);
+  padding-top: calc(var(--ghc-months-h) + var(--ghc-gap));
+  width: 1.375rem;
+  flex-shrink: 0;
+  font-size: 10px;
+  line-height: 1;
+  color: var(--ink-faint);
+}
+
+.home .ghc-days span {
+  display: flex;
+  align-items: center;
+  height: var(--ghc-cell);
+}
+
+.home .ghc-scroll {
+  overflow-x: auto;
+  scrollbar-width: thin;
+}
+
+.home .ghc-scroll::-webkit-scrollbar {
+  height: 6px;
+}
+
+.home .ghc-scroll::-webkit-scrollbar-thumb {
+  background: var(--line);
+  border-radius: 999px;
+}
+
+.home .ghc-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.home .ghc-board {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ghc-gap);
+  width: max-content;
+}
+
+.home .ghc-months {
+  position: relative;
+  height: var(--ghc-months-h);
+  width: 100%;
+}
+
+.home .ghc-months span {
+  position: absolute;
+  top: 0;
+  font-size: 10px;
+  line-height: 1;
+  color: var(--ink-faint);
+}
+
+.home .ghc-grid {
+  display: flex;
+  gap: var(--ghc-gap);
+}
+
+.home .ghc-week {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ghc-gap);
+}
+
+.home .ghc-cell {
+  width: var(--ghc-cell);
+  height: var(--ghc-cell);
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+
+/* GitHub palette — light */
+.home .ghc-l0 { background: #ebedf0; }
+.home .ghc-l1 { background: #9be9a8; }
+.home .ghc-l2 { background: #40c463; }
+.home .ghc-l3 { background: #30a14e; }
+.home .ghc-l4 { background: #216e39; }
+
+/* GitHub palette — dark */
+[data-theme="dark"] .home .ghc-l0 { background: #161b22; }
+[data-theme="dark"] .home .ghc-l1 { background: #0e4429; }
+[data-theme="dark"] .home .ghc-l2 { background: #006d32; }
+[data-theme="dark"] .home .ghc-l3 { background: #26a641; }
+[data-theme="dark"] .home .ghc-l4 { background: #39d353; }
+
+.home .ghc-cell.is-out { background: transparent; }
+
+/* legend */
+.home .ghc-footer {
+  margin-top: 0.6rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.25rem;
+  font-size: 10px;
+  line-height: 1.4;
+  color: var(--ink-faint);
+  width: 100%;
+}
+
+.home .ghc-footer .is-swatch {
+  width: 10px;
+  height: 10px;
+  border-radius: 3px;
+}
+
+/* loading / error states */
+.home .ghc-state {
+  display: grid;
+  place-items: center;
+  gap: 0.6rem;
+  width: 100%;
+  min-height: 6rem;
+  font-size: 14px;
+  line-height: 1.4;
+  color: var(--ink-muted);
+}
+
+.home .ghc-state a {
+  color: var(--ink);
+  text-decoration: none;
+  border-bottom: 1px solid var(--line);
+}
+
+.home .ghc-skeleton-grid {
+  display: grid;
+  grid-template-columns: repeat(53, var(--ghc-cell));
+  grid-template-rows: repeat(7, var(--ghc-cell));
+  gap: var(--ghc-gap);
+}
+
+.home .ghc-skeleton-cell {
+  background: var(--line-soft);
+  border-radius: 2px;
+  animation: ghcPulse 1.4s ease-in-out infinite;
+}
+
+.home .ghc-skeleton-cell:nth-child(3n) { animation-delay: 0.2s; }
+.home .ghc-skeleton-cell:nth-child(5n) { animation-delay: 0.4s; }
+
+@keyframes ghcPulse {
+  0%, 100% { opacity: 0.35; }
+  50%      { opacity: 0.75; }
+}
