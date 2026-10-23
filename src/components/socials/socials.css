@@ -1,8 +1,0 @@
-/*
- * Utilities stylesheet for the copy-paste Opensource UI component in
- * src/components/socials/github-contribution.tsx. Tailwind v3 is already
- * configured in this project, but the site's own CSS is hand-written, so
- * this emits ONLY the utilities the card uses (no preflight), keeping the
- * site's global styles untouched.
- */
-@tailwind utilities;
