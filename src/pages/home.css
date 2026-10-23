@@ -596,8 +596,8 @@
 
 /* ── GITHUB CONTRIBUTION CARD (ported from Opensource UI) ── */
 .home .ghc-card {
-  --ghc-cell: 9px;
-  --ghc-gap: 2px;
+  --ghc-cell: 11px;
+  --ghc-gap: 3px;
   --ghc-months-h: 1rem;
 
   display: flex;
@@ -612,6 +612,7 @@
   justify-content: space-between;
   gap: 1rem;
   width: 100%;
+  min-height: 1.25rem;
   margin-bottom: 0.85rem;
 }
 
@@ -826,8 +827,8 @@
 }
 
 .home .ghc-footer .is-swatch {
-  width: 10px;
-  height: 10px;
+  width: var(--ghc-cell);
+  height: var(--ghc-cell);
   border-radius: 3px;
 }
 
@@ -847,6 +848,36 @@
   color: var(--ink);
   text-decoration: none;
   border-bottom: 1px solid var(--line);
+}
+
+.home .ghc-state-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.home .ghc-retry {
+  padding: 0.3rem 0.75rem;
+  border-radius: 0.375rem;
+  border: 1px solid var(--line-soft);
+  background: var(--paper-raised);
+  color: var(--ink-muted);
+  font: inherit;
+  font-size: 13px;
+  line-height: 1.4;
+  letter-spacing: -0.26px;
+  cursor: pointer;
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+.home .ghc-retry:hover {
+  border-color: var(--line);
+  color: var(--ink);
+}
+
+.home .ghc-retry:focus-visible {
+  outline: 1px solid var(--line);
+  outline-offset: 1px;
 }
 
 .home .ghc-skeleton-grid {
