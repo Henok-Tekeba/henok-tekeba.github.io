@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Resume of Henok Tekeba, full stack developer. Education, experience, projects, and skills." />
     <title>Henok Tekeba | Resume</title>
     <style>
       :root {
@@ -123,6 +124,39 @@
         font-weight: 700;
       }
 
+      .pdf-button {
+        position: fixed;
+        right: 1.25rem;
+        bottom: 1.25rem;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        background: var(--ink);
+        color: #fff;
+        font-family: -apple-system, "Segoe UI", Helvetica, Arial, sans-serif;
+        font-size: 0.85rem;
+        font-weight: 600;
+        padding: 0.6rem 1.1rem;
+        cursor: pointer;
+        box-shadow: 0 6px 18px rgba(0, 0, 0, 0.18);
+      }
+
+      .pdf-button:hover {
+        opacity: 0.88;
+      }
+
+      .pdf-button svg {
+        width: 16px;
+        height: 16px;
+        stroke: currentColor;
+        fill: none;
+        stroke-width: 1.8;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+
       @media (max-width: 720px) {
         .page {
           padding: 0.9rem;
@@ -141,6 +175,10 @@
           box-shadow: none;
           padding: 0.55in;
         }
+
+        .pdf-button {
+          display: none;
+        }
       }
     </style>
   </head>
@@ -148,10 +186,11 @@
     <main class="page">
       <h1 class="name">Henok Tekeba</h1>
       <p class="contact">
-        Addis Ababa, Ethiopia | <a href="mailto:tekebahenok6@gmail.com">tekebahenok6@gmail.com</a> |
+        Addis Ababa, Ethiopia | <a href="tel:+251993100406">+251 99 310 0406</a> |
+        <a href="mailto:tekebahenok6@gmail.com">tekebahenok6@gmail.com</a> |
         <a href="https://github.com/Henok-Tekeba" target="_blank" rel="noreferrer">github.com/Henok-Tekeba</a> |
         <a href="https://www.linkedin.com/in/henok-ayele-6ab58b356" target="_blank" rel="noreferrer">linkedin.com/in/henok-ayele-6ab58b356</a> |
-        <a href="https://henok.tekeba.github.io/portfolio" target="_blank" rel="noreferrer">henok.tekeba.github.io/portfolio</a>
+        <a href="https://enoch.et" target="_blank" rel="noreferrer">enoch.et</a>
       </p>
 
       <section class="section">
@@ -159,10 +198,10 @@
         <hr class="rule" />
         <div class="row">
           <p class="institution">Addis Ababa University (AAU), Addis Ababa, Ethiopia</p>
-          <span class="date">Expected Graduation: 2028</span>
+          <span class="date">Expected 2028</span>
         </div>
         <p class="sub">B.S. in Electrical and Computer Engineering</p>
-        <p class="meta">Relevant Coursework: Object-Oriented Programming, Data Structures and Algorithms, Computational Methods</p>
+        <p class="meta">Relevant Coursework: Data Structures and Algorithms, Object-Oriented Programming, Computer Programming, Computational Methods, Digital Logic Design</p>
       </section>
 
       <section class="section">
@@ -170,22 +209,22 @@
         <hr class="rule" />
 
         <div class="row">
-          <p class="institution">voiET, Founder / ML Engineer</p>
-          <span class="date">2025 - Present</span>
+          <p class="institution">Independent Full-Stack Developer</p>
+          <span class="date">Mid 2025 &ndash; Present</span>
         </div>
         <ul>
-          <li>Built a wrapper around Fine-tuned Whisper on Amharic speech samples to improve ASR performance for local language use cases.</li>
-          <li>Deployed a production ASR service on Modal and reduced median inference latency from 2.4s to 0.9s per request while improving transcription quality.</li>
-          <li>Built an end to end voice AI pipeline for Ethiopian users, from data processing to inference.</li>
+          <li>Built and shipped Shortlist (shortlist.enoch.et), an internship platform that reads more than 4,000 postings, refreshed every 8 hours, and reports whether employers accept international applicants.</li>
+          <li>Engineered a parsing pipeline that extracts location rules, visa notes, skill requirements, and deadlines from raw posting text and returns a plain-language verdict supported by quoted text, with a skill match score out of 100.</li>
+          <li>Built Goha (goha.enoch.et), a daily-indexed platform cataloging 181 models, 212 datasets, 75 research papers, and 185 organizations across Ethiopian-language AI, with search, benchmark leaderboards, and model lineage views.</li>
+          <li>Added plain-language question answering over the Goha index and an activity feed tracking new models and datasets as they are published.</li>
         </ul>
 
         <div class="row">
-          <p class="institution">Independent Full-Stack Developer</p>
-          <span class="date">2025 (6 months)</span>
+          <p class="institution">Speech Data Contractor, Confidential Client</p>
+          <span class="date">Mid 2025</span>
         </div>
         <ul>
-          <li>Designed and deployed a production waitlist platform using Next.js, Express, and PostgreSQL.</li>
-          <li>Built and shipped web products with a focus on clean UX, API design, and reliable deployment.</li>
+          <li>Transcribed and annotated 30,000 fifteen-second audio clips, approximately 125 hours of speech, under a paid contract for automatic speech recognition (ASR) training data.</li>
         </ul>
       </section>
 
@@ -198,7 +237,7 @@
           <span class="date">GitHub Project</span>
         </div>
         <ul>
-          <li>Collected a custom street level image dataset in Addis Ababa and trained a computer vision classifier.</li>
+          <li>Collected a custom street-level image dataset in Addis Ababa and trained a computer vision classifier for local vehicle types.</li>
           <li>Evaluated model behavior on real-world data conditions and improved class consistency through data refinement.</li>
         </ul>
 
@@ -207,7 +246,7 @@
           <span class="date">Competition Project</span>
         </div>
         <ul>
-          <li>Contributed to autonomous control logic and embedded system debugging in a team robotics environment.</li>
+          <li>Contributed autonomous control logic and embedded system debugging in a team robotics environment.</li>
           <li>Improved reliability through iterative testing, sensor tuning, and rapid issue triage under competition constraints.</li>
         </ul>
       </section>
@@ -216,21 +255,30 @@
         <h2 class="section-title">Skills</h2>
         <hr class="rule" />
         <p class="skills-line"><strong>Languages:</strong> Python, TypeScript, JavaScript, Java</p>
-        <p class="skills-line"><strong>Frameworks/Tools:</strong> React, Next.js, Node.js, Express, PostgreSQL, Tailwind CSS, Git</p>
-        <p class="skills-line"><strong>ML/AI:</strong> PyTorch, Hugging Face, OpenAI API, Weights & Biases, Kaggle, Google Colab</p>
+        <p class="skills-line"><strong>Frameworks and Tools:</strong> React, Next.js, Node.js, Express, PostgreSQL, Tailwind CSS, Git</p>
+        <p class="skills-line"><strong>AI and Machine Learning:</strong> PyTorch, Hugging Face, OpenAI API, Weights &amp; Biases, Kaggle, Google Colab</p>
       </section>
 
       <section class="section">
-        <h2 class="section-title">Awards and Activities</h2>
+        <h2 class="section-title">Activities</h2>
         <hr class="rule" />
         <ul>
-          <li>Web3 Hackathon Participant</li>
-          <li>VEX Robotics Competition Team Member</li>
           <li>Rotaract Club Member</li>
+          <li>Web3 Hackathon Participant</li>
         </ul>
       </section>
     </main>
-      <script>
+
+    <button class="pdf-button" type="button" onclick="window.print()" aria-label="Download resume as PDF">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M12 3v12" />
+        <path d="M7 10l5 5 5-5" />
+        <path d="M4 19h16" />
+      </svg>
+      <span>Download as PDF</span>
+    </button>
+
+    <script>
       if (window.location.search.includes('print')) {
         window.addEventListener('load', function() {
           setTimeout(function() { window.print() }, 600)

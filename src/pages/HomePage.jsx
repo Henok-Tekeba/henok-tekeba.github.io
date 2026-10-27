@@ -58,7 +58,7 @@ export default function HomePage() {
 
             <p className="r-p">
               Grab my{' '}
-              <a href="/resume.pdf" target="_blank" rel="noreferrer" className="r-link">
+              <a href="/resume.html" target="_blank" rel="noreferrer" className="r-link">
                 <FileText width={16} height={16} strokeWidth={1.5} />
                 <span>resume</span>
               </a>{' '}

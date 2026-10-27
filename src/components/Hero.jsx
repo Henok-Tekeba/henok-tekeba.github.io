@@ -48,7 +48,7 @@ export default function Hero() {
 
         <p className="hero-reach reveal d2">
           Grab my{' '}
-          <a className="hero-link" href="/resume.pdf" target="_blank" rel="noreferrer" title="View resume">
+          <a className="hero-link" href="/resume.html" target="_blank" rel="noreferrer" title="View resume">
             <FileText size={16} strokeWidth={1.5} />
             <span>resume</span>
           </a>
