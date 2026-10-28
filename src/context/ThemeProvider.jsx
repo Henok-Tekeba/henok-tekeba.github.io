@@ -4,7 +4,7 @@ import { ThemeContext } from '../context/ThemeContext'
 const STORAGE_KEY = 'theme'
 
 function readInitialTheme() {
-  if (typeof window === 'undefined') return 'light'
+  if (typeof window === 'undefined') return 'dark'
   let saved = null
   try {
     saved = window.localStorage.getItem(STORAGE_KEY)
@@ -12,7 +12,7 @@ function readInitialTheme() {
     void err
   }
   if (saved === 'light' || saved === 'dark') return saved
-  return 'light'
+  return 'dark'
 }
 
 export function ThemeProvider({ children }) {
