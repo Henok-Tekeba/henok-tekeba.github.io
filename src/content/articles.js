@@ -1,7 +1,7 @@
 export const articles = [
   {
     slug: 'i-built-a-bot-to-stop-missing-opportunities',
-    title: 'I Built a Bot to Stop Missing Opportunities',
+    title: 'Opportunity Bot',
     date: 'JUN 2026',
     excerpt:
       'The frustration of finding out about opportunities after they close. So I built something to fix it.',
@@ -20,7 +20,7 @@ export const articles = [
   },
   {
     slug: 'missing-benchmarks-ethiopian-ai',
-    title: 'The Missing Benchmarks in Ethiopian AI',
+    title: 'Ethiopian AI Benchmarks',
     date: 'JUN 2026',
     excerpt:
       'Ethiopian AI is growing fast. Evaluation is not growing with it. Why benchmarks are the missing piece, and what it would take to build them.',
@@ -38,7 +38,7 @@ export const articles = [
   },
   {
     slug: 'why-you-should-start-using-ai-agents',
-    title: 'Why You Should Start Using AI Agents',
+    title: 'Why Use AI Agents',
     date: 'JUN 2026',
     excerpt:
       'AI agents are not a futuristic concept. They are already here, and they can do tasks for you. Here is why you should care.',
@@ -57,7 +57,7 @@ export const articles = [
   },
   {
     slug: 'asr-runtime-toolkit-making-open-source-speech-models-easier-to-run',
-    title: 'ASR Runtime Toolkit: Making Open-Source Speech Models Easier to Run',
+    title: 'ASR Runtime Toolkit',
     date: 'OCT 2026',
     excerpt:
       'A toolkit to make running open-source speech recognition models more predictable, debuggable, and reproducible.',

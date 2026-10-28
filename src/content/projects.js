@@ -10,19 +10,19 @@ export const projects = [
     icon: '/icons/xsplit.svg',
     screenshots: [],
     why: [
-      'I kept learning about Ethiopian AI companies weeks after they launched — from a Telegram forward, a tweet, or a friend. The ecosystem existed, but nobody could see it. I wanted a single, living map of who is building what, who is researching what, and what is launching next.',
+      'I kept learning about Ethiopian AI companies weeks after they launched, from a Telegram forward, a tweet, or a friend. The ecosystem existed, but nobody could see it. I wanted a single, living map of who is building what, who is researching what, and what is launching next.',
     ],
     problem: [
-      'Building that map by hand would be stale within a week. The information lives in dozens of scattered sources — Telegram channels, social posts, company sites — with no structure and no canonical list. A tracker only stays useful if it updates itself daily, otherwise it becomes another dead directory.',
+      'Building that map by hand would be stale within a week. The information lives in dozens of scattered sources, Telegram channels, social posts, company sites, with no structure and no canonical list. A tracker only stays useful if it updates itself daily, otherwise it becomes another dead directory.',
     ],
     architecture: [
       'Goha is a Next.js frontend over an Express API and a PostgreSQL schema that models companies, tools, researchers, and initiatives as separate, related entities. A GitHub Actions workflow runs the ingestion pipeline daily: it fetches sources, normalizes entries, deduplicates against what already exists, and writes updates into the database.',
-      'The whole system was designed and shipped in one day. The interesting part was refusing to build anything that needs a human editor — every piece of content is either imported automatically or it does not belong on the site.',
+      'The whole system was designed and shipped in one day. The interesting part was refusing to build anything that needs a human editor, every piece of content is either imported automatically or it does not belong on the site.',
     ],
     decisions: [
       {
         title: 'No human editor',
-        detail: 'Every piece of content is imported automatically or it does not belong on the site. Human curation is the single point of failure that kills directories — refusing it is what keeps the map alive.',
+        detail: 'Every piece of content is imported automatically or it does not belong on the site. Human curation is the single point of failure that kills directories, refusing it is what keeps the map alive.',
       },
       {
         title: 'Entities as related tables, not one list',
@@ -30,7 +30,7 @@ export const projects = [
       },
       {
         title: 'The ingestion pipeline is the product',
-        detail: 'A GitHub Actions workflow fetches, normalizes, deduplicates, and writes on a schedule. Freshness is automated, not manual — the site updates itself while I sleep.',
+        detail: 'A GitHub Actions workflow fetches, normalizes, deduplicates, and writes on a schedule. Freshness is automated, not manual, the site updates itself while I sleep.',
       },
     ],
   },
@@ -44,7 +44,7 @@ export const projects = [
     icon: '/icons/toolist.svg',
     screenshots: [],
     why: [
-      'I missed a hackathon the day after it closed. Not because I was not looking — because I was looking in the wrong place at the wrong time. Opportunities are announced across dozens of Telegram channels and buried in hundreds of messages a day.',
+      'I missed a hackathon the day after it closed. Not because I was not looking, because I was looking in the wrong place at the wrong time. Opportunities are announced across dozens of Telegram channels and buried in hundreds of messages a day.',
     ],
     problem: [
       'Discovery is a timing problem. By the time a message surfaces, the deadline may already have passed. People do not need more notifications; they need the right ones, summarized, once a day.',
@@ -60,7 +60,7 @@ export const projects = [
       },
       {
         title: 'Idempotent runs, deterministic state',
-        detail: 'Every run can fail and rerun without duplicating or losing entries. If a source breaks, the next run picks up where the last one stopped — zero maintenance by design.',
+        detail: 'Every run can fail and rerun without duplicating or losing entries. If a source breaks, the next run picks up where the last one stopped, zero maintenance by design.',
       },
       {
         title: 'Code for structure, the model for judgment',
