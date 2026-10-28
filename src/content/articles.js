@@ -55,6 +55,38 @@ export const articles = [
       'AI agents are not about replacing humans. They are about making humans more capable. You should start using them not because they are impressive but because they let you focus on what actually matters.',
     ],
   },
+  {
+    slug: 'asr-runtime-toolkit-making-open-source-speech-models-easier-to-run',
+    title: 'ASR Runtime Toolkit: Making Open-Source Speech Models Easier to Run',
+    date: 'OCT 2026',
+    excerpt:
+      'A toolkit to make running open-source speech recognition models more predictable, debuggable, and reproducible.',
+    status: 'Published',
+    paragraphs: [
+      'Working with open-source speech recognition models should not require hours of debugging dependency conflicts before a single transcription can be generated.',
+      'Yet models hosted on Hugging Face can require different versions of Python libraries, incompatible dependencies, specialized inference code, and runtime configurations that are not always clearly documented. A model that works in one environment may fail in another.',
+      'ASR Runtime Toolkit (ART) is a project aimed at reducing this friction.',
+      'What does it do?',
+      'ART focuses on the engineering challenges involved in running unfamiliar Automatic Speech Recognition (ASR) models. Its goal is to make model execution more predictable through dependency compatibility checks, environment isolation, structured error reporting, and reproducible runtime configurations.',
+      'Rather than treating every model failure as a debugging problem that must be solved from scratch, the toolkit aims to make failures easier to identify, understand, and resolve.',
+      'Why does this matter?',
+      'Reliable model execution is a prerequisite for meaningful experimentation. If a model cannot be loaded consistently, reproducing its results or comparing it with other models becomes difficult.',
+      'This is especially relevant when working with underdocumented models and low-resource language technologies, including Amharic ASR. Researchers should be able to spend more time investigating model performance and less time reconstructing fragile software environments.',
+      'The engineering approach',
+      'The project focuses on four areas:',
+      'Compatibility: identifying dependency requirements and potential conflicts.',
+      'Isolation: keeping model-specific environments separate to reduce interference between projects.',
+      'Diagnostics: making installation, import, and inference failures easier to understand.',
+      'Reproducibility: preserving environment specifications and execution details so successful runs can be recreated.',
+      'The long-term objective is to provide a repeatable workflow for investigating and running diverse open-source ASR models without assuming they all share the same software stack.',
+      'Measuring success',
+      'The toolkit\'s effectiveness should be demonstrated through controlled experiments, not claims alone. Relevant measurements include model execution success rate, time to first successful transcription, dependency conflicts detected, and environment reproducibility.',
+      'These experiments will help determine where ART improves the workflow, where it still fails, and which limitations require further engineering.',
+      'Why I am building it',
+      'ART grew out of a practical problem encountered while exploring and running open-source ASR models for Ethiopian languages. The project is an opportunity to work on a less visible but important part of machine learning: the infrastructure that makes experimentation reliable.',
+      'The broader goal is simple: make open-source speech models easier to run, easier to debug, and easier to reproduce.',
+    ],
+  },
 ]
 
 export function getArticleBySlug(slug) {
