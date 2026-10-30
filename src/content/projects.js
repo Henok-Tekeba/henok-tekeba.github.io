@@ -8,7 +8,7 @@ export const projects = [
     stack: ['Next.js', 'Express', 'PostgreSQL', 'GitHub Actions'],
     live: 'https://goha.enoch.et',
     icon: '/icons/xsplit.svg',
-    screenshots: [],
+    screenshots: ['/screenshots/goha.png'],
     why: [
       'I kept learning about Ethiopian AI companies weeks after they launched, from a Telegram forward, a tweet, or a friend. The ecosystem existed, but nobody could see it. I wanted a single, living map of who is building what, who is researching what, and what is launching next.',
     ],
@@ -77,7 +77,7 @@ export const projects = [
     stack: ['Python', 'ATS APIs', 'LLM scoring', 'Scheduled jobs'],
     icon: '/icons/open-icons.svg',
     live: 'https://shortlist.enoch.et',
-    screenshots: [],
+    screenshots: ['/screenshots/shortlist.png'],
     why: [
       'Internship hunting is a search problem with invisible constraints. Most postings are wrong for you in ways the title never says: they cannot sponsor a visa, they require a location you are not in, or they want a stack you do not use.',
     ],
@@ -100,6 +100,40 @@ export const projects = [
       {
         title: 'A ranked shortlist, not a feed',
         detail: 'The output is ordered by fit against a skill profile, so the next action is obvious: apply top-down. The pipeline ends at a decision, not a dashboard.',
+      },
+    ],
+  },
+  {
+    slug: 'omnirun',
+    name: 'OmniRun',
+    tagline: 'Preflight Hugging Face models against your hardware: memory fit, runtime support, and decode speed before you download weights.',
+    year: '2026',
+    role: 'Full stack engineer',
+    stack: ['React', 'TypeScript', 'Vite', 'Tailwind'],
+    live: 'https://omnirun.enoch.et',
+    icon: '/icons/open-icons.svg',
+    screenshots: ['/screenshots/omnirun.png'],
+    why: [
+      'Running open-source models locally is a guessing game. You download gigabytes of weights only to find out your GPU cannot fit them or the runtime does not support them. OmniRun checks fit before download.',
+    ],
+    problem: [
+      'Model cards rarely state memory requirements clearly, and compatibility depends on hardware and runtime. Developers waste time and bandwidth on models that cannot run.',
+    ],
+    architecture: [
+      'A client-side React app that estimates memory fit, runtime support, and decode speed for a given model and hardware profile before weights are downloaded. Everything runs in the browser, with no backend.',
+    ],
+    decisions: [
+      {
+        title: 'Preflight, not download',
+        detail: 'Check memory fit, runtime support, and decode speed before any weights are fetched, so time and bandwidth are spent only on models that can actually run.',
+      },
+      {
+        title: 'FITS, SUPPORTED, and VERIFIED stay separate',
+        detail: 'A model can fit in memory but still be unsupported by your runtime, or supported but unverified for speed. Each signal is reported on its own so nothing is conflated.',
+      },
+      {
+        title: 'Client-side only',
+        detail: 'All estimation runs in the browser. No backend, no accounts, no data leaves the machine.',
       },
     ],
   },

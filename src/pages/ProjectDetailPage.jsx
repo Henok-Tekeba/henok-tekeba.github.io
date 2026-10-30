@@ -48,6 +48,26 @@ export default function ProjectDetailPage() {
           </p>
         </header>
 
+        {project.screenshots && project.screenshots.length > 0 && (
+          <div
+            className="reveal d1"
+            style={{
+              marginBottom: '2rem',
+              borderRadius: '1rem',
+              overflow: 'hidden',
+              border: '1px solid var(--border)',
+              background: 'var(--bg-2)',
+            }}
+          >
+            <img
+              src={project.screenshots[0]}
+              alt={`${project.name} screenshot`}
+              loading="lazy"
+              style={{ display: 'block', width: '100%', height: 'auto' }}
+            />
+          </div>
+        )}
+
         <div className="project-body reveal d1">
           <section className="project-section">
             <h2 className="r-h2">Why I built it</h2>
@@ -96,7 +116,7 @@ export default function ProjectDetailPage() {
             </ul>
           </section>
 
-          {project.screenshots.length > 0 && (
+          {project.screenshots.length > 1 && (
             <section className="project-section">
               <h2 className="r-h2">Screenshots</h2>
               <div className="project-shots">
