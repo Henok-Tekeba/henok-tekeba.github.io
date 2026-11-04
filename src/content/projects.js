@@ -35,6 +35,41 @@ export const projects = [
     ],
   },
   {
+    slug: 'pursuit',
+    name: 'Pursuit',
+    tagline: 'A calm workspace to track every internship application, email, and follow-up, so the next right action is always obvious.',
+    year: '2026',
+    role: 'Full stack engineer',
+    stack: ['Next.js', 'TypeScript', 'PostgreSQL', 'Tailwind'],
+    live: 'https://pursuit.enoch.et',
+    icon: '/icons/open-icons.svg',
+    screenshots: ['/screenshots/pursuit.png'],
+    why: [
+      'Internship applications are relationship work. The value is not in how many rows you collect. It is in remembering who you spoke to, what you said, and when to follow up without sounding like a robot.',
+    ],
+    problem: [
+      'Spreadsheets lose the human context. Follow-ups slip, threads get lost, and it is hard to see what is actually working. The search needs a system, not more rows.',
+    ],
+    architecture: [
+      'A Next.js app backed by PostgreSQL where each application is one record holding company, role, contact, source, notes, and the emails sent. Follow-up cadence is set once and surfaced as due or overdue, with a timeline keeping the conversation intact.',
+      'Response rate, interviews, offers, and follow-up effectiveness are tracked so the search can be adjusted with intent instead of guesswork.',
+    ],
+    decisions: [
+      {
+        title: 'One record per application',
+        detail: 'Company, role, contact, source, notes, and sent emails live together, so the full context of an application is never split across tools.',
+      },
+      {
+        title: 'Follow-ups that do not slip',
+        detail: 'Set the cadence once. Pursuit surfaces what is due and what is overdue without turning the inbox into a guilt trip.',
+      },
+      {
+        title: 'Signal over volume',
+        detail: 'Response rate, interviews, offers, and follow-up effectiveness are tracked so the search is adjusted with intent, not by collecting more rows.',
+      },
+    ],
+  },
+  {
     slug: 'never-miss',
     name: 'Never Miss',
     tagline: 'A daily digest that scrapes, summarizes, and delivers opportunities before they close. Runs on its own, zero maintenance.',
@@ -65,41 +100,6 @@ export const projects = [
       {
         title: 'Code for structure, the model for judgment',
         detail: 'Scraping, deduplication, and normalization are deterministic code. The LLM is reserved for the one step that actually needs language understanding: summarizing.',
-      },
-    ],
-  },
-  {
-    slug: 'shortlist',
-    name: 'Shortlist',
-    tagline: 'A scoring pipeline that pulls internships from dozens of company ATS boards daily, checks each posting for visa and location limits, and grades the fit against your skills. Runs on its own, zero maintenance.',
-    year: '2026',
-    role: 'Automation engineer',
-    stack: ['Python', 'ATS APIs', 'LLM scoring', 'Scheduled jobs'],
-    icon: '/icons/open-icons.svg',
-    live: 'https://shortlist.enoch.et',
-    screenshots: ['/screenshots/shortlist.png'],
-    why: [
-      'Internship hunting is a search problem with invisible constraints. Most postings are wrong for you in ways the title never says: they cannot sponsor a visa, they require a location you are not in, or they want a stack you do not use.',
-    ],
-    problem: [
-      'Companies post across dozens of different ATS boards with inconsistent formats. Reading each posting closely to extract eligibility takes longer than applying. The filter should happen before the human sees the list.',
-    ],
-    architecture: [
-      'Every day the pipeline pulls postings from company ATS boards, parses each description for visa and location constraints, and scores fit against a skill profile.',
-      'What comes out is a ranked shortlist instead of a feed. The scoring is deterministic where it can be and model-assisted where the text is ambiguous, and the whole thing runs unattended.',
-    ],
-    decisions: [
-      {
-        title: 'Filter before the human sees the list',
-        detail: 'Visa and location constraints are parsed out of each posting before scoring even starts. Ineligible internships never reach the output, so reading time is spent only on postings worth applying to.',
-      },
-      {
-        title: 'Deterministic where possible, model-assisted where ambiguous',
-        detail: 'Explicit constraints are extracted with plain parsing; the LLM only grades the fit that text alone cannot settle. Cheap, repeatable logic does the heavy lifting.',
-      },
-      {
-        title: 'A ranked shortlist, not a feed',
-        detail: 'The output is ordered by fit against a skill profile, so the next action is obvious: apply top-down. The pipeline ends at a decision, not a dashboard.',
       },
     ],
   },
