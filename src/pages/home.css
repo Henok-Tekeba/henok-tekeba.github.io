@@ -574,7 +574,8 @@
 .home .r-theme-btn {
   position: absolute;
   top: 1.5rem;
-  right: 1.5rem;
+  /* align with the right edge of the centered text column (680px, 1rem inner padding) */
+  right: max(1.5rem, calc((100% - 680px) / 2 + 1rem));
   z-index: 40;
 }
 
