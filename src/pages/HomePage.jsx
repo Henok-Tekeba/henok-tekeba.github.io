@@ -80,7 +80,7 @@ export default function HomePage() {
             </p>
 
             <p className="r-p">
-              I'm currently a Software Engineer Intern at Ethix, and I'm looking for teams building products that need technical curiosity, speed, and attention to detail.
+              I'm currently a Software Engineer Intern at <a href="https://ethix.io" target="_blank" rel="noopener noreferrer" className="r-link"><span>Ethix</span></a>, and I'm looking for teams building products that need technical curiosity, speed, and attention to detail.
             </p>
           </div>
         </section>

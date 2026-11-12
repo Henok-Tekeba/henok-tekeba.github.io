@@ -55,8 +55,8 @@ export default function Projects() {
               <h3 className="experience-role">{entry.role}</h3>
               <p className="experience-company">
                 {entry.link ? (
-                  <a href={entry.link} target="_blank" rel="noopener noreferrer">
-                    {entry.company}
+                  <a href={entry.link} target="_blank" rel="noopener noreferrer" className="hero-link">
+                    <span>{entry.company}</span>
                   </a>
                 ) : (
                   entry.company

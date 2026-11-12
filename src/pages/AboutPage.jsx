@@ -67,7 +67,7 @@ export default function AboutPage() {
 
         <div className="about-outro reveal d3">
           <p className="page-intro">
-            I'm currently interning as a software engineer at Ethix, where I contribute to real products and work with experienced engineers. I'm always up for interesting collaborations and future opportunities — if you're working on something interesting or just want to connect,{' '}
+            I'm currently interning as a software engineer at <a className="hero-link" href="https://ethix.io" target="_blank" rel="noopener noreferrer"><span>Ethix</span></a>, where I contribute to real products and work with experienced engineers. I'm always up for interesting collaborations and future opportunities — if you're working on something interesting or just want to connect,{' '}
             <a className="hero-link" href="mailto:tekebahenok6@gmail.com">
               <span>reach out</span>
             </a>.
