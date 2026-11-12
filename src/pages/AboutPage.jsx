@@ -8,7 +8,7 @@ import PageLayout from '../components/PageLayout'
 const facts = [
   { label: 'Location', value: 'Addis Ababa, Ethiopia', Icon: MapPinIcon },
   { label: 'University', value: 'Addis Ababa University', Icon: UniversityIcon },
-  { label: 'Looking for', value: 'Internships & full stack roles', Icon: Sparkles },
+  { label: 'Currently', value: 'Software Engineer Intern @ Ethix', Icon: Sparkles },
 ]
 
 export default function AboutPage() {
@@ -67,7 +67,7 @@ export default function AboutPage() {
 
         <div className="about-outro reveal d3">
           <p className="page-intro">
-            I'm looking for internship and full stack development opportunities where I can contribute to real products, work with experienced engineers, and keep building. If you're working on something interesting or just want to connect,{' '}
+            I'm currently interning as a software engineer at Ethix, where I contribute to real products and work with experienced engineers. I'm always up for interesting collaborations and future opportunities — if you're working on something interesting or just want to connect,{' '}
             <a className="hero-link" href="mailto:tekebahenok6@gmail.com">
               <span>reach out</span>
             </a>.

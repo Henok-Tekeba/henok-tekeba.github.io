@@ -8,7 +8,7 @@ export default function Contact() {
       <h2 className="contact-title reveal">Get in touch.</h2>
 
       <p className="contact-text reveal d1">
-        I'm looking for internships and teams building products that need technical curiosity, speed, and attention to detail.
+        I'm currently a Software Engineer Intern at Ethix, and I'm looking for teams building products that need technical curiosity, speed, and attention to detail.
       </p>
 
       <p className="hero-reach reveal d2">

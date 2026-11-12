@@ -1,5 +1,16 @@
 const experience = [
   {
+    period: 'Nov 2026 to Present',
+    role: 'Software Engineer Intern',
+    company: 'Ethix',
+    link: 'https://ethix.io',
+    highlights: [
+      'Engineering full stack features on client platforms for Ethix, a software engineering and AI development company serving global teams',
+      'Working across custom SaaS and applied AI systems, from LLM-powered automation to cloud-deployed web applications',
+      'Shipping under senior-led review with production-ready code, testing, and weekly demos',
+    ],
+  },
+  {
     period: '2024 to Present',
     role: 'Founder & Full Stack Engineer',
     company: 'voiET Voice AI Platform',
@@ -42,7 +53,15 @@ export default function Projects() {
 
             <div className="experience-content">
               <h3 className="experience-role">{entry.role}</h3>
-              <p className="experience-company">{entry.company}</p>
+              <p className="experience-company">
+                {entry.link ? (
+                  <a href={entry.link} target="_blank" rel="noopener noreferrer">
+                    {entry.company}
+                  </a>
+                ) : (
+                  entry.company
+                )}
+              </p>
               <ul className="experience-highlights">
                 {entry.highlights.map((item, j) => (
                   <li key={j}>{item}</li>
